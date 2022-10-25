@@ -1,4 +1,3 @@
-/*Copy this entire thing! Removing the surrounding comments
 package com.example.baads;
 
 import android.os.Bundle;
@@ -11,12 +10,12 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 //Change FragmentSecondBinding to your page. It will follow the Pattern of FragmentNAMEOFYOURPAGEBinding
-import com.example.baads.databinding.FragmentSecondBinding;
+import com.example.baads.databinding.FragmentTestingBinding;
 
-public class CopyFromThisToMakeNewPage extends Fragment {
+public class Testing extends Fragment {
 
     //Change FragmentSecondBinding to what you changed above to.
-    private FragmentSecondBinding binding;
+    private FragmentTestingBinding binding;
 
     @Override
     public View onCreateView(
@@ -25,7 +24,7 @@ public class CopyFromThisToMakeNewPage extends Fragment {
     ) {
 
         //Change FragmentSecondBinding to what you changed above to.
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = FragmentTestingBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -40,4 +39,3 @@ public class CopyFromThisToMakeNewPage extends Fragment {
         binding = null;
     }
 }
-*/

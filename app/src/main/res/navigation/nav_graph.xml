@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_youtubePlayer"
             app:destination="@id/youtubePlayer" />
+        <action
+            android:id="@+id/action_FirstFragment_to_testing"
+            app:destination="@id/testing" />
     </fragment>
     <fragment
         android:id="@+id/soundBar"
@@ -33,4 +36,8 @@
         android:id="@+id/youtubePlayer"
         android:name="com.example.baads.YoutubePlayer"
         android:label="YoutubePlayer" />
+    <fragment
+        android:id="@+id/testing"
+        android:name="com.example.baads.Testing"
+        android:label="Testing" />
 </navigation>
