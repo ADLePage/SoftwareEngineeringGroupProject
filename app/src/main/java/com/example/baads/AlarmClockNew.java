@@ -50,7 +50,7 @@ public class AlarmClockNew extends AppCompatActivity {
                 &&(Integer.parseInt(minute)<=59)){
             return true;
         }
-        return true;
+        return false;
     }
     //If loading page again, reload back user inputted values.
     private void setValuesBackToUserInput(){
@@ -126,11 +126,12 @@ public class AlarmClockNew extends AppCompatActivity {
                     //This part sends the calendar to the event handler.
                     startAlarmClock(calendar);
 
-                    TextView textview = findViewById(R.id.AlarmTimeInputHour2);
-                    textview.setText("Calculated:"+ calendar.getTimeInMillis());
 
-                    TextView textview2 = findViewById(R.id.AlarmTimeInputMinute2);
-                    textview2.setText("System value:"+ System.currentTimeMillis());
+                    //Testing Code
+                    //TextView textview = findViewById(R.id.AlarmTimeInputHour2);
+                    //textview.setText("Calculated:"+ calendar.getTimeInMillis());
+                    //TextView textview2 = findViewById(R.id.AlarmTimeInputMinute2);
+                    //textview2.setText("System value:"+ System.currentTimeMillis());
                 }else{
                     textviewTester.setText("Error, input valid time");
                     time1Flipped = false;

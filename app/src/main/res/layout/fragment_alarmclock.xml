@@ -14,7 +14,7 @@
         android:id="@+id/AlarmTimeInputHour1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Enter Hour Up To 23"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="20dp"
-        android:alpha="100"
+        android:alpha="0"
         android:ems="10"
         android:hint="Enter Hour Up To 23"
         android:inputType="number"
@@ -89,7 +89,7 @@
         android:layout_height="51dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="68dp"
-        android:alpha="100"
+        android:alpha="0"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Alarm 2"
@@ -115,7 +115,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="88dp"
-        android:alpha="100"
+        android:alpha="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AlarmSwitch1" />
 
@@ -176,7 +176,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="128dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -184,8 +184,8 @@
         android:id="@+id/Alarm1"
         android:layout_width="110dp"
         android:layout_height="47dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="120dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Alarm 1"
@@ -221,7 +221,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="20dp"
-        android:alpha="100"
+        android:alpha="0"
         android:ems="10"
         android:hint="Enter Minute Up To 59"
         android:inputType="number"
@@ -260,5 +260,16 @@
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="335dp"
+        android:layout_height="319dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="196dp"
+        android:text="Welcome to BAADS stress free alarm portion! Enter in your alarm hour up to 23 and minute up to 59 to establish your alarm and flick the switch for when you want to wake up. "
+        android:textSize="34sp"
+        app:layout_constraintStart_toEndOf="@+id/AlarmSwitch5"
+        app:layout_constraintTop_toBottomOf="@+id/tester" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
