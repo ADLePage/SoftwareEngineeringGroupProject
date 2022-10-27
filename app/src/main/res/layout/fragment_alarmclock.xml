@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:isScrollContainer="true"
+    android:scrollbarSize="4dp"
+    android:scrollbarStyle="insideOverlay"
+    android:scrollbarThumbVertical="?android:attr/scrollbarThumbVertical"
+    android:verticalScrollbarPosition="right">
+
+    <EditText
+        android:id="@+id/AlarmTimeInputHour1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Enter Hour Up To 23"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/AlarmTimeInputHour2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:alpha="100"
+        android:ems="10"
+        android:hint="Enter Hour Up To 23"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AlarmTimeInputMinute1" />
+
+    <Switch
+        android:id="@+id/AlarmSwitch5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="88dp"
+        android:alpha="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AlarmSwitch4" />
+
+    <EditText
+        android:id="@+id/Alarm4"
+        android:layout_width="114dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="72dp"
+        android:alpha="0"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Alarm 4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Alarm3" />
+
+    <EditText
+        android:id="@+id/Alarm5"
+        android:layout_width="110dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:alpha="0"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Alarm 5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Alarm4" />
+
+    <EditText
+        android:id="@+id/AlarmTimeInputMinute1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="Enter Minute Up To 59"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AlarmTimeInputHour1" />
+
+    <EditText
+        android:id="@+id/Alarm2"
+        android:layout_width="110dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="68dp"
+        android:alpha="100"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Alarm 2"
+        app:layout_constraintStart_toEndOf="@+id/AlarmSwitch2"
+        app:layout_constraintTop_toBottomOf="@+id/Alarm1" />
+
+    <EditText
+        android:id="@+id/AlarmTimeInputMinute3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:alpha="0"
+        android:ems="10"
+        android:hint="Enter Minute Up To 59"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AlarmTimeInputHour3" />
+
+    <Switch
+        android:id="@+id/AlarmSwitch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="88dp"
+        android:alpha="100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AlarmSwitch1" />
+
+    <EditText
+        android:id="@+id/AlarmTimeInputMinute4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="Enter Minute Up To 59"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AlarmTimeInputHour4"
+        android:alpha="0" />
+
+    <EditText
+        android:id="@+id/Alarm3"
+        android:layout_width="111dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="68dp"
+        android:alpha="0"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Alarm 3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Alarm2" />
+
+    <EditText
+        android:id="@+id/AlarmTimeInputHour5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:alpha="0"
+        android:ems="10"
+        android:hint="Enter Hour Up To 23"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AlarmTimeInputMinute4" />
+
+    <EditText
+        android:id="@+id/AlarmTimeInputMinute5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:alpha="0"
+        android:ems="10"
+        android:hint="Enter Minute Up To 59"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AlarmTimeInputHour5" />
+
+    <Switch
+        android:id="@+id/AlarmSwitch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Alarm1"
+        android:layout_width="110dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Alarm 1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/AlarmTimeInputHour4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:alpha="0"
+        android:ems="10"
+        android:hint="Enter Hour Up To 23"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AlarmTimeInputMinute3" />
+
+    <Switch
+        android:id="@+id/AlarmSwitch4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="88dp"
+        android:alpha="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AlarmSwitch3" />
+
+    <EditText
+        android:id="@+id/AlarmTimeInputMinute2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:alpha="100"
+        android:ems="10"
+        android:hint="Enter Minute Up To 59"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AlarmTimeInputHour2" />
+
+    <Switch
+        android:id="@+id/AlarmSwitch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="88dp"
+        android:alpha="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AlarmSwitch2" />
+
+    <EditText
+        android:id="@+id/AlarmTimeInputHour3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:alpha="0"
+        android:ems="10"
+        android:hint="Enter Hour Up To 23"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AlarmTimeInputMinute2" />
+
+    <TextView
+        android:id="@+id/tester"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="176dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

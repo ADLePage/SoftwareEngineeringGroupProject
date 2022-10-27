@@ -63,6 +63,15 @@ public class MainPage extends Fragment {
             }
         });
 
+        //Creates a binding to send user to the Alarm Clock
+        binding.AlarmClock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(MainPage.this)
+                        .navigate(R.id.action_FirstFragment_to_alarmClock);
+            }
+        });
+
     }
 
     @Override

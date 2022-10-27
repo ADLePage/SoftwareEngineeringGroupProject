@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_testing"
             app:destination="@id/testing" />
+        <action
+            android:id="@+id/action_FirstFragment_to_alarmClock"
+            app:destination="@id/alarmClockNew" />
     </fragment>
     <fragment
         android:id="@+id/soundBar"
@@ -40,4 +43,12 @@
         android:id="@+id/testing"
         android:name="com.example.baads.Testing"
         android:label="Testing" />
+    <fragment
+        android:id="@+id/alarmClock"
+        android:name="com.example.baads.AlarmClockOld"
+        android:label="AlarmClock" />
+    <activity
+        android:id="@+id/alarmClockNew"
+        android:name="com.example.baads.AlarmClockNew"
+        android:label="AlarmClockNew" />
 </navigation>
