@@ -10,9 +10,10 @@
         android:id="@+id/textview_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="68dp"
         android:text="Welcome to BAADS stress free app! Let your stress melt away."
+        android:textAlignment="center"
+        android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,7 +21,7 @@
         android:id="@+id/button_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="72dp"
         android:text="Soundbars"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="28dp"
         android:text="Soothing Music"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textview_first" />
@@ -40,8 +41,8 @@
         android:id="@+id/YouTubePlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="52dp"
         android:text="YouTube Player"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_first" />
@@ -51,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="28dp"
         android:text="Testing Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Soothing_Music" />
@@ -60,9 +61,19 @@
         android:id="@+id/AlarmClock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="60dp"
         android:text="Alarm Clock"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/YouTubePlayer" />
+
+    <Button
+        android:id="@+id/positiveThoughts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="16dp"
+        android:text="Positive Thoughts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TestingButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

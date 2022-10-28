@@ -26,6 +26,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_alarmClock"
             app:destination="@id/alarmClockNew" />
+        <action
+            android:id="@+id/action_FirstFragment_to_positiveThoughts2"
+            app:destination="@id/positiveThoughts2" />
     </fragment>
     <fragment
         android:id="@+id/soundBar"
@@ -43,12 +46,13 @@
         android:id="@+id/testing"
         android:name="com.example.baads.Testing"
         android:label="Testing" />
-    <fragment
-        android:id="@+id/alarmClock"
-        android:name="com.example.baads.AlarmClockOld"
-        android:label="AlarmClock" />
     <activity
         android:id="@+id/alarmClockNew"
         android:name="com.example.baads.AlarmClockNew"
         android:label="AlarmClockNew" />
+    <activity
+        android:id="@+id/positiveThoughts2"
+        android:name="com.example.baads.PositiveThoughts"
+        android:label="activity_positive_thoughts"
+        tools:layout="@layout/activity_positive_thoughts" />
 </navigation>
