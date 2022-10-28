@@ -58,11 +58,6 @@ public class PositiveThoughts extends AppCompatActivity {
             Calendar calendar = Calendar.getInstance();
             //moves it a minute in the future.
             calendar.setTimeInMillis(System.currentTimeMillis()+60000);
-            TextView textview = findViewById(R.id.textView6);
-            textview.setText(String.valueOf(System.currentTimeMillis()));
-
-            TextView textview1 = findViewById(R.id.textView7);
-            textview1.setText(String.valueOf(calendar.getTimeInMillis()));
             startThoughtNotifications(calendar);
         }else{
             cancelNotification();
