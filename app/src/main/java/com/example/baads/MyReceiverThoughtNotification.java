@@ -8,8 +8,6 @@ import android.content.Intent;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import kotlin.random.Random;
-
 //By using the broadcast receiver default class
 //And sourcing from https://www.youtube.com/watch?v=xSrVWFCtgaE
 //Credit to Foxandroid
@@ -28,8 +26,6 @@ public class MyReceiverThoughtNotification extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
-
-
 
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "Positive Thoughts")

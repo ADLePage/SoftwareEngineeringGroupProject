@@ -123,6 +123,11 @@ public class AlarmClockNew extends AppCompatActivity {
                     calendar.set(Calendar.SECOND,0);
                     calendar.set(Calendar.MILLISECOND,0);
 
+                    //In the case the user wants to set an alarm for tomorrow.
+                    if(calendar.getTimeInMillis()<System.currentTimeMillis()){
+                        calendar.setTimeInMillis(calendar.getTimeInMillis()+(24*60*60*1000));
+                    }
+
                     //This part sends the calendar to the event handler.
                     startAlarmClock(calendar);
 
