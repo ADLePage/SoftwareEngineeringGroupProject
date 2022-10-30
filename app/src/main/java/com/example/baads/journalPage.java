@@ -13,12 +13,13 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import androidx.appcompat.app.AppCompatActivity;
 
-
+import com.example.baads.databinding.ActivityJournalPageBinding;
 
 
 public class journalPage extends AppCompatActivity {
      Button newButton,saveButton,openButton;
      EditText editText;
+     private ActivityJournalPageBinding binding;
 
      public void saveButtonFunction(){
          final EditText fileName = new EditText(this);
@@ -36,7 +37,9 @@ public class journalPage extends AppCompatActivity {
      @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_journal_page);
+
         newButton = (Button) findViewById(R.id.newButton);
         saveButton = (Button) findViewById(R.id.saveButton);
         openButton = (Button) findViewById(R.id.openButton);
@@ -48,7 +51,7 @@ public class journalPage extends AppCompatActivity {
     }
 
 
-
+/*
     public void buttonAction(View v) {
         final EditText fileName = new EditText(this);
         AlertDialog.Builder ad = new AlertDialog.Builder(this);
@@ -107,5 +110,5 @@ public class journalPage extends AppCompatActivity {
                 editText.setText(" ");
         }
     }
-
+*/
     }

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-android:paddingLeft="20dp"
-android:paddingRight="20dp"
-android:paddingTop="20dp"
-android:paddingBottom="20dp"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".journalPage"
-android:orientation="vertical"
-android:weightSum="10">
-
+    android:id="@+id/journalLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingTop="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="20dp"
+    android:weightSum="10"
+    tools:context=".journalPage">
 
 
     <LinearLayout
@@ -20,49 +20,41 @@ android:weightSum="10">
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="textMultiLine"
             android:gravity="top"
-            android:id="@+id/text"
-            android:scrollbars = "vertical"/>
+            android:inputType="textMultiLine"
+            android:scrollbars="vertical" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/journalInnerLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="New"
-            android:textColor="@color/teal_200"
-            android:backgroundTint="@color/material_dynamic_tertiary50"
             android:id="@+id/newButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="buttonAction"/>
+            android:text="New" />
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Save"
-            android:backgroundTint="@color/material_dynamic_secondary70"
-            android:outlineAmbientShadowColor="@color/black"
-            android:textColor="@color/teal_200"
             android:id="@+id/saveButton"
-            android:onClick="buttonAction"
-            android:layout_weight="1"/>
-
-        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Open"
-            android:textColor="@color/teal_200"
+            android:layout_weight="1"
+            android:outlineAmbientShadowColor="@color/black"
+            android:text="Save" />
+
+        <Button
             android:id="@+id/openButton"
-            android:backgroundTint="@color/design_default_color_on_secondary"
-            android:onClick="buttonAction"
-            android:layout_weight="1"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Open" />
     </LinearLayout>
 
 </LinearLayout>
