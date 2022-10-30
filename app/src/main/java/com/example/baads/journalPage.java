@@ -19,6 +19,20 @@ import androidx.appcompat.app.AppCompatActivity;
 public class journalPage extends AppCompatActivity {
      Button newButton,saveButton,openButton;
      EditText editText;
+
+     public void saveButtonFunction(){
+         final EditText fileName = new EditText(this);
+         AlertDialog.Builder ad = new AlertDialog.Builder(this);
+         ad.setView(fileName);
+         try {
+             FileOutputStream fout = openFileOutput(fileName.getText().toString() + ".txt", MODE_WORLD_READABLE);
+             fout.write(editText.getText().toString().getBytes());
+         } catch (Exception e) {
+             Toast.makeText(getApplicationContext(), "Error Occured:" + e, Toast.LENGTH_LONG).show();
+         }
+     }
+
+
      @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +41,14 @@ public class journalPage extends AppCompatActivity {
         saveButton = (Button) findViewById(R.id.saveButton);
         openButton = (Button) findViewById(R.id.openButton);
         editText = (EditText) findViewById(R.id.text);
+
+        saveButton.setOnClickListener(e->saveButtonFunction());
+        saveButton.setText("Save Button");
+        //saveButton.
     }
+
+
+
     public void buttonAction(View v) {
         final EditText fileName = new EditText(this);
         AlertDialog.Builder ad = new AlertDialog.Builder(this);
