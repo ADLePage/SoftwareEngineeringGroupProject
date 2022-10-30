@@ -29,6 +29,10 @@
         <action
             android:id="@+id/action_FirstFragment_to_journalPage"
             app:destination="@id/journalPage" />
+        <action
+            android:id="@+id/action_FirstFragment_to_Video"
+            app:destination="@id/video" />
+
     </fragment>
     <fragment
         android:id="@+id/soundBar"
@@ -56,4 +60,9 @@
         android:name="com.example.baads.journalPage"
         android:label="activity_journal_page"
         tools:layout="@layout/activity_journal_page" />
+    <activity
+        android:id="@+id/video"
+        android:name="com.example.baads.Video"
+        android:label="activity_video"
+        tools:layout="@layout/activity_video" />
 </navigation>
