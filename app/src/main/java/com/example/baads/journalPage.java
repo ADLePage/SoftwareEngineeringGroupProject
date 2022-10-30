@@ -1,51 +1,90 @@
 package com.example.baads;
 
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.View;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
-import com.example.baads.databinding.ActivityJournalPageBinding;
 
 public class journalPage extends AppCompatActivity {
-
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityJournalPageBinding binding;
-
-    @Override
+     Button newButton,saveButton,openButton;
+     EditText editText;
+     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_journal_page);
+        newButton = (Button) findViewById(R.id.newButton);
+        saveButton = (Button) findViewById(R.id.saveButton);
+        openButton = (Button) findViewById(R.id.openButton);
+        editText = (EditText) findViewById(R.id.text);
+    }
+    public void buttonAction(View v) {
+        final EditText fileName = new EditText(this);
+        AlertDialog.Builder ad = new AlertDialog.Builder(this);
+        ad.setView(fileName);
+        if (v.getId() == R.id.saveButton) {
+            ad.setMessage("SAVE TODAY'S JOURNAL");
+            ad.setPositiveButton("SAVE", new DialogInterface.OnClickListener() {
 
-        binding = ActivityJournalPageBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    try {
+                        FileOutputStream fout = openFileOutput(fileName.getText().toString() + ".txt", MODE_WORLD_READABLE);
+                        fout.write(editText.getText().toString().getBytes());
+                    } catch (Exception e) {
+                        Toast.makeText(getApplicationContext(), "Error Occured:" + e, Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+            ad.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.cancel();
+                }
+            });
+            ad.show();
+        }
+             if (v.getId()== R.id.openButton) {
+                 ad.setMessage("OPEN THIS JOURNAL");
+                 ad.setPositiveButton("OPEN", new DialogInterface.OnClickListener() {
+                     @Override
+                     public void onClick(DialogInterface dialogInterface, int i) {
+                         int j;
+                         editText.setText("");
+                         try {
+                             FileInputStream fin = openFileInput(fileName.getText().toString()+".txt");
+                             while (( j = fin.read()) !=-1) {
+                                 editText.setText((editText.getText().toString() + Character.toString((char) j)));
+                             }
 
-        setSupportActionBar(binding.toolbar);
+                         }catch (Exception e) {
+                             Toast.makeText(getApplicationContext(), "Error Occured: " +e, Toast.LENGTH_LONG).show();
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_journal_page);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+                         }
+                     }
+                 });
+                 ad.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
+                     @Override
+                     public void onClick(DialogInterface dialog, int which) {
+                         dialog.cancel();
+                     }
+                 });
 
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+                 ad.show();
+             }
+            if(v.getId()==R.id.newButton) {
+                editText.setText(" ");
+        }
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_journal_page);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
     }
-}
