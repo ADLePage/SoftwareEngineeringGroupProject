@@ -13,13 +13,11 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.baads.databinding.ActivityJournalPageBinding;
 
 
 public class journalPage extends AppCompatActivity {
      Button newButton,saveButton,openButton;
      EditText editText;
-     private ActivityJournalPageBinding binding;
 
      public void saveButtonFunction(){
          final EditText fileName = new EditText(this);
