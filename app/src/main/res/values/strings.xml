@@ -10,4 +10,6 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_main2">MainActivity2</string>
+    <string name="white_noise_title">White Noise</string>
+    <string name="ocean_noise_title">Ocean Noise</string>
 </resources>
