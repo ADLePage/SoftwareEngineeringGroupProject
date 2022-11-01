@@ -29,7 +29,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/journalInnerLinearLayout"
+
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
@@ -39,22 +39,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="New" />
+            android:text="New"
+            android:onClick="buttonAction" />
+        <Button
+            android:id="@+id/openButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="buttonAction"
+            android:text="Open" />
 
         <Button
             android:id="@+id/saveButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="buttonAction"
             android:outlineAmbientShadowColor="@color/black"
             android:text="Save" />
 
-        <Button
-            android:id="@+id/openButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Open" />
+
     </LinearLayout>
 
 </LinearLayout>
