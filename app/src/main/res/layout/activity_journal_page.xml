@@ -10,7 +10,8 @@
     android:paddingRight="20dp"
     android:paddingBottom="20dp"
     android:weightSum="10"
-    tools:context=".journalPage">
+    tools:context=".journalPage"
+    android:background="@drawable/background2">
 
 
     <LinearLayout
