@@ -46,7 +46,7 @@ public class journalPage extends AppCompatActivity {
         if (wow.getId() == R.id.saveButton)
         {
             ad.setMessage("SAVE TODAY'S JOURNAL");
-            ad.setPositiveButton("save", new DialogInterface.OnClickListener() {
+            ad.setPositiveButton("SAVE", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     try {
@@ -57,7 +57,7 @@ public class journalPage extends AppCompatActivity {
                     }
                 }
             });
-            ad.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+            ad.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dialogInterface.cancel();
