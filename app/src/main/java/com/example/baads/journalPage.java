@@ -82,7 +82,6 @@ public class journalPage extends AppCompatActivity {
                     dialog.cancel();
                 }
             });
-
             ad.show();
         }
 
