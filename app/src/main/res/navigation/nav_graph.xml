@@ -32,6 +32,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_Video"
             app:destination="@id/video" />
+        <action
+            android:id="@+id/action_FirstFragment_to_stressManagementCompat"
+            app:destination="@id/StressManagement2" />
 
     </fragment>
     <fragment
@@ -65,4 +68,8 @@
         android:name="com.example.baads.Video"
         android:label="activity_video"
         tools:layout="@layout/activity_video" />
+    <activity
+        android:id="@+id/StressManagement2"
+        android:name="com.example.baads.StressManagement2"
+        android:label="StressManagementCompat" />
 </navigation>
