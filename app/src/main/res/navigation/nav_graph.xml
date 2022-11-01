@@ -12,9 +12,6 @@
         tools:layout="@layout/fragment_mainpage">
 
         <action
-            android:id="@+id/action_FirstFragment_to_soundBar"
-            app:destination="@id/soundBar" />
-        <action
             android:id="@+id/action_FirstFragment_to_musicPlayer"
             app:destination="@id/musicPlayer" />
         <action
@@ -32,12 +29,11 @@
         <action
             android:id="@+id/action_FirstFragment_to_Video"
             app:destination="@id/video" />
+        <action
+            android:id="@+id/action_FirstFragment_to_soundBar"
+            app:destination="@id/soundBar" />
 
     </fragment>
-    <fragment
-        android:id="@+id/soundBar"
-        android:name="com.example.baads.SoundBar"
-        android:label="SoundBar" />
     <fragment
         android:id="@+id/musicPlayer"
         android:name="com.example.baads.MusicPlayer"
@@ -65,4 +61,9 @@
         android:name="com.example.baads.Video"
         android:label="activity_video"
         tools:layout="@layout/activity_video" />
+    <activity
+        android:id="@+id/soundBar"
+        android:name="com.example.baads.SoundBar"
+        android:label="activity_sound_bar"
+        tools:layout="@layout/activity_sound_bar" />
 </navigation>
