@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 
 public class StressManagement2 extends AppCompatActivity {
@@ -18,8 +19,9 @@ public class StressManagement2 extends AppCompatActivity {
        // newButton = (Button) findViewById(R.id.newButton);
 
        WebView newWebView = (WebView) findViewById(R.id.wikiV);
-        setContentView(newWebView);
-        newWebView.loadUrl("https://www.wikihow.com");
+       newWebView.setWebViewClient(new WebViewClient());
+        //setContentView(newWebView);
+        newWebView.loadUrl("https://www.wikihow.com/Deal-With-Stress");
 
     }
 }
