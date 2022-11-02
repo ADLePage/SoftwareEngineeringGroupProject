@@ -16,11 +16,8 @@ public class StressManagement2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stress_management2);
 
-       // newButton = (Button) findViewById(R.id.newButton);
-
        WebView newWebView = (WebView) findViewById(R.id.wikiV);
        newWebView.setWebViewClient(new WebViewClient());
-        //setContentView(newWebView);
         newWebView.loadUrl("https://www.wikihow.com/Deal-With-Stress");
 
     }
