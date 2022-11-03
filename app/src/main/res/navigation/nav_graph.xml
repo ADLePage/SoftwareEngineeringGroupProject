@@ -35,6 +35,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_stressManagementCompat"
             app:destination="@id/StressManagement2" />
+        <action
+            android:id="@+id/action_FirstFragment_to_selfCareList"
+            app:destination="@id/selfCareList" />
 
     </fragment>
     <fragment
@@ -72,4 +75,9 @@
         android:id="@+id/StressManagement2"
         android:name="com.example.baads.StressManagement2"
         android:label="StressManagementCompat" />
+    <activity
+        android:id="@+id/selfCareList"
+        android:name="com.example.baads.SelfCareList"
+        android:label="activity_self_care_list"
+        tools:layout="@layout/activity_self_care_list" />
 </navigation>
