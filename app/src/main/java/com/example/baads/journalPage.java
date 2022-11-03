@@ -24,14 +24,15 @@ public class journalPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_journal_page);
 
-        newButton = (Button)findViewById(R.id.newButton);
-        saveButton = (Button)findViewById(R.id.saveButton);
+
+
         openButton = (Button)findViewById(R.id.openButton);
         editText = (EditText)findViewById(R.id.text);
-
+        newButton = (Button)findViewById(R.id.newButton);
+        saveButton = (Button)findViewById(R.id.saveButton);
     }
 
-    public void buttonAction(View wow) {
+    public void buttonAct(View wow) {
         final EditText fileName = new EditText(this);
         AlertDialog.Builder ad = new AlertDialog.Builder(this);
         ad.setView(fileName);

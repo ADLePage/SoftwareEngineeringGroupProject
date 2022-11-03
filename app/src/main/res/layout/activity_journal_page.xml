@@ -30,6 +30,7 @@
 
         <TextView
             android:id="@+id/textView6"
+            android:textColor="@color/purple_200"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />
@@ -47,13 +48,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="New"
-            android:onClick="buttonAction" />
+            android:outlineAmbientShadowColor="@color/black"
+            android:onClick="buttonAct" />
         <Button
             android:id="@+id/openButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="buttonAction"
+            android:onClick="buttonAct"
+            android:outlineAmbientShadowColor="@color/black"
             android:text="Open" />
 
         <Button
@@ -61,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="buttonAction"
+            android:onClick="buttonAct"
             android:outlineAmbientShadowColor="@color/black"
             android:text="Save" />
 
