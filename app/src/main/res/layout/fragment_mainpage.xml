@@ -6,6 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".MainPage">
 
+    <Button
+        android:id="@+id/SelfCareList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="644dp"
+        android:layout_marginEnd="268dp"
+        android:text="Self Care Ideas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/wiki2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="556dp"
+        android:layout_marginEnd="68dp"
+        android:text="Wiki Tips"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textview_first"
         android:layout_width="wrap_content"
@@ -81,10 +104,12 @@
         android:id="@+id/video"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="558dp"
         android:layout_marginEnd="268dp"
         android:text="Video"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AlarmClock" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
