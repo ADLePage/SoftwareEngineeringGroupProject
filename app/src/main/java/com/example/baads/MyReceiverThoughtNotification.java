@@ -10,10 +10,11 @@ import androidx.core.app.NotificationManagerCompat;
 
 //By using the broadcast receiver default class
 //And sourcing from https://www.youtube.com/watch?v=xSrVWFCtgaE
-//Credit to Foxandroid
+//Huge credit to Foxandroid
 //I was having trouble setting up the notification and sound part for the alarm,
 //and used this code to be able to set up an alarm system
 //A majority of code is here thanks to them.
+//Re-adapted for positive affirmations
 public class MyReceiverThoughtNotification extends BroadcastReceiver {
 
     private int count=0;

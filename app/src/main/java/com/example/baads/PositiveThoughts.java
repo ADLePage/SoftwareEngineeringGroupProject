@@ -12,13 +12,16 @@ import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
 import com.example.baads.databinding.ActivityPositiveThoughtsBinding;
 
 import java.util.Calendar;
 
 
+//@Author Aidan LePage
+//Huge credit to Foxandroid. Re-adapted my AlarmClockNew class using a lot of their
+//code from their tutorial https://www.youtube.com/watch?v=xSrVWFCtgaE
+//for notification manager and a receiver class.
 public class PositiveThoughts extends AppCompatActivity {
 
     private ActivityPositiveThoughtsBinding binding;
