@@ -10,8 +10,6 @@ public class SoundBar extends AppCompatActivity {
     MediaPlayer whiteNoise;
 
 
-public class SoundBar extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,4 +36,3 @@ public class SoundBar extends AppCompatActivity {
     }
 
     }
-}
