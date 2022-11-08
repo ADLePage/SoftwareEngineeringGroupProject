@@ -10,7 +10,8 @@
     android:paddingRight="20dp"
     android:paddingBottom="20dp"
     android:weightSum="10"
-    tools:context=".journalPage">
+    tools:context=".journalPage"
+    android:background="@drawable/background2">
 
 
     <LinearLayout
@@ -26,10 +27,16 @@
             android:gravity="top"
             android:inputType="textMultiLine"
             android:scrollbars="vertical" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/journalInnerLinearLayout"
+
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
@@ -39,22 +46,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="New" />
+            android:text="New"
+            android:onClick="buttonAction" />
+        <Button
+            android:id="@+id/openButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="buttonAction"
+            android:text="Open" />
 
         <Button
             android:id="@+id/saveButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="buttonAction"
             android:outlineAmbientShadowColor="@color/black"
             android:text="Save" />
 
-        <Button
-            android:id="@+id/openButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Open" />
+
     </LinearLayout>
 
 </LinearLayout>

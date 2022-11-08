@@ -1,7 +1,5 @@
 package com.example.baads;
 
-import static android.content.ContentValues.TAG;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -90,7 +88,6 @@ public class MainPage extends Fragment {
             }
         });
 
-
         binding.wiki2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,7 +103,7 @@ public class MainPage extends Fragment {
                         .navigate(R.id.action_FirstFragment_to_selfCareList);
             }
         });
-        
+
     }
 
     @Override

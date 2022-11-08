@@ -1,43 +1,14 @@
 package com.example.baads;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
-
-import com.example.baads.databinding.FragmentSoundbarBinding;
-
-public class SoundBar extends Fragment {
-
-    private FragmentSoundbarBinding binding;
+public class SoundBar extends AppCompatActivity {
 
     @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState
-    ) {
-
-        binding = FragmentSoundbarBinding.inflate(inflater, container, false);
-        return binding.getRoot();
-
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sound_bar);
     }
-
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
-
 }
