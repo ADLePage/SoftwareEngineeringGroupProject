@@ -17,7 +17,6 @@ import androidx.core.app.NotificationManagerCompat;
 //Re-adapted for positive affirmations
 public class MyReceiverThoughtNotification extends BroadcastReceiver {
 
-    private int count=0;
     private String[] positiveThoughts = new String[]{
             "You are doing great!",
             "You are valued!",
@@ -27,8 +26,7 @@ public class MyReceiverThoughtNotification extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
-
-
+        
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "Positive Thoughts")
                 .setSmallIcon(R.drawable.ic_launcher_background)
                 .setContentTitle(positiveThoughts[(int) (Math.random()%3)])

@@ -83,7 +83,6 @@ public class AlarmClockNew extends AppCompatActivity {
         mainAlarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,
                 calendar.getTimeInMillis(), 1000,
                 pendingIntent);
-
     }
     //Source https://www.youtube.com/watch?v=xSrVWFCtgaE
     //All credit goes to Foxandroid.
@@ -119,7 +118,7 @@ public class AlarmClockNew extends AppCompatActivity {
                         textViewHour.getText().toString(),
                         textViewMinute.getText().toString())) {
                     //Once again https://www.youtube.com/watch?v=xSrVWFCtgaE
-                    //All credit goes to android fox. All this is theirs.
+                    //All credit goes to Foxandroid. All this is theirs.
                     //I needed code to be able to make a notification for the android alarm system.
                     createNotificationForAlarm();
 
@@ -137,8 +136,7 @@ public class AlarmClockNew extends AppCompatActivity {
                     calendar.set(Calendar.MINUTE,Integer.parseInt(textViewMinute.getText().toString()));
                     calendar.set(Calendar.SECOND,0);
                     calendar.set(Calendar.MILLISECOND,0);
-                    Toast.makeText(this, "Calendar Time:" + calendar.getTimeInMillis() + "\n" + "Actual Time:" + System.currentTimeMillis(), Toast.LENGTH_LONG).show();
-
+                    //Toast.makeText(this, "Calendar Time:" + calendar.getTimeInMillis() + "\n" + "Actual Time:" + System.currentTimeMillis(), Toast.LENGTH_LONG).show();
 
                     //In the case the user wants to set an alarm for tomorrow.
                     if(calendar.getTimeInMillis()<System.currentTimeMillis()){
@@ -210,9 +208,6 @@ public class AlarmClockNew extends AppCompatActivity {
 
         setContentView(R.layout.fragment_alarmclock);
         setValuesBackToUserInput();
-
-
-
 
         //Setting button function.
         Button button = findViewById(R.id.AlarmSwitch1);
