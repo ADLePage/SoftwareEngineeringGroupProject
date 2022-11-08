@@ -88,6 +88,21 @@ public class MainPage extends Fragment {
             }
         });
 
+        binding.wiki2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(MainPage.this)
+                        .navigate(R.id.action_FirstFragment_to_stressManagementCompat);
+            }
+        });
+
+        binding.SelfCareList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(MainPage.this)
+                        .navigate(R.id.action_FirstFragment_to_selfCareList);
+            }
+        });
 
     }
 
