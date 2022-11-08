@@ -13,4 +13,5 @@
     <string name="soundBarTitle">Soothing Sounds</string>
     <string name="white_noise_title">White Noise</string>
     <string name="ocean_noise_title">Ocean Noise</string>
+    <string name="title_activity_daily">dailyActivity</string>
 </resources>

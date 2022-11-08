@@ -35,7 +35,6 @@
         <action
             android:id="@+id/action_FirstFragment_to_agenda"
             app:destination="@id/agenda" />
-
     </fragment>
     <fragment
         android:id="@+id/musicPlayer"
