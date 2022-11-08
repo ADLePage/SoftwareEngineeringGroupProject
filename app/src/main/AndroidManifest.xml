@@ -16,12 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Baads"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Agenda"
+            android:exported="false" />
         <activity
             android:name=".SoundBar"
             android:exported="false"
-            android:label="@string/soundBarTitle"
-            />
+            android:label="@string/soundBarTitle" />
         <activity
             android:name=".Video"
             android:exported="false">

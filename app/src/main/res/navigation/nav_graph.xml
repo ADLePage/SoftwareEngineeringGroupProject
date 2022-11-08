@@ -32,6 +32,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_soundBar"
             app:destination="@id/soundBar" />
+        <action
+            android:id="@+id/action_FirstFragment_to_agenda"
+            app:destination="@id/agenda" />
 
     </fragment>
     <fragment
@@ -66,4 +69,9 @@
         android:name="com.example.baads.SoundBar"
         android:label="activity_sound_bar"
         tools:layout="@layout/activity_sound_bar" />
+    <activity
+        android:id="@+id/agenda"
+        android:name="com.example.baads.Agenda"
+        android:label="activity_agenda"
+        tools:layout="@layout/activity_agenda" />
 </navigation>
