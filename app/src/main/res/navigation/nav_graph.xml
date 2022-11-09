@@ -35,6 +35,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_agenda"
             app:destination="@id/agenda" />
+        <action
+            android:id="@+id/action_FirstFragment_to_youTubeVideo"
+            app:destination="@id/youTubeVideo" />
     </fragment>
     <fragment
         android:id="@+id/musicPlayer"
@@ -73,4 +76,9 @@
         android:name="com.example.baads.Agenda"
         android:label="activity_agenda"
         tools:layout="@layout/activity_agenda" />
+    <activity
+        android:id="@+id/youTubeVideo"
+        android:name="com.example.baads.YouTubeActivity"
+        android:label="activity_you_tube"
+        tools:layout="@layout/activity_you_tube" />
 </navigation>
