@@ -25,8 +25,8 @@
         android:theme="@style/Theme.Baads"
         tools:targetApi="31">
         <activity
-            android:name=".Agenda"/>
-
+            android:name=".Agenda"
+            android:exported="false"/>
         <activity
             android:name=".YouTubeActivity"
             android:exported="true">
