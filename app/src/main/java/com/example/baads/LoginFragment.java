@@ -65,16 +65,26 @@ public class LoginFragment extends Fragment {
                     //Sourced from https://firebase.google.com/docs/firestore/query-data/get-data?utm_source=studio
                     //Needed to be able to get a reference from the database.
                     //Sourced from the original firebase example.
+
+                    //Gets the document reference.
+                    //This this case, it takes from the users collection, and finds the user with the inputted username.
                     DocumentReference docRef = databaseLoginInfoConnection.collection("users").document(username);
+
+                    //Checks whether or not there was an account with both the username and password.
                     if(!(docRef.get().isSuccessful())){
                         binding.errorText.setText("ERROR: NO ACCOUNT TIED TO THAT USERNAME OR PASSWORD");
                     }
+
+                    //This is what we use to be able to login.
                     docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            //If the task is complete, go into the if statement.
                             if (task.isSuccessful()) {
+                                //gets the document that contains the user information
                                 DocumentSnapshot document = task.getResult();
                                 if (document.exists()) {
+                                    //checks if the document contains the users password.
                                     if(document.getData().containsValue(password)) {
                                         NavHostFragment.findNavController(LoginFragment.this)
                                                 .navigate(R.id.action_loginFragment_to_FirstFragment);
