@@ -70,7 +70,7 @@ public class LoginFragment extends Fragment {
                     //This this case, it takes from the users collection, and finds the user with the inputted username.
                     DocumentReference docRef = databaseLoginInfoConnection.collection("users").document(username);
 
-                    //Checks whether or not there was an account with both the username and password.
+                    //Checks whether or not there was an account with both the username.
                     if(!(docRef.get().isSuccessful())){
                         binding.errorText.setText("ERROR: NO ACCOUNT TIED TO THAT USERNAME OR PASSWORD");
                     }
