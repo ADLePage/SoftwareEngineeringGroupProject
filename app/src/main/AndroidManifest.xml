@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
-    <uses-permission android:name="android.permission.SET_TIME"
+    <uses-permission
+        android:name="android.permission.SET_TIME"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <queries>
         <intent>
@@ -25,8 +26,17 @@
         android:theme="@style/Theme.Baads"
         tools:targetApi="31">
         <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.Baads.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Agenda"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".YouTubeActivity"
             android:exported="true"/>
@@ -46,7 +56,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".SoundBar"
             android:exported="false"
@@ -115,6 +124,5 @@
                 android:value="" />
         </activity>
     </application>
-
 
 </manifest>
