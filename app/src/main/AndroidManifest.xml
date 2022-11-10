@@ -26,6 +26,29 @@
         android:theme="@style/Theme.Baads"
         tools:targetApi="31">
         <activity
+            android:name=".MakeEvent"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".AgendaMakeEvent"
+            android:exported="false"
+            android:label="@string/title_activity_agenda_make_event"
+            android:theme="@style/Theme.Baads.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Agenda"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login"
@@ -35,11 +58,8 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Agenda"
-            android:exported="false" />
-        <activity
             android:name=".YouTubeActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".WikiTips"
             android:exported="false">
@@ -67,7 +87,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".Video"
             android:exported="false">

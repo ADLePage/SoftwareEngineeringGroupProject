@@ -46,19 +46,13 @@ public class MainPage extends Fragment {
             }
         });
         //Creates a binding to send user to the music player
-        binding.SoothingMusic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_musicPlayer);
-            }
-        });
+
         //Creates a binding to send user to the youtube page
-        binding.YouTubePlayer.setOnClickListener(new View.OnClickListener() {
+        binding.youTubeVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_youtubePlayer);
+                        .navigate(R.id.action_FirstFragment_to_youTubeVideo);
             }
         });
 
@@ -80,19 +74,11 @@ public class MainPage extends Fragment {
             }
         });
 
-        binding.video.setOnClickListener(new View.OnClickListener() {
+        binding.dailyActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_Video);
-            }
-        });
-
-        binding.wiki2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_wikiTips);
+                        .navigate(R.id.action_FirstFragment_to_dailyActivity2);
             }
         });
 
@@ -109,6 +95,14 @@ public class MainPage extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
                         .navigate(R.id.action_FirstFragment_to_selfCareList);
+            }
+        });
+
+        binding.wiki2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(MainPage.this)
+                        .navigate(R.id.action_FirstFragment_to_wikiTips);
             }
         });
 
