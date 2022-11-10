@@ -46,19 +46,13 @@ public class MainPage extends Fragment {
             }
         });
         //Creates a binding to send user to the music player
-        binding.SoothingMusic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_musicPlayer);
-            }
-        });
+
         //Creates a binding to send user to the youtube page
-        binding.YouTubePlayer.setOnClickListener(new View.OnClickListener() {
+        binding.youTubeVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_youtubePlayer);
+                        .navigate(R.id.action_FirstFragment_to_youTubeVideo);
             }
         });
 
