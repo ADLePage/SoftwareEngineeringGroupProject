@@ -29,7 +29,19 @@
             android:exported="false"/>
         <activity
             android:name=".YouTubeActivity"
-            android:exported="true">
+            android:exported="true"/>
+        <activity
+            android:name=".WikiTips"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".dailyActivity"
+            android:exported="false"
+            android:label="@string/title_activity_daily"
+            android:theme="@style/Theme.Baads.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -39,6 +51,14 @@
             android:name=".SoundBar"
             android:exported="false"
             android:label="@string/soundBarTitle" />
+        <activity
+            android:name=".SelfCareList"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
         <activity
             android:name=".Video"
             android:exported="false">

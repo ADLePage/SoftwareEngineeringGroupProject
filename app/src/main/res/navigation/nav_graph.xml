@@ -30,6 +30,7 @@
             android:id="@+id/action_FirstFragment_to_Video"
             app:destination="@id/video" />
         <action
+
             android:id="@+id/action_FirstFragment_to_soundBar"
             app:destination="@id/soundBar" />
         <action
@@ -38,6 +39,14 @@
         <action
             android:id="@+id/action_FirstFragment_to_youTubeVideo"
             app:destination="@id/youTubeVideo" />
+        <action
+            android:id="@+id/action_FirstFragment_to_selfCareList"
+            app:destination="@id/selfCareList" />
+        <action
+            android:id="@+id/action_FirstFragment_to_wikiTips"
+            app:destination="@id/wikiTips" />
+
+
     </fragment>
     <fragment
         android:id="@+id/musicPlayer"
@@ -81,4 +90,14 @@
         android:name="com.example.baads.YouTubeActivity"
         android:label="activity_you_tube"
         tools:layout="@layout/activity_you_tube" />
+    <activity
+        android:id="@+id/selfCareList"
+        android:name="com.example.baads.SelfCareList"
+        android:label="activity_self_care_list"
+        tools:layout="@layout/activity_self_care_list" />
+    <activity
+        android:id="@+id/wikiTips"
+        android:name="com.example.baads.WikiTips"
+        android:label="WikiTips" />
+
 </navigation>

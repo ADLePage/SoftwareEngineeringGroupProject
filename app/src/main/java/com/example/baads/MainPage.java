@@ -87,23 +87,23 @@ public class MainPage extends Fragment {
                         .navigate(R.id.action_FirstFragment_to_Video);
             }
         });
-/*
+
         binding.wiki2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_stressManagementCompat);
+                        .navigate(R.id.action_FirstFragment_to_wikiTips);
             }
         });
 
-*/
+
         binding.agenda.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
                         .navigate(R.id.action_FirstFragment_to_agenda);
             }
         });
-/*
+
         binding.SelfCareList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -111,7 +111,7 @@ public class MainPage extends Fragment {
                         .navigate(R.id.action_FirstFragment_to_selfCareList);
 
             }
-        }); */
+        });
 
     }
 
