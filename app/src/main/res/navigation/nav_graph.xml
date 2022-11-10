@@ -44,7 +44,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_wikiTips"
             app:destination="@id/wikiTips" />
-
+        <action
+            android:id="@+id/action_FirstFragment_to_dailyActivity2"
+            app:destination="@id/dailyActivity2" />
     </fragment>
     <fragment
         android:id="@+id/musicPlayer"
@@ -97,4 +99,9 @@
             android:id="@+id/action_loginFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <activity
+        android:id="@+id/dailyActivity2"
+        android:name="com.example.baads.dailyActivity"
+        android:label="activity_daily"
+        tools:layout="@layout/activity_daily" />
 </navigation>

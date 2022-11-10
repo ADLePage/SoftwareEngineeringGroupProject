@@ -61,16 +61,6 @@
         app:layout_constraintTop_toBottomOf="@+id/TestingButton" />
 
     <Button
-        android:id="@+id/video"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="268dp"
-        android:text="Video"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AlarmClock" />
-
-    <Button
         android:id="@+id/agenda"
         android:layout_width="150dp"
         android:layout_height="55dp"
@@ -118,8 +108,8 @@
         android:id="@+id/dailyActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="28dp"
         android:text="Daily Activity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/positiveThoughts" />
