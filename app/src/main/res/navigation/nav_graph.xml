@@ -45,6 +45,9 @@
             android:id="@+id/action_FirstFragment_to_wikiTips"
             app:destination="@id/wikiTips" />
 
+        <action
+            android:id="@+id/action_FirstFragment_to_dailyActivity2"
+            app:destination="@id/dailyActivity2" />
     </fragment>
     <fragment
         android:id="@+id/musicPlayer"
@@ -88,6 +91,15 @@
         android:name="com.example.baads.YouTubeActivity"
         android:label="activity_you_tube"
         tools:layout="@layout/activity_you_tube" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.baads.LoginFragment"
+        android:label="fragment_first2"
+        tools:layout="@layout/fragment_first2" >
+        <action
+            android:id="@+id/action_loginFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
     <activity
         android:id="@+id/selfCareList"
         android:name="com.example.baads.SelfCareList"
@@ -98,13 +110,10 @@
         android:name="com.example.baads.WikiTips"
         android:label="WikiTips" />
 
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.baads.LoginFragment"
-        android:label="fragment_first2"
-        tools:layout="@layout/fragment_first2" >
-        <action
-            android:id="@+id/action_loginFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
+    <activity
+        android:id="@+id/dailyActivity2"
+        android:name="com.example.baads.dailyActivity"
+        android:label="activity_daily"
+        tools:layout="@layout/activity_daily" />
 </navigation>
+
