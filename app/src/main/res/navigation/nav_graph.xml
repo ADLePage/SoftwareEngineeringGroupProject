@@ -114,4 +114,6 @@
         android:name="com.example.baads.dailyActivity"
         android:label="activity_daily"
         tools:layout="@layout/activity_daily" />
+
 </navigation>
+
