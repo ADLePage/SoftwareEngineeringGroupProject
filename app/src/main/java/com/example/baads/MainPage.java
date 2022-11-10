@@ -46,21 +46,7 @@ public class MainPage extends Fragment {
             }
         });
         //Creates a binding to send user to the music player
-        binding.SoothingMusic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_musicPlayer);
-            }
-        });
-        //Creates a binding to send user to the youtube page
-        binding.YouTubePlayer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_youtubePlayer);
-            }
-        });
+
 
         //Creates a binding to send user to the testing page.
         binding.TestingButton.setOnClickListener(new View.OnClickListener() {
@@ -80,29 +66,15 @@ public class MainPage extends Fragment {
             }
         });
 
-        binding.video.setOnClickListener(new View.OnClickListener() {
+        binding.dailyActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_Video);
+                        .navigate(R.id.action_FirstFragment_to_dailyActivity2);
             }
         });
 
-        binding.wiki2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_stressManagementCompat);
-            }
-        });
 
-        binding.SelfCareList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_selfCareList);
-            }
-        });
 
     }
 

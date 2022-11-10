@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/FirstFragment"
@@ -11,9 +11,6 @@
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_mainpage">
 
-        <action
-            android:id="@+id/action_FirstFragment_to_soundBar"
-            app:destination="@id/soundBar" />
         <action
             android:id="@+id/action_FirstFragment_to_musicPlayer"
             app:destination="@id/musicPlayer" />
@@ -32,12 +29,19 @@
         <action
             android:id="@+id/action_FirstFragment_to_Video"
             app:destination="@id/video" />
-
+        <action
+            android:id="@+id/action_FirstFragment_to_soundBar"
+            app:destination="@id/soundBar" />
+        <action
+            android:id="@+id/action_FirstFragment_to_agenda"
+            app:destination="@id/agenda" />
+        <action
+            android:id="@+id/action_FirstFragment_to_youTubeVideo"
+            app:destination="@id/youTubeVideo" />
+        <action
+            android:id="@+id/action_FirstFragment_to_dailyActivity2"
+            app:destination="@id/dailyActivity2" />
     </fragment>
-    <fragment
-        android:id="@+id/soundBar"
-        android:name="com.example.baads.SoundBar"
-        android:label="SoundBar" />
     <fragment
         android:id="@+id/musicPlayer"
         android:name="com.example.baads.MusicPlayer"
@@ -65,4 +69,33 @@
         android:name="com.example.baads.Video"
         android:label="activity_video"
         tools:layout="@layout/activity_video" />
+    <activity
+        android:id="@+id/soundBar"
+        android:name="com.example.baads.SoundBar"
+        android:label="activity_sound_bar"
+        tools:layout="@layout/activity_sound_bar" />
+    <activity
+        android:id="@+id/agenda"
+        android:name="com.example.baads.Agenda"
+        android:label="activity_agenda"
+        tools:layout="@layout/activity_agenda" />
+    <activity
+        android:id="@+id/youTubeVideo"
+        android:name="com.example.baads.YouTubeActivity"
+        android:label="activity_you_tube"
+        tools:layout="@layout/activity_you_tube" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.baads.LoginFragment"
+        android:label="fragment_first2"
+        tools:layout="@layout/fragment_first2" >
+        <action
+            android:id="@+id/action_loginFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/dailyActivity2"
+        android:name="com.example.baads.dailyActivity"
+        android:label="activity_daily"
+        tools:layout="@layout/activity_daily" />
 </navigation>
