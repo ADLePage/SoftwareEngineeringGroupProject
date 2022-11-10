@@ -47,6 +47,14 @@ public class MainPage extends Fragment {
         });
         //Creates a binding to send user to the music player
 
+        //Creates a binding to send user to the youtube page
+        binding.youTubeVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(MainPage.this)
+                        .navigate(R.id.action_FirstFragment_to_youTubeVideo);
+            }
+        });
 
         //Creates a binding to send user to the testing page.
         binding.TestingButton.setOnClickListener(new View.OnClickListener() {
