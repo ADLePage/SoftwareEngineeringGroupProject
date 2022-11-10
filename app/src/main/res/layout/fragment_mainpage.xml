@@ -13,7 +13,7 @@
         android:layout_marginTop="68dp"
         android:text="Welcome to BAADS stress free app! Let your stress melt away."
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textAppearance="@style/Theme.Baads"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
