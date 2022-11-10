@@ -87,22 +87,28 @@ public class MainPage extends Fragment {
                         .navigate(R.id.action_FirstFragment_to_Video);
             }
         });
-
-        binding.wiki2.setOnClickListener(new View.OnClickListener() {
+       binding.dailyActivity.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_stressManagementCompat);
-            }
-        });
+           public void onClick(View view) {
+               NavHostFragment.findNavController(MainPage.this)
+                       .navigate(R.id.action_FirstFragment_to_dailyActivity2);
+           }
+       });
+   //     binding.wiki2.setOnClickListener(new View.OnClickListener() {
+     //       @Override
+      //      public void onClick(View view) {
+       //         NavHostFragment.findNavController(MainPage.this)
+       //                 .navigate(R.id.action_FirstFragment_to_stressManagementCompat);
+      //      }
+      //  });
 
-        binding.SelfCareList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_selfCareList);
-            }
-        });
+      //  binding.SelfCareList.setOnClickListener(new View.OnClickListener() {
+      //      @Override
+       //     public void onClick(View view) {
+        //        NavHostFragment.findNavController(MainPage.this)
+        //                .navigate(R.id.action_FirstFragment_to_selfCareList);
+     //       }
+      //  });
 
     }
 
