@@ -27,7 +27,7 @@ android:id="@+id/musicPlayer"
     android:label="YoutubePlayer" />
 <activity
 android:id="@+id/alarmClockNew"
-android:name="com.example.baads.AlarmClockNew"
+android:name="com.example.baads.AlarmClockOLD"
 android:label="AlarmClockNew" />
 <activity
 android:id="@+id/positiveThoughts2"

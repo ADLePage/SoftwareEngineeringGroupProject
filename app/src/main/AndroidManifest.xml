@@ -26,6 +26,15 @@
         android:theme="@style/Theme.Baads"
         tools:targetApi="31">
         <activity
+            android:name=".alarmActivityRework"
+            android:exported="false"
+            android:label="@string/title_activity_alarm_rework"
+            android:theme="@style/Theme.Baads.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MakeEvent"
             android:exported="false">
             <meta-data
@@ -115,7 +124,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".AlarmClockNew"
+            android:name=".AlarmClockOLD"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

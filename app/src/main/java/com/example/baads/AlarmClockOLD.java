@@ -35,7 +35,7 @@ import java.util.Calendar;
 //Huge credit to Foxandroid, source https://www.youtube.com/watch?v=xSrVWFCtgaE.
 //Much of the code regarding the alarm system and broadcasting is theirs and give total credit to them.
 //Needed their code to create a notification system along with an alarm system.
-public class AlarmClockNew extends AppCompatActivity {
+public class AlarmClockOLD extends AppCompatActivity {
     private FragmentAlarmclockBinding binding;
 
     //Source https://www.youtube.com/watch?v=xSrVWFCtgaE

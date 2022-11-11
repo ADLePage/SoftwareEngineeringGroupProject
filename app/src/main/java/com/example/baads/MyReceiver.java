@@ -4,6 +4,8 @@ import android.app.Notification;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -16,10 +18,14 @@ import androidx.core.app.NotificationManagerCompat;
 //A majority of code is here thanks to them.
 public class MyReceiver extends BroadcastReceiver {
 
+    public static MediaPlayer alarmSounder;
     @Override
     public void onReceive(Context context, Intent intent) {
         // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
+        Uri alarmSound = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.alarm_sound);
+        alarmSounder = MediaPlayer.create(context,alarmSound);
+        alarmSounder.start();
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "Alarm System")
                 .setSmallIcon(R.drawable.ic_launcher_background)
                 .setContentTitle("BAADS stress relief Alarm Manager")
