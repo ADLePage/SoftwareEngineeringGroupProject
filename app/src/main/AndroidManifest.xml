@@ -26,7 +26,16 @@
         android:theme="@style/Theme.Baads"
         tools:targetApi="31">
         <activity
-            android:name=".alarmActivityRework"
+            android:name=".positiveThoughts.positiveAffirmationsRework"
+            android:exported="false"
+            android:label="@string/title_activity_positive_affirmations_rework"
+            android:theme="@style/Theme.Baads.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".alarm.alarmActivityRework"
             android:exported="false"
             android:label="@string/title_activity_alarm_rework"
             android:theme="@style/Theme.Baads.NoActionBar">
@@ -105,12 +114,12 @@
         </activity>
 
         <receiver
-            android:name=".MyReceiverThoughtNotification"
+            android:name=".positiveThoughts.MyReceiverThoughtNotification"
             android:enabled="true"
             android:exported="true" />
 
         <activity
-            android:name=".PositiveThoughts"
+            android:name=".positiveThoughts.PositiveThoughtsOLD"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -124,7 +133,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".AlarmClockOLD"
+            android:name=".alarm.AlarmClockOLD"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -132,7 +141,7 @@
         </activity>
 
         <receiver
-            android:name=".MyReceiver"
+            android:name=".alarm.MyReceiver"
             android:enabled="true"
             android:exported="true" />
 

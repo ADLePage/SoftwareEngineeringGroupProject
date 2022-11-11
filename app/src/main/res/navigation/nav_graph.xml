@@ -18,9 +18,6 @@
             android:id="@+id/action_FirstFragment_to_youtubePlayer"
             app:destination="@id/youtubePlayer" />
         <action
-            android:id="@+id/action_FirstFragment_to_positiveThoughts2"
-            app:destination="@id/positiveThoughts2" />
-        <action
             android:id="@+id/action_FirstFragment_to_journalPage"
             app:destination="@id/journalPage" />
         <action
@@ -47,6 +44,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_alarmActivityReworkFragment"
             app:destination="@id/alarmActivityReworkFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_positiveAffirmationsReworkFragment"
+            app:destination="@id/positiveAffirmationsReworkFragment" />
     </fragment>
     <fragment
         android:id="@+id/musicPlayer"
@@ -56,11 +56,6 @@
         android:id="@+id/youtubePlayer"
         android:name="com.example.baads.YoutubePlayer"
         android:label="YoutubePlayer" />
-    <activity
-        android:id="@+id/positiveThoughts2"
-        android:name="com.example.baads.PositiveThoughts"
-        android:label="activity_positive_thoughts"
-        tools:layout="@layout/activity_positive_thoughts" />
     <activity
         android:id="@+id/journalPage"
         android:name="com.example.baads.journalPage"
@@ -112,8 +107,12 @@
         tools:layout="@layout/activity_daily" />
     <fragment
         android:id="@+id/alarmActivityReworkFragment"
-        android:name="com.example.baads.alarmActivityReworkFragment"
+        android:name="com.example.baads.alarm.alarmActivityReworkFragment"
         android:label="alarmActivityReworkFragment" />
+    <fragment
+        android:id="@+id/positiveAffirmationsReworkFragment"
+        android:name="com.example.baads.positiveThoughts.positiveAffirmationsReworkFragment"
+        android:label="positiveAffirmationsReworkFragment" />
 
 </navigation>
 

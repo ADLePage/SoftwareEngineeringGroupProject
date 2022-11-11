@@ -20,4 +20,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_agenda_make_event">AgendaMakeEvent</string>
     <string name="title_activity_alarm_rework">alarmActivityRework</string>
+    <string name="title_activity_positive_affirmations_rework">positiveAffirmationsRework</string>
 </resources>

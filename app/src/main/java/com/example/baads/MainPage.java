@@ -34,7 +34,7 @@ public class MainPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_positiveThoughts2);
+                        .navigate(R.id.action_FirstFragment_to_positiveAffirmationsReworkFragment);
             }
         });
         ////Creates a binding to send user to the sound bar

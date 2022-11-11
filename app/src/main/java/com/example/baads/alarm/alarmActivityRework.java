@@ -1,7 +1,8 @@
-package com.example.baads;
+package com.example.baads.alarm;
 
 import android.os.Bundle;
 
+import com.example.baads.R;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;

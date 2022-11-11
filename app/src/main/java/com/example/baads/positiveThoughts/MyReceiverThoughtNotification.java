@@ -1,14 +1,14 @@
-package com.example.baads;
+package com.example.baads.positiveThoughts;
 
 import android.app.Notification;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.media.MediaPlayer;
-import android.net.Uri;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+
+import com.example.baads.R;
 
 //By using the broadcast receiver default class
 //And sourcing from https://www.youtube.com/watch?v=xSrVWFCtgaE
@@ -16,20 +16,23 @@ import androidx.core.app.NotificationManagerCompat;
 //I was having trouble setting up the notification and sound part for the alarm,
 //and used this code to be able to set up an alarm system
 //A majority of code is here thanks to them.
-public class MyReceiver extends BroadcastReceiver {
+//Re-adapted for positive affirmations
+public class MyReceiverThoughtNotification extends BroadcastReceiver {
 
-    public static MediaPlayer alarmSounder;
+    private String[] positiveThoughts = new String[]{
+            "You are doing great!",
+            "You are valued!",
+            "Tough times end, tough people last."};
+
     @Override
     public void onReceive(Context context, Intent intent) {
         // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
-        Uri alarmSound = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.alarm_sound);
-        alarmSounder = MediaPlayer.create(context,alarmSound);
-        alarmSounder.start();
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "Alarm System")
+        
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "Positive Thoughts")
                 .setSmallIcon(R.drawable.ic_launcher_background)
-                .setContentTitle("BAADS stress relief Alarm Manager")
-                .setContentText("Wake up time!")
+                .setContentTitle(positiveThoughts[(int) (Math.random()%3)])
+                .setContentText("Positive Affirmations")
                 .setAutoCancel(true)
                 .setDefaults(NotificationCompat.DEFAULT_ALL)
                 .setPriority(Notification.PRIORITY_HIGH);

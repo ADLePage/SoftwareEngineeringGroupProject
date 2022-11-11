@@ -1,6 +1,4 @@
-package com.example.baads;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.baads.positiveThoughts;
 
 import android.app.AlarmManager;
 import android.app.NotificationChannel;
@@ -10,45 +8,42 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
+import com.example.baads.R;
 import com.example.baads.databinding.ActivityPositiveThoughtsBinding;
 
 import java.util.Calendar;
 
 
-//@Author Aidan LePage
-//Huge credit to Foxandroid. Re-adapted my AlarmClockNew class using a lot of their
-//code from their tutorial https://www.youtube.com/watch?v=xSrVWFCtgaE
-//for notification manager and a receiver class.
-public class PositiveThoughts extends AppCompatActivity {
+public class positiveAffirmationsReworkFragment extends Fragment {
 
     private ActivityPositiveThoughtsBinding binding;
     private boolean isSwitchFlipped = false;
     private AlarmManager mainAlarm;
     private PendingIntent pendingIntent;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(
+            LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState
+    ) {
 
-        binding = ActivityPositiveThoughtsBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        binding = ActivityPositiveThoughtsBinding.inflate(inflater, container, false);
+        return binding.getRoot();
 
-        setContentView(R.layout.activity_positive_thoughts);
-
-        resetPageToSave();
-
-        createNotificationForAlarm();
-
-        Button button = findViewById(R.id.positiveThoughtEnabler);
-        button.setOnClickListener(e->enablePositiveThoughts());
     }
 
     //Resets page back to user saved settings.
     private void resetPageToSave() {
-        Switch thoughtEnabler = findViewById(R.id.positiveThoughtEnabler);
+        Switch thoughtEnabler = getActivity().findViewById(R.id.positiveThoughtEnabler);
         thoughtEnabler.setChecked(isSwitchFlipped);
     }
 
@@ -71,10 +66,10 @@ public class PositiveThoughts extends AppCompatActivity {
     //All credit goes to android fox. Repurposing their starting alarm notification function for the usage
     //in a notification manager than gives positive affirmations to the user.
     private void startThoughtNotifications(Calendar calendar) {
-        mainAlarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        mainAlarm = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
 
-        Intent intent = new Intent(this,MyReceiverThoughtNotification.class);
-        pendingIntent = PendingIntent.getBroadcast(this,1,intent,0);
+        Intent intent = new Intent(getActivity().getApplication(),MyReceiverThoughtNotification.class);
+        pendingIntent = PendingIntent.getBroadcast(getActivity().getApplication(),1,intent,0);
         mainAlarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,
                 calendar.getTimeInMillis(), 1000,
                 pendingIntent);
@@ -84,16 +79,16 @@ public class PositiveThoughts extends AppCompatActivity {
     //All credit goes to android fox.
     //Repurposing their cancel alarm for cancelling notifications.
     private void cancelNotification(){
-        Intent intent = new Intent(this,MyReceiverThoughtNotification.class);
+        Intent intent = new Intent(getActivity().getApplication(),MyReceiverThoughtNotification.class);
 
-        pendingIntent = PendingIntent.getBroadcast(this,1,intent,0);
+        pendingIntent = PendingIntent.getBroadcast(getActivity().getApplication(),1,intent,0);
 
         if(mainAlarm == null){
-            mainAlarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+            mainAlarm = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
         }
 
         mainAlarm.cancel(pendingIntent);
-        Toast.makeText(this, "Positive Affirmations Cancelled", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity().getApplication(), "Positive Affirmations Cancelled", Toast.LENGTH_SHORT).show();
     }
 
     //https://www.youtube.com/watch?v=xSrVWFCtgaE
@@ -107,8 +102,26 @@ public class PositiveThoughts extends AppCompatActivity {
             NotificationChannel channel = new NotificationChannel("Positive Thoughts",name,importance);
             channel.setDescription(description);
 
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            NotificationManager notificationManager = getActivity().getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
     }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        resetPageToSave();
+
+        createNotificationForAlarm();
+
+        Button button = getActivity().findViewById(R.id.positiveThoughtEnabler);
+        button.setOnClickListener(e->enablePositiveThoughts());
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+
 }

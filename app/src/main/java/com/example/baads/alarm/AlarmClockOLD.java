@@ -1,4 +1,4 @@
-package com.example.baads;
+package com.example.baads.alarm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +17,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.baads.R;
 import com.example.baads.databinding.FragmentAlarmclockBinding;
 
 import java.util.Calendar;
@@ -78,7 +79,7 @@ public class AlarmClockOLD extends AppCompatActivity {
     private void startAlarmClock(Calendar calendar){
         mainAlarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-        Intent intent = new Intent(this,MyReceiver.class);
+        Intent intent = new Intent(this, MyReceiver.class);
         pendingIntent = PendingIntent.getBroadcast(this,0,intent,0);
         mainAlarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,
                 calendar.getTimeInMillis(), 1000,
