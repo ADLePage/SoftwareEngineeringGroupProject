@@ -26,6 +26,15 @@
         android:theme="@style/Theme.Baads"
         tools:targetApi="31">
         <activity
+            android:name=".youtubePlayerReworked"
+            android:exported="false"
+            android:label="@string/title_activity_youtube_player_reworked"
+            android:theme="@style/Theme.Baads.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".journalPageReworked"
             android:exported="false"
             android:label="@string/title_activity_journal_page_reworked"
@@ -85,7 +94,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".YouTubeActivity"
+            android:name=".youtubePlayer.YouTubeActivity"
             android:exported="true" />
         <activity
             android:name=".WikiTips"
@@ -109,13 +118,6 @@
             android:label="@string/soundBarTitle" />
         <activity
             android:name=".SelfCareList"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Video"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

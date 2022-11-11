@@ -1,20 +1,15 @@
-package com.example.baads;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
+package com.example.baads.youtubePlayer;
 
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.baads.R;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
-import com.google.android.youtube.player.internal.v;
 
 
 public class YouTubeActivity extends YouTubeBaseActivity {
@@ -22,15 +17,13 @@ public class YouTubeActivity extends YouTubeBaseActivity {
     Button btn;
     YouTubePlayerView youTubePlayerView;
     YouTubePlayer.OnInitializedListener onInitializedListener;
-
+    public YouTubePlayer youTubePlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_you_tube);
 
-        btn = findViewById(R.id.play);
-        youTubePlayerView = findViewById(R.id.YoutubePlayerView);
 
         onInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override

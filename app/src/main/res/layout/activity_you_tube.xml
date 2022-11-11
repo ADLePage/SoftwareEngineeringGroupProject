@@ -4,21 +4,5 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".YouTubeActivity">
-
-    <com.google.android.youtube.player.YouTubePlayerView
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:id="@+id/YoutubePlayerView"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Play"
-            android:id="@+id/play"
-            android:layout_marginTop="20dp"/>
-
-
-
+    android:orientation="vertical">
 </LinearLayout>

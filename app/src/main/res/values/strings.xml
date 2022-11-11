@@ -22,4 +22,5 @@
     <string name="title_activity_alarm_rework">alarmActivityRework</string>
     <string name="title_activity_positive_affirmations_rework">positiveAffirmationsRework</string>
     <string name="title_activity_journal_page_reworked">journalPageReworked</string>
+    <string name="title_activity_youtube_player_reworked">youtubePlayerReworked</string>
 </resources>
