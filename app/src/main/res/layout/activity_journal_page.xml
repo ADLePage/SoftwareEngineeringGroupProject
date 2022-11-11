@@ -10,7 +10,7 @@
     android:paddingRight="20dp"
     android:paddingBottom="20dp"
     android:weightSum="10"
-    tools:context=".journalPage"
+    tools:context=".journalPage.journalPageOLD"
     android:background="@drawable/background2">
 
 
@@ -46,8 +46,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="New"
-            android:onClick="buttonAction" />
+            android:onClick="buttonAct"
+            android:text="New" />
         <Button
             android:id="@+id/openButton"
             android:layout_width="match_parent"
@@ -61,7 +61,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="buttonAction"
             android:outlineAmbientShadowColor="@color/black"
             android:text="Save" />
 

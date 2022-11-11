@@ -1,4 +1,4 @@
-package com.example.baads;
+package com.example.baads.mainFiles;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.baads.R;
 import com.example.baads.databinding.FragmentMainpageBinding;
 
 public class MainPage extends Fragment {
@@ -61,7 +62,7 @@ public class MainPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_journalPage);
+                        .navigate(R.id.action_FirstFragment_to_journalPageFragmentReworked);
             }
         });
 

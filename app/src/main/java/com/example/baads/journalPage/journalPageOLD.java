@@ -1,7 +1,6 @@
-package com.example.baads;
+package com.example.baads.journalPage;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 
@@ -13,9 +12,10 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.baads.R;
 
 
-public class journalPage extends AppCompatActivity {
+public class journalPageOLD extends AppCompatActivity {
      Button newButton, saveButton,openButton;
      EditText editText;
 

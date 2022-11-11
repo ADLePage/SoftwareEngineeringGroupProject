@@ -1,4 +1,4 @@
-package com.example.baads.alarm;
+package com.example.baads.mainFiles;
 
 import android.os.Bundle;
 
@@ -14,24 +14,23 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.baads.databinding.ActivityAlarmReworkBinding;
+import com.example.baads.databinding.ActivityLoginBinding;
 
-
-public class alarmActivityRework extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityAlarmReworkBinding binding;
+    private ActivityLoginBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityAlarmReworkBinding.inflate(getLayoutInflater());
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_alarm_activity_rework);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_login);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
@@ -46,7 +45,7 @@ public class alarmActivityRework extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_alarm_activity_rework);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_login);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }

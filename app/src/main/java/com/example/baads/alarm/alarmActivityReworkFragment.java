@@ -28,7 +28,6 @@ import java.util.Calendar;
 //https://stackoverflow.com/questions/42211527/getpackagename-in-fragment
 //Helped with getting packagename in fragment.
 
-
 //This file deals with creating functionality for the widgets on the alarm page,
 //functionality for the alarm system, and alot of management of that page.
 //Alarm clock sound used.

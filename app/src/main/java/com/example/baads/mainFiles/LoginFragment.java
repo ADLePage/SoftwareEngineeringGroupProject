@@ -1,4 +1,4 @@
-package com.example.baads;
+package com.example.baads.mainFiles;
 
 
 import static android.content.ContentValues.TAG;
@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.baads.R;
 import com.example.baads.databinding.FragmentFirst2Binding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

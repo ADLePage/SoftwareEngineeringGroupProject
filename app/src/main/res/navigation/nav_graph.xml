@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.baads.MainPage"
+        android:name="com.example.baads.mainFiles.MainPage"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_mainpage">
 
@@ -17,9 +17,6 @@
         <action
             android:id="@+id/action_FirstFragment_to_youtubePlayer"
             app:destination="@id/youtubePlayer" />
-        <action
-            android:id="@+id/action_FirstFragment_to_journalPage"
-            app:destination="@id/journalPage" />
         <action
             android:id="@+id/action_FirstFragment_to_Video"
             app:destination="@id/video" />
@@ -47,6 +44,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_positiveAffirmationsReworkFragment"
             app:destination="@id/positiveAffirmationsReworkFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_journalPageFragmentReworked"
+            app:destination="@id/journalPageFragmentReworked" />
     </fragment>
     <fragment
         android:id="@+id/musicPlayer"
@@ -56,11 +56,6 @@
         android:id="@+id/youtubePlayer"
         android:name="com.example.baads.YoutubePlayer"
         android:label="YoutubePlayer" />
-    <activity
-        android:id="@+id/journalPage"
-        android:name="com.example.baads.journalPage"
-        android:label="activity_journal_page"
-        tools:layout="@layout/activity_journal_page" />
     <activity
         android:id="@+id/video"
         android:name="com.example.baads.Video"
@@ -83,7 +78,7 @@
         tools:layout="@layout/activity_you_tube" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.baads.LoginFragment"
+        android:name="com.example.baads.mainFiles.LoginFragment"
         android:label="fragment_first2"
         tools:layout="@layout/fragment_first2" >
         <action
@@ -113,6 +108,10 @@
         android:id="@+id/positiveAffirmationsReworkFragment"
         android:name="com.example.baads.positiveThoughts.positiveAffirmationsReworkFragment"
         android:label="positiveAffirmationsReworkFragment" />
+    <fragment
+        android:id="@+id/journalPageFragmentReworked"
+        android:name="com.example.baads.journalPage.journalPageFragmentReworked"
+        android:label="journalPageFragmentReworked" />
 
 </navigation>
 

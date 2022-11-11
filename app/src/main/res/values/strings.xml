@@ -21,4 +21,5 @@
     <string name="title_activity_agenda_make_event">AgendaMakeEvent</string>
     <string name="title_activity_alarm_rework">alarmActivityRework</string>
     <string name="title_activity_positive_affirmations_rework">positiveAffirmationsRework</string>
+    <string name="title_activity_journal_page_reworked">journalPageReworked</string>
 </resources>

@@ -26,6 +26,15 @@
         android:theme="@style/Theme.Baads"
         tools:targetApi="31">
         <activity
+            android:name=".journalPageReworked"
+            android:exported="false"
+            android:label="@string/title_activity_journal_page_reworked"
+            android:theme="@style/Theme.Baads.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".positiveThoughts.positiveAffirmationsRework"
             android:exported="false"
             android:label="@string/title_activity_positive_affirmations_rework"
@@ -67,7 +76,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".mainFiles.LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login"
             android:theme="@style/Theme.Baads.NoActionBar">
@@ -126,7 +135,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".journalPage"
+            android:name=".journalPage.journalPageOLD"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -146,7 +155,7 @@
             android:exported="true" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".mainFiles.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Baads.NoActionBar">

@@ -1,4 +1,4 @@
-package com.example.baads;
+package com.example.baads.mainFiles;
 
 public class usernameStorage {
     //source : https://stackoverflow.com/questions/1944656/android-global-variable

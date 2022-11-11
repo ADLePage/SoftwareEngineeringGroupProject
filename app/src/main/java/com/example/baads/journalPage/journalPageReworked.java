@@ -1,7 +1,8 @@
-package com.example.baads;
+package com.example.baads.journalPage;
 
 import android.os.Bundle;
 
+import com.example.baads.databinding.ActivityJournalPageReworkedBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,23 +14,23 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.baads.databinding.ActivityLoginBinding;
+import com.example.baads.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class journalPageReworked extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityLoginBinding binding;
+    private ActivityJournalPageReworkedBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        binding = ActivityJournalPageReworkedBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_login);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_journal_page_reworked);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
@@ -44,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_login);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_journal_page_reworked);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
