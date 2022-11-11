@@ -39,8 +39,8 @@
             android:id="@+id/action_FirstFragment_to_journalPageFragmentReworked"
             app:destination="@id/journalPageFragmentReworked" />
         <action
-            android:id="@+id/action_FirstFragment_to_youtubePlayerFragmentReworked"
-            app:destination="@id/youtubePlayerFragmentReworked" />
+            android:id="@+id/action_FirstFragment_to_youTubeActivity2"
+            app:destination="@id/youTubeActivity2" />
     </fragment>
     <fragment
         android:id="@+id/musicPlayer"
@@ -92,10 +92,10 @@
         android:id="@+id/journalPageFragmentReworked"
         android:name="com.example.baads.journalPage.journalPageFragmentReworked"
         android:label="journalPageFragmentReworked" />
-    <fragment
-        android:id="@+id/youtubePlayerFragmentReworked"
-        android:name="com.example.baads.youtubePlayer.youtubePlayerFragmentReworked"
-        android:label="youtubePlayerFragmentReworked" />
+    <activity
+        android:id="@+id/youTubeActivity2"
+        android:name="com.example.baads.youtubePlayer.YouTubeActivity"
+        android:label="YouTubeActivity" />
 
 </navigation>
 

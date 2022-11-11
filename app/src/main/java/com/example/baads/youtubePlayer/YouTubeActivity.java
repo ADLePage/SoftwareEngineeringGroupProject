@@ -17,14 +17,15 @@ public class YouTubeActivity extends YouTubeBaseActivity {
     Button btn;
     YouTubePlayerView youTubePlayerView;
     YouTubePlayer.OnInitializedListener onInitializedListener;
-    public YouTubePlayer youTubePlayer;
+    YouTubePlayer youTubePlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_you_tube);
 
-
+        btn = findViewById(R.id.play);
+        youTubePlayerView = findViewById(R.id.YoutubePlayerView);
         onInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
