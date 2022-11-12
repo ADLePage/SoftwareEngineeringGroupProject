@@ -23,7 +23,7 @@ app:destination="@id/alarmClock2" />
 android:id="@+id/musicPlayer"
     @ -56,10 +59,6 @@
     android:id="@+id/youtubePlayer"
-    android:name="com.example.baads.YoutubePlayer"
+    android:name="com.example.baads.youtubePlayer.YoutubePlayer"
     android:label="YoutubePlayer" />
 <activity
 android:id="@+id/alarmClockNew"

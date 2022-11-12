@@ -1,4 +1,4 @@
-package com.example.baads;
+package com.example.baads.youtubePlayer;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,13 +7,12 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.baads.databinding.FragmentYoutubeplayerBinding;
+import com.example.baads.databinding.ActivityYouTubeBinding;
 
 public class YoutubePlayer extends Fragment {
 
-    private FragmentYoutubeplayerBinding binding;
+    private ActivityYouTubeBinding binding;
 
     @Override
     public View onCreateView(
@@ -21,7 +20,7 @@ public class YoutubePlayer extends Fragment {
             Bundle savedInstanceState
     ) {
         //Change here to get different layounds
-        binding = FragmentYoutubeplayerBinding.inflate(inflater, container, false);
+        binding = ActivityYouTubeBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
