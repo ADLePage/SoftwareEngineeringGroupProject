@@ -22,4 +22,6 @@
     <string name="title_activity_alarm_rework">alarmActivityRework</string>
     <string name="title_activity_positive_affirmations_rework">positiveAffirmationsRework</string>
     <string name="title_activity_journal_page_reworked">journalPageReworked</string>
+    <string name="title_activity_input_file">input_file</string>
+    <string name="title_activity_model">model</string>
 </resources>
