@@ -132,12 +132,12 @@
         </activity>
 
         <receiver
-            android:name=".positiveThoughts.MyReceiverThoughtNotification"
+            android:name=".positiveThoughts.MyReceiverThoughtNotificationDEPRECATED"
             android:enabled="true"
             android:exported="true" />
 
         <activity
-            android:name=".positiveThoughts.PositiveThoughtsOLD"
+            android:name=".positiveThoughts.PositiveThoughtsDEPRECATED"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

@@ -21,8 +21,10 @@ import android.media.AudioAttributes;
 import android.os.Build;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.Date;
 //@Author Aidan LePage
 
 //https://stackoverflow.com/questions/42211527/getpackagename-in-fragment
@@ -128,7 +130,12 @@ public class alarmActivityReworkFragment extends Fragment {
         }
         notificationManager.deleteNotificationChannel("Alarm System");
         mainAlarm.cancel(pendingIntent);
-        MyReceiver.alarmSounder.stop();
+        try {
+            MyReceiver.alarmSounder.stop();
+        }catch(NullPointerException e){
+
+        }
+
         //Toast.makeText(this, "Alarm Cancelled", Toast.LENGTH_SHORT).show();
     }
     private void doAlarmFunction(){
@@ -167,7 +174,9 @@ public class alarmActivityReworkFragment extends Fragment {
                 calendar.set(Calendar.SECOND,0);
                 calendar.set(Calendar.MILLISECOND,0);
                 //Toast.makeText(getActivity().this, "Calendar Time:" + calendar.getTimeInMillis() + "\n" + "Actual Time:" + System.currentTimeMillis(), Toast.LENGTH_LONG).getActivity().show();
+                Date date = calendar.getTime();
 
+                Toast.makeText(getActivity().getApplication(), "Alarm set for "+date.getHours()+":"+date.getMinutes(), Toast.LENGTH_SHORT).show();
                 //In the case the user wants to set an alarm for tomorrow.
                 if(calendar.getTimeInMillis()<System.currentTimeMillis()){
                     calendar.setTimeInMillis(calendar.getTimeInMillis()+(24*60*60*1000));
@@ -204,13 +213,6 @@ public class alarmActivityReworkFragment extends Fragment {
             String description = "Channel For Alarm";
             int importance = NotificationManager.IMPORTANCE_HIGH;
 
-            //Source: http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
-            //AudioAttribute creator, sourcing java2s's AudioAttribute creation
-            //in order to be able to create an audioattribute to attach to an alarmsound.
-            AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                    .setUsage(AudioAttributes.USAGE_NOTIFICATION)
-                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                    .build();
 
             channel = new NotificationChannel("Alarm System",name,importance);
             channel.setDescription(description);

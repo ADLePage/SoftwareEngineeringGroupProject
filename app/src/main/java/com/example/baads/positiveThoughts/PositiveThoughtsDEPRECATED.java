@@ -23,10 +23,10 @@ import java.util.Calendar;
 //Huge credit to Foxandroid. Re-adapted my AlarmClockNew class using a lot of their
 //code from their tutorial https://www.youtube.com/watch?v=xSrVWFCtgaE
 //for notification manager and a receiver class.
-public class PositiveThoughtsOLD extends AppCompatActivity {
+public class PositiveThoughtsDEPRECATED extends AppCompatActivity {
 
     private com.example.baads.databinding.ActivityPositiveThoughtsBinding binding;
-    private boolean isSwitchFlipped = false;
+    public static boolean isSwitchFlipped = false;
     private AlarmManager mainAlarm;
     private PendingIntent pendingIntent;
 
@@ -74,7 +74,7 @@ public class PositiveThoughtsOLD extends AppCompatActivity {
     private void startThoughtNotifications(Calendar calendar) {
         mainAlarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-        Intent intent = new Intent(this, MyReceiverThoughtNotification.class);
+        Intent intent = new Intent(this, MyReceiverThoughtNotificationDEPRECATED.class);
         pendingIntent = PendingIntent.getBroadcast(this,1,intent,0);
         mainAlarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,
                 calendar.getTimeInMillis(), 1000,
@@ -85,7 +85,7 @@ public class PositiveThoughtsOLD extends AppCompatActivity {
     //All credit goes to android fox.
     //Repurposing their cancel alarm for cancelling notifications.
     private void cancelNotification(){
-        Intent intent = new Intent(this,MyReceiverThoughtNotification.class);
+        Intent intent = new Intent(this, MyReceiverThoughtNotificationDEPRECATED.class);
 
         pendingIntent = PendingIntent.getBroadcast(this,1,intent,0);
 

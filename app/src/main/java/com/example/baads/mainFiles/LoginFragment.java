@@ -21,7 +21,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-
+//Sourced from https://firebase.google.com/docs/firestore/query-data/get-data?utm_source=studio
+//Needed to be able to get a reference from the database.
+//Sourced from the original firebase example.
 public class LoginFragment extends Fragment {
 
     private FragmentFirst2Binding binding;
