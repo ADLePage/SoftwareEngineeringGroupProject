@@ -49,11 +49,14 @@ import java.util.concurrent.atomic.AtomicReference;
 //License: https://creativecommons.org/licenses/by/4.0/
 //Used sound for Positive notifications
 
+//This is a thread runner that essentially loops pulling from the database a couple of things
+    //Amount of things within the affirmations data
+        //I take a random number, % the amount of affirmations within the database, and then pull a random affirmation
+        //using that result
+//Then displays a notification with that affirmation pulled from the database.
+//Then puts the thread to sleep for a minute.
+//Repeat if switch flipped is still true.
 public class positiveAffirmationsThread implements Runnable {
-    private String[] positiveThoughts = new String[]{
-            "You are doing great!",
-            "You are valued!",
-            "Tough times end, tough people last."};
 
     Thread positiveAffirmations;
     Activity activityThread;
@@ -62,6 +65,7 @@ public class positiveAffirmationsThread implements Runnable {
     private FirebaseFirestore databaseLoginInfoConnection;
     private static int countVariable;
     positiveAffirmationsThread(Activity activity){
+        notificationSound = null;
         activityThread = activity;
         databaseLoginInfoConnection = FirebaseFirestore.getInstance();
         positiveAffirmations = new Thread(this, "positiveAffirmation");
@@ -75,14 +79,13 @@ public class positiveAffirmationsThread implements Runnable {
         MediaPlayer notificationSound = MediaPlayer.create(activityThread,alarmSound);
         DocumentReference docRef;
 
+        //While the switch in positive Thoughts is flipped, it will continue to do this.
+        //Once turned off, it will no longer call this.
         while (positiveAffirmationsReworkFragment.isSwitchFlipped) {
             final String[] affirmation = {"Affirmation"};
             final String[] returnValue = new String[1];
             //initializing value INCASE for some reason it cannot connect to the database fast enough.
             returnValue[0]= "You've got this!";
-            //https://stackoverflow.com/questions/40800288/math-random-generates-same-number
-            //Math.random() was being weird, so this helps with a random number generator.
-            //This is used to count how many affirmations we have in our database.
 
             CollectionReference collection = databaseLoginInfoConnection.collection("Affirmations");
             Query query = collection;
@@ -91,16 +94,18 @@ public class positiveAffirmationsThread implements Runnable {
                 if(task.isSuccessful()){
                     AggregateQuerySnapshot snapshot = task.getResult();
                     countVariable = (int) snapshot.getCount();
-                    //Due to how i'm using an array, I have to sub one from the count to traverse it.
-                    countVariable= countVariable-1;
-
                 }
             });
+            //Try catch for thread. necessary in-case interrupted. Also necessary as it takes some time to pull.
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
+            //https://stackoverflow.com/questions/40800288/math-random-generates-same-number
+            //Math.random() was being weird, so this helps with a random number generator.
+            //This is used to count how many affirmations we have in our database.
             Random random = new Random();
             int randomValue = random.nextInt()%countVariable;
             randomValue = Math.abs(randomValue);
@@ -127,14 +132,14 @@ public class positiveAffirmationsThread implements Runnable {
                     }
                 }
             });
-            //Needed to wait for the onComplete to complete and pull something
+            //Needs to wait for the above statement to complete.
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             //Source: Foxandroid
-            //Creates a notification channel.
+            //Creates a notificationcompat and a notification channel.
             NotificationCompat.Builder builder = new NotificationCompat.Builder(activityThread, "Positive Thoughts")
                     .setSmallIcon(R.drawable.ic_launcher_background)
                     .setContentTitle("Affirmation Notification")
@@ -159,7 +164,6 @@ public class positiveAffirmationsThread implements Runnable {
             }
             NotificationManagerCompat notificationManager = NotificationManagerCompat.from(activityThread);
 
-            // notificationId is a unique int for each notification that you must define
             notificationManager.notify(100, builder.build());
             try {
                 Thread.sleep(60000);

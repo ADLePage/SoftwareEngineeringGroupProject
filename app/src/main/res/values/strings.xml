@@ -24,4 +24,6 @@
     <string name="title_activity_journal_page_reworked">journalPageReworked</string>
     <string name="title_activity_input_file">input_file</string>
     <string name="title_activity_model">model</string>
+    <string name="title_activity_wiki_tips_rework">wikiTipsRework</string>
+    <string name="title_activity_self_care_list_reworked">selfCareListReworked</string>
 </resources>

@@ -1,15 +1,17 @@
-package com.example.baads;
+package com.example.baads.selfCareList;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class SelfCareList extends AppCompatActivity {
+import com.example.baads.R;
+
+public class SelfCareListDEPRECATED extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_self_care_list);
+        //setContentView(R.layout.activity_self_care_list);
 
     }
 }
@@ -20,7 +22,7 @@ public class SelfCareList extends AppCompatActivity {
        /* binding.positiveThoughts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(SelfCareList.this)
+                NavHostFragment.findNavController(SelfCareListDEPRECATED.this)
                         .navigate(R.id.action_FirstFragment_to_positiveThoughts2);
             }*/
       //  });

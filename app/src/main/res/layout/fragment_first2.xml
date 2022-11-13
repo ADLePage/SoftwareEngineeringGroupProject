@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".mainFiles.LoginFragment">
 
+
     <Button
         android:id="@+id/skipButton"
         android:layout_width="wrap_content"

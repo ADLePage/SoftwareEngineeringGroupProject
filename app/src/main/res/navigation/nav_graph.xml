@@ -21,12 +21,6 @@
             android:id="@+id/action_FirstFragment_to_agenda"
             app:destination="@id/agenda" />
         <action
-            android:id="@+id/action_FirstFragment_to_selfCareList"
-            app:destination="@id/selfCareList" />
-        <action
-            android:id="@+id/action_FirstFragment_to_wikiTips"
-            app:destination="@id/wikiTips" />
-        <action
             android:id="@+id/action_FirstFragment_to_dailyActivity2"
             app:destination="@id/dailyActivity2" />
         <action
@@ -39,8 +33,11 @@
             android:id="@+id/action_FirstFragment_to_journalPageFragmentReworked"
             app:destination="@id/journalPageFragmentReworked" />
         <action
-            android:id="@+id/action_FirstFragment_to_youTubeActivity2"
-            app:destination="@id/youTubeActivity2" />
+            android:id="@+id/action_FirstFragment_to_wikiTipsFragmentReworked"
+            app:destination="@id/wikiTipsFragmentReworked" />
+        <action
+            android:id="@+id/action_FirstFragment_to_selfCareListReworkedFragment"
+            app:destination="@id/selfCareListReworkedFragment" />
     </fragment>
     <fragment
         android:id="@+id/musicPlayer"
@@ -65,15 +62,6 @@
             android:id="@+id/action_loginFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
-    <activity
-        android:id="@+id/selfCareList"
-        android:name="com.example.baads.SelfCareList"
-        android:label="activity_self_care_list"
-        tools:layout="@layout/activity_self_care_list" />
-    <activity
-        android:id="@+id/wikiTips"
-        android:name="com.example.baads.WikiTips"
-        android:label="WikiTips" />
 
     <activity
         android:id="@+id/dailyActivity2"
@@ -92,10 +80,14 @@
         android:id="@+id/journalPageFragmentReworked"
         android:name="com.example.baads.journalPage.journalPageFragmentReworked"
         android:label="journalPageFragmentReworked" />
-    <activity
-        android:id="@+id/youTubeActivity2"
-        android:name="com.example.baads.youtubePlayer.YouTubeActivity"
-        android:label="YouTubeActivity" />
+    <fragment
+        android:id="@+id/wikiTipsFragmentReworked"
+        android:name="com.example.baads.wikiTips.wikiTipsFragmentReworked"
+        android:label="wikiTipsFragmentReworked" />
+    <fragment
+        android:id="@+id/selfCareListReworkedFragment"
+        android:name="com.example.baads.selfCareList.selfCareListReworkedFragment"
+        android:label="selfCareListReworkedFragment" />
 
 </navigation>
 

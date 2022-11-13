@@ -53,7 +53,7 @@ public class MainPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.youTubeActivity2);
+                        .navigate(R.id.);
             }
         });
 
@@ -95,7 +95,7 @@ public class MainPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_selfCareList);
+                        .navigate(R.id.action_FirstFragment_to_selfCareListReworkedFragment);
             }
         });
 
@@ -103,7 +103,7 @@ public class MainPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_wikiTips);
+                        .navigate(R.id.action_FirstFragment_to_wikiTipsFragmentReworked);
             }
         });
 
