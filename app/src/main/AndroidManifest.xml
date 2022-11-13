@@ -112,9 +112,9 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="youtubePlayer.YouTubeActivity"
+            android:name=".youtubePlayer.YouTubeActivity"
             android:exported="true"
-            tools:ignore="MissingClass" />
+            />
         <activity
             android:name=".dailyActivity"
             android:exported="false"

@@ -38,6 +38,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_selfCareListReworkedFragment"
             app:destination="@id/selfCareListReworkedFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_youTubeActivity2"
+            app:destination="@id/youTubeActivity2" />
     </fragment>
     <fragment
         android:id="@+id/musicPlayer"
@@ -88,6 +91,10 @@
         android:id="@+id/selfCareListReworkedFragment"
         android:name="com.example.baads.selfCareList.selfCareListReworkedFragment"
         android:label="selfCareListReworkedFragment" />
+    <activity
+        android:id="@+id/youTubeActivity2"
+        android:name="com.example.baads.youtubePlayer.YouTubeActivity"
+        android:label="YouTubeActivity" />
 
 </navigation>
 
