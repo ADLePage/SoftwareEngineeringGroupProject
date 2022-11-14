@@ -34,50 +34,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
-        android:text="Nothing to Display Right Now"
+        android:text="Nothing to Display:)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/todayAgendaText" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editEventText"
         android:layout_width="156dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="36dp"
         android:ems="10"
         android:hint="Event"
         android:inputType="textPersonName"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/editTextDate"
+        app:layout_constraintBottom_toTopOf="@+id/newEventButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
-        android:ems="10"
-        android:hint="Date"
-        android:inputType="date"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/editTextTime"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:ems="10"
-        android:hint="Time"
-        android:inputType="time"
-        app:layout_constraintBottom_toTopOf="@+id/newEventButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
