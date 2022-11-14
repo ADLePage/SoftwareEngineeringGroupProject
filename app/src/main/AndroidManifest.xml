@@ -29,6 +29,11 @@
             android:name=".AgendaRework"
             android:exported="false"
             android:label="@string/title_activity_agenda_rework"
+            />
+        <activity
+            android:name=".soundBarRework"
+            android:exported="false"
+            android:label="@string/title_activity_sound_bar_rework"
             android:theme="@style/Theme.Baads.NoActionBar" >
             <meta-data
                 android:name="android.app.lib_name"
@@ -133,7 +138,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SoundBar"
+            android:name=".soundBar.SoundBarOLD"
             android:exported="false"
             android:label="@string/soundBarTitle" />
         <activity

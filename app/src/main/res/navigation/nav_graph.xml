@@ -44,6 +44,10 @@
         <action
             android:id="@+id/action_FirstFragment_to_agendaReworkFragment"
             app:destination="@id/agendaReworkFragment" />
+    <action
+            android:id="@+id/action_FirstFragment_to_soundBarReworkFragment"
+            app:destination="@id/soundBarReworkFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/musicPlayer"
@@ -51,7 +55,7 @@
         android:label="MusicPlayer" />
     <activity
         android:id="@+id/soundBar"
-        android:name="com.example.baads.SoundBar"
+        android:name="com.example.baads.soundBar.SoundBarOLD"
         android:label="activity_sound_bar"
         tools:layout="@layout/activity_sound_bar" />
     <activity
@@ -102,6 +106,11 @@
         android:id="@+id/agendaReworkFragment"
         android:name="com.example.baads.agenda.AgendaReworkFragment"
         android:label="AgendaReworkFragment" />
+    <fragment
+        android:id="@+id/soundBarReworkFragment"
+        android:name="com.example.baads.soundBar.soundBarReworkFragment"
+        android:label="soundBarReworkFragment" />
+
 
 </navigation>
 

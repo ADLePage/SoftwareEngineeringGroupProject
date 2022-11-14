@@ -1,11 +1,13 @@
-package com.example.baads;
+package com.example.baads.soundBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.media.MediaPlayer;
 import android.view.View;
 
-public class SoundBar extends AppCompatActivity {
+import com.example.baads.R;
+
+public class SoundBarOLD extends AppCompatActivity {
     MediaPlayer oceanNoise;
     MediaPlayer whiteNoise;
 
