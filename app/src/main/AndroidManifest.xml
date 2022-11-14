@@ -26,6 +26,15 @@
         android:theme="@style/Theme.Baads"
         tools:targetApi="31" >
         <activity
+            android:name=".AgendaRework"
+            android:exported="false"
+            android:label="@string/title_activity_agenda_rework"
+            android:theme="@style/Theme.Baads.NoActionBar" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".selfCareListReworked"
             android:exported="false"
             android:label="@string/title_activity_self_care_list_reworked"
@@ -96,7 +105,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Agenda"
+            android:name=".agenda.Agenda"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
@@ -113,8 +122,7 @@
         </activity>
         <activity
             android:name=".youtubePlayer.YouTubeActivity"
-            android:exported="true"
-            />
+            android:exported="true" />
         <activity
             android:name=".dailyActivity"
             android:exported="false"

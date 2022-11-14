@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_youTubeActivity2"
             app:destination="@id/youTubeActivity2" />
+        <action
+            android:id="@+id/action_FirstFragment_to_agendaReworkFragment"
+            app:destination="@id/agendaReworkFragment" />
     </fragment>
     <fragment
         android:id="@+id/musicPlayer"
@@ -53,7 +56,7 @@
         tools:layout="@layout/activity_sound_bar" />
     <activity
         android:id="@+id/agenda"
-        android:name="com.example.baads.Agenda"
+        android:name="com.example.baads.agenda.Agenda"
         android:label="activity_agenda"
         tools:layout="@layout/activity_agenda" />
     <fragment
@@ -95,6 +98,10 @@
         android:id="@+id/youTubeActivity2"
         android:name="com.example.baads.youtubePlayer.YouTubeActivity"
         android:label="YouTubeActivity" />
+    <fragment
+        android:id="@+id/agendaReworkFragment"
+        android:name="com.example.baads.agenda.AgendaReworkFragment"
+        android:label="AgendaReworkFragment" />
 
 </navigation>
 

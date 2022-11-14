@@ -86,7 +86,7 @@ public class MainPage extends Fragment {
         binding.agenda.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_agenda);
+                        .navigate(R.id.action_FirstFragment_to_agendaReworkFragment);
             }
         });
 
