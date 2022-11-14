@@ -36,21 +36,32 @@ public class soundBarReworkFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        oceanNoise = MediaPlayer.create(getActivity(), R.raw.ocean_noise); //both mp3 files were pulled from https://mc2method.org/white-noise/
-        whiteNoise = MediaPlayer.create(getActivity(), R.raw.white_noise);
-
+        //both mp3 files were pulled from https://mc2method.org/white-noise/
         AppCompatImageButton oceanButtonPlay = getActivity().findViewById(R.id.playOcean);
-        oceanButtonPlay.setOnClickListener(e->oceanNoise.start());
+        oceanButtonPlay.setOnClickListener(e-> oceanStart());
+
 
         AppCompatImageButton oceanButtonPause = getActivity().findViewById(R.id.pauseOcean);
         oceanButtonPause.setOnClickListener(e->oceanNoise.stop());
 
         AppCompatImageButton whiteNoisePlay = getActivity().findViewById(R.id.playWhite);
-        whiteNoisePlay.setOnClickListener(e->whiteNoise.start());
+        whiteNoisePlay.setOnClickListener(e-> whiteStart());
+
 
         AppCompatImageButton whiteNoisePause = getActivity().findViewById(R.id.pauseWhite);
         whiteNoisePause.setOnClickListener(e->whiteNoise.stop());
     }
+
+    private void oceanStart(){
+        oceanNoise = MediaPlayer.create(getActivity(), R.raw.ocean_noise);
+        oceanNoise.start();
+    }
+
+    private void whiteStart(){
+        whiteNoise = MediaPlayer.create(getActivity(), R.raw.white_noise);
+        whiteNoise.start();
+    }
+
 
     @Override
     public void onDestroyView() {
