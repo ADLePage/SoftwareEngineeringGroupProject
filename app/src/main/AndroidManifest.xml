@@ -26,6 +26,15 @@
         android:theme="@style/Theme.Baads"
         tools:targetApi="31" >
         <activity
+            android:name=".soundBarRework"
+            android:exported="false"
+            android:label="@string/title_activity_sound_bar_rework"
+            android:theme="@style/Theme.Baads.NoActionBar" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".selfCareListReworked"
             android:exported="false"
             android:label="@string/title_activity_self_care_list_reworked"
@@ -113,8 +122,7 @@
         </activity>
         <activity
             android:name=".youtubePlayer.YouTubeActivity"
-            android:exported="true"
-            />
+            android:exported="true" />
         <activity
             android:name=".dailyActivity"
             android:exported="false"
@@ -125,7 +133,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SoundBar"
+            android:name=".soundBar.SoundBarOLD"
             android:exported="false"
             android:label="@string/soundBarTitle" />
         <activity
