@@ -6,5 +6,4 @@ public class usernameStorage {
     //Used this idea from the stackoverflow
     //Initialized to Testing in order for testing to happen.
     public static String username = "Testing";
-    public static boolean loggedIn = false;
 }

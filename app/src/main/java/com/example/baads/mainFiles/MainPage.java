@@ -30,9 +30,6 @@ public class MainPage extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //This resets a workaround to getting back to main page from the youtube video part.
-        usernameStorage.loggedIn = false;
-
         ////Creates a binding to send user to the sound bar
         binding.positiveThoughts.setOnClickListener(new View.OnClickListener() {
             @Override

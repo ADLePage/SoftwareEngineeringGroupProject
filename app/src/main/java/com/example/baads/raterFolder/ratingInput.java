@@ -46,7 +46,7 @@ public class ratingInput extends Fragment {
         databaseLoginInfoConnection = FirebaseFirestore.getInstance();
 
         Map<String, Object> data1 = new HashMap<>();
-
+//All you need to do is swap out"descriptive sentence" and "task" for their respective variables
         data1.put("Rating", userInput);
         
         databaseLoginInfoConnection.collection("users")

@@ -60,11 +60,6 @@ public class LoginFragment extends Fragment {
             }
         });
 
-        if(usernameStorage.loggedIn==true){
-            NavHostFragment.findNavController(LoginFragment.this)
-                    .navigate(R.id.action_loginFragment_to_FirstFragment);
-        }
-
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceType")
             @Override
