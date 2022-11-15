@@ -47,6 +47,9 @@
     <action
             android:id="@+id/action_FirstFragment_to_soundBarReworkFragment"
             app:destination="@id/soundBarReworkFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_youTubeReworkedFragment"
+            app:destination="@id/youTubeReworkedFragment" />
 
     </fragment>
     <fragment
@@ -110,6 +113,11 @@
         android:id="@+id/soundBarReworkFragment"
         android:name="com.example.baads.soundBar.soundBarReworkFragment"
         android:label="soundBarReworkFragment" />
+    <fragment
+        android:id="@+id/youTubeReworkedFragment"
+        android:name="com.example.baads.youtubePlayer.YouTubeReworkedFragment"
+        android:label="fragment_first4"
+        tools:layout="@layout/fragment_first4" />
 
 
 </navigation>
