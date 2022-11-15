@@ -50,6 +50,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_youTubeReworkedFragment"
             app:destination="@id/youTubeReworkedFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_ratingInput"
+            app:destination="@id/ratingInput" />
 
     </fragment>
     <fragment
@@ -118,6 +121,10 @@
         android:name="com.example.baads.youtubePlayer.YouTubeReworkedFragment"
         android:label="fragment_first4"
         tools:layout="@layout/fragment_first4" />
+    <fragment
+        android:id="@+id/ratingInput"
+        android:name="com.example.baads.raterFolder.ratingInput"
+        android:label="ratingInput" />
 
 
 </navigation>

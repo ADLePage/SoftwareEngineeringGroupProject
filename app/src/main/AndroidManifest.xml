@@ -15,7 +15,6 @@
         </intent>
     </queries>
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -26,6 +25,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Baads"
         tools:targetApi="31">
+        <activity
+            android:name=".ratingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_rating"
+            android:theme="@style/Theme.Baads.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".YouTubeReworked"
             android:exported="false"
@@ -39,9 +47,11 @@
             android:name=".AgendaRework"
             android:exported="false"
             android:label="@string/title_activity_agenda_rework" />
+
         <meta-data
             android:name="android.app.lib_name"
             android:value="" />
+
         <activity
             android:name=".soundBarRework"
             android:exported="false"
@@ -140,9 +150,11 @@
         <activity
             android:name=".youtubePlayer.YouTubeActivity"
             android:exported="true" />
+
         <meta-data
             android:name="android.app.lib_name"
             android:value="" />
+
         <activity
             android:name=".dailyActivity"
             android:exported="false"
@@ -186,6 +198,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
