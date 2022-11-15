@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
         }
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
 
-        // notificationId is a unique int for each notification that you must define
         notificationManager.notify(100, builder.build());
     }
 

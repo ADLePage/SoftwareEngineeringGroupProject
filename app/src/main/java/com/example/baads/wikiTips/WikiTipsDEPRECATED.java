@@ -1,15 +1,15 @@
-package com.example.baads;
+package com.example.baads.wikiTips;
 //import static com.example.baads.R.id.wikiV;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
+
+import com.example.baads.R;
 
 
-
-public class WikiTips extends AppCompatActivity {
+public class WikiTipsDEPRECATED extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

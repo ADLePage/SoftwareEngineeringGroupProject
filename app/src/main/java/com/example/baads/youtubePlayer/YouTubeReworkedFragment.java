@@ -1,4 +1,4 @@
-package com.example.baads;
+package com.example.baads.youtubePlayer;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,15 +7,13 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
-//import com.example.baads.databinding.FragmentSecondBinding;
-import com.example.baads.databinding.FragmentMusicBinding;
+import com.example.baads.databinding.FragmentFirst4Binding;
+import com.google.android.youtube.player.YouTubePlayerFragment;
 
-public class MusicPlayer extends Fragment {
+public class YouTubeReworkedFragment extends Fragment {
 
-    //Change this
-    private FragmentMusicBinding binding;
+    private FragmentFirst4Binding binding;
 
     @Override
     public View onCreateView(
@@ -23,9 +21,9 @@ public class MusicPlayer extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        //Change this
-        binding = FragmentMusicBinding.inflate(inflater, container, false);
+        binding = FragmentFirst4Binding.inflate(inflater, container, false);
         return binding.getRoot();
+
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {

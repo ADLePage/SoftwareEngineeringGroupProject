@@ -43,7 +43,7 @@ public class MainPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_soundBar);
+                        .navigate(R.id.action_FirstFragment_to_soundBarReworkFragment);
             }
         });
         //Creates a binding to send user to the music player
@@ -54,6 +54,15 @@ public class MainPage extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
                         .navigate(R.id.youTubeActivity2);
+            }
+        });
+
+        //Creates a binding to send user to the youtube page
+        binding.NewYouTube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(MainPage.this)
+                        .navigate(R.id.action_FirstFragment_to_youTubeReworkedFragment);
             }
         });
 
@@ -86,7 +95,7 @@ public class MainPage extends Fragment {
         binding.agenda.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_agenda);
+                        .navigate(R.id.action_FirstFragment_to_agendaReworkFragment);
             }
         });
 
@@ -95,7 +104,7 @@ public class MainPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_selfCareList);
+                        .navigate(R.id.action_FirstFragment_to_selfCareListReworkedFragment);
             }
         });
 
@@ -103,7 +112,7 @@ public class MainPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_wikiTips);
+                        .navigate(R.id.action_FirstFragment_to_wikiTipsFragmentReworked);
             }
         });
 

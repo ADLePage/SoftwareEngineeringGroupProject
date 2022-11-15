@@ -26,12 +26,8 @@ android:id="@+id/musicPlayer"
     android:name="com.example.baads.youtubePlayer.YoutubePlayer"
     android:label="YoutubePlayer" />
 <activity
-android:id="@+id/alarmClockNew"
-android:name="com.example.baads.alarm.AlarmClockOLD"
-android:label="AlarmClockNew" />
-<activity
 android:id="@+id/positiveThoughts2"
-android:name="com.example.baads.positiveThoughts.PositiveThoughtsOLD"
+android:name="com.example.baads.positiveThoughts.PositiveThoughtsDEPRECATED"
     @ -114,5 +113,13 @@
     android:name="com.example.baads.dailyActivity"
     android:label="activity_daily"

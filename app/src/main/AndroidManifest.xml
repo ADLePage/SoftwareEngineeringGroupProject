@@ -26,6 +26,46 @@
         android:theme="@style/Theme.Baads"
         tools:targetApi="31">
         <activity
+            android:name=".YouTubeReworked"
+            android:exported="false"
+            android:label="@string/title_activity_you_tube_reworked"
+            android:theme="@style/Theme.Baads.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".AgendaRework"
+            android:exported="false"
+            android:label="@string/title_activity_agenda_rework" />
+        <activity
+            android:name=".soundBarRework"
+            android:exported="false"
+            android:label="@string/title_activity_sound_bar_rework"
+            android:theme="@style/Theme.Baads.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".selfCareListReworked"
+            android:exported="false"
+            android:label="@string/title_activity_self_care_list_reworked"
+            android:theme="@style/Theme.Baads.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".wikiTipsRework"
+            android:exported="false"
+            android:label="@string/title_activity_wiki_tips_rework"
+            android:theme="@style/Theme.Baads.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".model"
             android:exported="false"
             android:label="@string/title_activity_model"
@@ -78,7 +118,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Agenda"
+            android:name=".agenda.Agenda"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -94,15 +134,8 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".YouTubeActivity"
+            android:name=".youtubePlayer.YouTubeActivity"
             android:exported="true" />
-        <activity
-            android:name=".WikiTips"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
         <activity
             android:name=".dailyActivity"
             android:exported="false"
@@ -113,31 +146,11 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SoundBar"
+            android:name=".soundBar.SoundBarOLD"
             android:exported="false"
             android:label="@string/soundBarTitle" />
         <activity
-            android:name=".SelfCareList"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Video"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-
-        <receiver
-            android:name=".positiveThoughts.MyReceiverThoughtNotification"
-            android:enabled="true"
-            android:exported="true" />
-
-        <activity
-            android:name=".positiveThoughts.PositiveThoughtsOLD"
+            android:name=".selfCareList.SelfCareListDEPRECATED"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -145,13 +158,6 @@
         </activity>
         <activity
             android:name=".journalPage.journalPageOLD"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".alarm.AlarmClockOLD"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

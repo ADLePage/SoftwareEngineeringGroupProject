@@ -25,7 +25,10 @@ public class MyReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
+        //Source: http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
+        //Format for Uri creation.
         Uri alarmSound = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.alarm_sound);
+
         alarmSounder = MediaPlayer.create(context,alarmSound);
         alarmSounder.start();
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "Alarm System")

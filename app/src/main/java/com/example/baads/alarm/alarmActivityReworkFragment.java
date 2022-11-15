@@ -17,12 +17,14 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.media.AudioAttributes;
+
 import android.os.Build;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.Date;
 //@Author Aidan LePage
 
 //https://stackoverflow.com/questions/42211527/getpackagename-in-fragment
@@ -30,6 +32,7 @@ import java.util.Calendar;
 
 //This file deals with creating functionality for the widgets on the alarm page,
 //functionality for the alarm system, and alot of management of that page.
+
 //Alarm clock sound used.
 //Sound used: https://freesound.org/people/joedeshon/sounds/78562/
 //Creative license: https://creativecommons.org/licenses/by/4.0/
@@ -41,6 +44,20 @@ import java.util.Calendar;
 //Huge credit to Foxandroid, source https://www.youtube.com/watch?v=xSrVWFCtgaE.
 //Much of the code regarding the alarm system and broadcasting is theirs and give total credit to them.
 //Needed their code to create a notification system along with an alarm system.
+
+/*
+This class deals with the alarm function.
+On click of the switch within the alarm fragment, it will
+    Check whether or not the inputted data is correct.
+    If correct, then it will submit it to a calendar object.
+    That calendar object is checked whether or not the date is for today or tomorrow.
+    Send it to a receiver
+    Also builds a notification manager
+        when the alarm sounds, it will play a notification and an alarm noise.
+If the switch is turned off, it will delete
+    the notification
+    and try to stop the alarm noise.
+ */
 public class alarmActivityReworkFragment extends Fragment {
 
     private FragmentAlarmclockBinding binding;
@@ -71,16 +88,18 @@ public class alarmActivityReworkFragment extends Fragment {
 
     //Source https://www.youtube.com/watch?v=xSrVWFCtgaE
     //All credit goes to Foxandroid
-    //Foxandroids private variables we need for the alarm system to work.
+    //Foxandroids private variables mainAlarm and pendingIntent that we need for the alarm system to work.
     private AlarmManager mainAlarm;
     private PendingIntent pendingIntent;
-    //End of sourced code.
+
     private NotificationChannel channel;
     private NotificationManager notificationManager;
 
     public static String hour1;
     public static String minute1;
     public static boolean time1Flipped = false;
+
+    //Checks whether or not the user input correct data.
     public boolean isCorrectSyntax(String hour, String minute){
         if(hour.isEmpty()||minute.isEmpty()){
             return false;
@@ -128,8 +147,15 @@ public class alarmActivityReworkFragment extends Fragment {
         }
         notificationManager.deleteNotificationChannel("Alarm System");
         mainAlarm.cancel(pendingIntent);
-        MyReceiver.alarmSounder.stop();
-        //Toast.makeText(this, "Alarm Cancelled", Toast.LENGTH_SHORT).show();
+        try {
+            //This is the media player within the receiver. Due to some weird interaction I need to instead
+            //have the sound play through the media player.
+            MyReceiver.alarmSounder.stop();
+        }catch(NullPointerException e){
+            //This try catch is in-case the media player is not playing.
+        }
+
+        Toast.makeText(getActivity(), "Alarm Cancelled", Toast.LENGTH_SHORT).show();
     }
     private void doAlarmFunction(){
         time1Flipped = !time1Flipped;
@@ -167,24 +193,19 @@ public class alarmActivityReworkFragment extends Fragment {
                 calendar.set(Calendar.SECOND,0);
                 calendar.set(Calendar.MILLISECOND,0);
                 //Toast.makeText(getActivity().this, "Calendar Time:" + calendar.getTimeInMillis() + "\n" + "Actual Time:" + System.currentTimeMillis(), Toast.LENGTH_LONG).getActivity().show();
+                Date date = calendar.getTime();
 
                 //In the case the user wants to set an alarm for tomorrow.
                 if(calendar.getTimeInMillis()<System.currentTimeMillis()){
                     calendar.setTimeInMillis(calendar.getTimeInMillis()+(24*60*60*1000));
+                    Toast.makeText(getActivity().getApplication(), "Alarm set for tomorrow "+date.getHours()+":"+date.getMinutes(), Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(getActivity().getApplication(), "Alarm set for today "+date.getHours()+":"+date.getMinutes(), Toast.LENGTH_SHORT).show();
                 }
-
                 //This part sends the calendar to the event handler.
-
                 startAlarmClock(calendar);
-
-
-                //Testing Code
-                //TextView textview = findViewById(R.id.AlarmTimeInputHour2);
-                //textview.setText("Calculated:"+ calendar.getTimeInMillis());
-                //TextView textview2 = findViewById(R.id.AlarmTimeInputMinute2);
-                //textview2.setText("System value:"+ System.currentTimeMillis());
             }else{
-                //Toast.makeText(getActivity().this, "Error, input valid time", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Error, input valid time", Toast.LENGTH_SHORT).show();
                 time1Flipped = false;
                 Switch alarmSwitch = getActivity().findViewById(R.id.AlarmSwitch1);
                 alarmSwitch.setChecked(time1Flipped);
@@ -192,6 +213,7 @@ public class alarmActivityReworkFragment extends Fragment {
                 textViewMinute.setText("");
             }
         }else{
+            //If you're switching the alarm off, stop the alarm.
             cancelAlarm();
         }
     }
@@ -204,13 +226,6 @@ public class alarmActivityReworkFragment extends Fragment {
             String description = "Channel For Alarm";
             int importance = NotificationManager.IMPORTANCE_HIGH;
 
-            //Source: http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
-            //AudioAttribute creator, sourcing java2s's AudioAttribute creation
-            //in order to be able to create an audioattribute to attach to an alarmsound.
-            AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                    .setUsage(AudioAttributes.USAGE_NOTIFICATION)
-                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                    .build();
 
             channel = new NotificationChannel("Alarm System",name,importance);
             channel.setDescription(description);

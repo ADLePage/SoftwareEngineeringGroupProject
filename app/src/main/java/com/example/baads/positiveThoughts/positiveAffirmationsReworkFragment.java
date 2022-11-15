@@ -1,11 +1,8 @@
 package com.example.baads.positiveThoughts;
 
-import android.app.AlarmManager;
+
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,15 +18,14 @@ import androidx.fragment.app.Fragment;
 import com.example.baads.R;
 import com.example.baads.databinding.ActivityPositiveThoughtsBinding;
 
-import java.util.Calendar;
 
 
 public class positiveAffirmationsReworkFragment extends Fragment {
 
     private ActivityPositiveThoughtsBinding binding;
-    private boolean isSwitchFlipped = false;
-    private AlarmManager mainAlarm;
-    private PendingIntent pendingIntent;
+    public static boolean isSwitchFlipped = false;
+    private positiveAffirmationsThread thread;
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -47,52 +43,8 @@ public class positiveAffirmationsReworkFragment extends Fragment {
         thoughtEnabler.setChecked(isSwitchFlipped);
     }
 
-    //Source https://www.youtube.com/watch?v=xSrVWFCtgaE
-    //All credit goes to android fox. Repurposing their alarm clock for the creation
-    //of a notification manager that displays poisitive messages.
-    private void enablePositiveThoughts() {
-        isSwitchFlipped = !isSwitchFlipped;
-        if(isSwitchFlipped){
-            Calendar calendar = Calendar.getInstance();
-            //moves it a minute in the future.
-            calendar.setTimeInMillis(System.currentTimeMillis()+60000);
-            startThoughtNotifications(calendar);
-        }else{
-            cancelNotification();
-        }
-
-    }
-    //Source https://www.youtube.com/watch?v=xSrVWFCtgaE
-    //All credit goes to android fox. Repurposing their starting alarm notification function for the usage
-    //in a notification manager than gives positive affirmations to the user.
-    private void startThoughtNotifications(Calendar calendar) {
-        mainAlarm = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
-
-        Intent intent = new Intent(getActivity().getApplication(),MyReceiverThoughtNotification.class);
-        pendingIntent = PendingIntent.getBroadcast(getActivity().getApplication(),1,intent,0);
-        mainAlarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,
-                calendar.getTimeInMillis(), 1000,
-                pendingIntent);
-    }
-
-    //Source https://www.youtube.com/watch?v=xSrVWFCtgaE
-    //All credit goes to android fox.
-    //Repurposing their cancel alarm for cancelling notifications.
-    private void cancelNotification(){
-        Intent intent = new Intent(getActivity().getApplication(),MyReceiverThoughtNotification.class);
-
-        pendingIntent = PendingIntent.getBroadcast(getActivity().getApplication(),1,intent,0);
-
-        if(mainAlarm == null){
-            mainAlarm = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
-        }
-
-        mainAlarm.cancel(pendingIntent);
-        Toast.makeText(getActivity().getApplication(), "Positive Affirmations Cancelled", Toast.LENGTH_SHORT).show();
-    }
-
     //https://www.youtube.com/watch?v=xSrVWFCtgaE
-    //All credit goes to androidfox. Repurposing this creation of notification for alarms to display positive
+    //All credit goes to Foxandroid. Repurposing this creation of notification for alarms to display positive
     //affirmations for the user.
     private void createNotificationForAlarm(){
         if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.O){
@@ -107,6 +59,19 @@ public class positiveAffirmationsReworkFragment extends Fragment {
         }
     }
 
+    //Source: https://www.tutorialspoint.com/how-to-create-a-thread-in-java
+    //Source: https://www.youtube.com/watch?v=xSrVWFCtgaE
+    //Credit for Foxandroid and tutorialspoint for how to create this. Combined both into a thread that
+    //In the background will make notifications and sounds.
+    private void buttonAction() throws InterruptedException {
+        isSwitchFlipped = !isSwitchFlipped;
+        if(isSwitchFlipped) {
+            thread = new positiveAffirmationsThread(getActivity());
+        }else {
+            Toast.makeText(getActivity().getApplication(), "Positive Affirmations Cancelled", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -115,7 +80,13 @@ public class positiveAffirmationsReworkFragment extends Fragment {
         createNotificationForAlarm();
 
         Button button = getActivity().findViewById(R.id.positiveThoughtEnabler);
-        button.setOnClickListener(e->enablePositiveThoughts());
+        button.setOnClickListener(e-> {
+            try {
+                buttonAction();
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+        });
     }
 
     @Override
