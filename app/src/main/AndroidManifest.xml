@@ -15,6 +15,7 @@
         </intent>
     </queries>
 
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -38,6 +39,9 @@
             android:name=".AgendaRework"
             android:exported="false"
             android:label="@string/title_activity_agenda_rework" />
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="" />
         <activity
             android:name=".soundBarRework"
             android:exported="false"
@@ -136,6 +140,9 @@
         <activity
             android:name=".youtubePlayer.YouTubeActivity"
             android:exported="true" />
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="" />
         <activity
             android:name=".dailyActivity"
             android:exported="false"
@@ -179,7 +186,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

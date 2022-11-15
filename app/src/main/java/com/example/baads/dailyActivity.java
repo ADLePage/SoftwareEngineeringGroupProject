@@ -14,7 +14,7 @@ import android.view.View;
 
 import com.example.baads.dailyAdapter.dailyActivityAdapter;
 import com.example.baads.dailyModel.dailyactivityModel;
-import com.google.android.gms.ads.mediation.Adapter;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.firestore.DocumentChange;
