@@ -35,6 +35,7 @@ public class ratingInput extends Fragment {
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        //Sourced from https://firebase.google.com/docs/firestore/manage-data/add-data
         super.onViewCreated(view, savedInstanceState);
         int userInput = 0;
         String date = "";
@@ -47,8 +48,7 @@ public class ratingInput extends Fragment {
         Map<String, Object> data1 = new HashMap<>();
 //All you need to do is swap out"descriptive sentence" and "task" for their respective variables
         data1.put("Rating", userInput);
-
-
+        
         databaseLoginInfoConnection.collection("users")
                 .document(usernameStorage.username)
                 .collection("stressRating")
