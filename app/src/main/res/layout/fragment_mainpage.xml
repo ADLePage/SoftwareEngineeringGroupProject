@@ -115,16 +115,6 @@
         app:layout_constraintTop_toBottomOf="@+id/positiveThoughts" />
 
     <Button
-        android:id="@+id/NewYouTube"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="13dp"
-        android:text="NewYouTube"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SelfCareList" />
-
-    <Button
         android:id="@+id/stressRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
