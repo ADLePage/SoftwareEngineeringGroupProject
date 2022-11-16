@@ -4,12 +4,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.baads.databinding.FragmentFirst5Binding;
+import com.example.baads.R;
+import com.example.baads.databinding.FragmentRatingBinding;
+import com.example.baads.databinding.FragmentRatingBinding;
 import com.example.baads.mainFiles.usernameStorage;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -20,7 +23,7 @@ import java.util.Map;
 
 public class ratingInput extends Fragment {
 
-    private FragmentFirst5Binding binding;
+    private FragmentRatingBinding binding;
     private FirebaseFirestore databaseLoginInfoConnection;
 
     @Override
@@ -29,7 +32,7 @@ public class ratingInput extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentFirst5Binding.inflate(inflater, container, false);
+        binding = FragmentRatingBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -47,8 +50,11 @@ public class ratingInput extends Fragment {
 
         Map<String, Object> data1 = new HashMap<>();
 //All you need to do is swap out"descriptive sentence" and "task" for their respective variables
+
+
         data1.put("Rating", userInput);
-        
+
+
         databaseLoginInfoConnection.collection("users")
                 .document(usernameStorage.username)
                 .collection("stressRating")
