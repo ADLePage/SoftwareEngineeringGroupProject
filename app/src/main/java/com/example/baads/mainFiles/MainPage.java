@@ -53,6 +53,7 @@ public class MainPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
+
                         .navigate(R.id.youTubeActivity2);
             }
         });
