@@ -12,25 +12,34 @@ import androidx.core.app.NotificationManagerCompat;
 
 import com.example.baads.R;
 
-//By using the broadcast receiver default class
-//And sourcing from https://www.youtube.com/watch?v=xSrVWFCtgaE
-//Huge credit to Foxandroid
-//I was having trouble setting up the notification and sound part for the alarm,
-//and used this code to be able to set up an alarm system
-//A majority of code is here thanks to them.
+/** @MyReceiver
+ *  This is the receiver for the alarm notification.
+ *
+ *  Much of the code is sourced from https://www.youtube.com/watch?v=xSrVWFCtgaE
+ *  Huge credit to Foxandroid, followed their tutorial.
+ *
+ *  Credit to http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
+ *  Format for Uri creation
+ *
+ *  https://developer.android.com/guide/topics/media/mediaplayer
+ *  MediaPlayer documentation for playing sound
+ *
+ */
 public class MyReceiver extends BroadcastReceiver {
 
     public static MediaPlayer alarmSounder;
     @Override
     public void onReceive(Context context, Intent intent) {
         // TODO: This method is called when the BroadcastReceiver is receiving
-        // an Intent broadcast.
-        //Source: http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
-        //Format for Uri creation.
-        Uri alarmSound = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.alarm_sound);
 
+        //Source Java2s
+        Uri alarmSound = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.alarm_sound);
+        //Source Java2s
+
+        //https://developer.android.com/guide/topics/media/mediaplayer
         alarmSounder = MediaPlayer.create(context,alarmSound);
         alarmSounder.start();
+
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "Alarm System")
                 .setSmallIcon(R.drawable.ic_launcher_background)
                 .setContentTitle("BAADS stress relief Alarm Manager")

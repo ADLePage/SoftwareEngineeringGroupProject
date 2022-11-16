@@ -1,11 +1,7 @@
 package com.example.baads.positiveThoughts;
-
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.os.Bundle;
 
 import com.example.baads.R;
-import com.example.baads.databinding.ActivityPositiveThoughtsBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;

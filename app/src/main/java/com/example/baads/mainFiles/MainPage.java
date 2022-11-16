@@ -30,7 +30,7 @@ public class MainPage extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ////Creates a binding to send user to the sound bar
+        //Creates a binding to send user to the sound bar
         binding.positiveThoughts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,7 +38,7 @@ public class MainPage extends Fragment {
                         .navigate(R.id.action_FirstFragment_to_positiveAffirmationsReworkFragment);
             }
         });
-        ////Creates a binding to send user to the sound bar
+        //Creates a binding to send user to the sound bar
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -22,13 +22,16 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-//Sourced from https://firebase.google.com/docs/firestore/query-data/get-data?utm_source=studio
-//Needed to be able to get a reference from the database.
-//Sourced from the original firebase example.
 
-//This fragment deals with establishing a connection to the FirestoneDatabase and searching for a users information
-//If found, it will allow a login and store a username within the usernameStorage class
-    //This username can be accessed by calling usernameStorage.username
+/** LoginFragment
+ *
+ *  This fragment deals with establishing a connection to the FirestoneDatabase and searching for a users information
+ *  If found, it will allow a login and store a username within the usernameStorage class
+ *      This username can be accessed by calling usernameStorage.username
+ *
+ *  Source: https://firebase.google.com/docs/firestore/query-data/get-data?utm_source=studio
+ *  Sourced their code to make a connection, and find from our database.
+ */
 public class LoginFragment extends Fragment {
 
     private FragmentFirst2Binding binding;
@@ -77,10 +80,8 @@ public class LoginFragment extends Fragment {
                 username = String.valueOf(binding.username.getText());
                 password = String.valueOf(binding.password.getText());
                 if(!(username.isEmpty()||password.isEmpty())) {
-                    //Sourced from https://firebase.google.com/docs/firestore/query-data/get-data?utm_source=studio
-                    //Needed to be able to get a reference from the database.
-                    //Sourced from the original firebase example.
 
+                    //Sourced from https://firebase.google.com/docs/firestore/query-data/get-data?utm_source=studio
                     //Gets the document reference.
                     //This this case, it takes from the users collection, and finds the user with the inputted username.
                     DocumentReference docRef = databaseLoginInfoConnection.collection("users").document(username);

@@ -8,7 +8,6 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 
 import android.media.AudioAttributes;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
@@ -29,34 +28,30 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
-
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicReference;
 
-//Source: https://www.tutorialspoint.com/how-to-create-a-thread-in-java
-//Trying to figure out how to implement positive affirmations to randomize messages given to user.
-//Had an idea of running a thread and putting it to sleep for a duration so the user isn't bombarded with messages
-//although I had no idea how threads worked in java.
-
-//Sourced from https://firebase.google.com/docs/firestore/query-data/aggregation-queries
-//Also sourced from //Sourced from https://firebase.google.com/docs/firestore/query-data/get-data?utm_source=studio
-//Needed to source in order to be able to create queries
-
-//Source: https://www.youtube.com/watch?v=xSrVWFCtgaE
-//Used Foxandroids tutorial to create notification channels.
-
-//Source: https://freesound.org/people/IENBA/sounds/545495/
-//License: https://creativecommons.org/licenses/by/4.0/
-//Used sound for Positive notifications
-
-//This is a thread runner that essentially loops pulling from the database a couple of things
-    //Amount of things within the affirmations data
-        //I take a random number, % the amount of affirmations within the database, and then pull a random affirmation
-        //using that result
-//Then displays a notification with that affirmation pulled from the database.
-//Then puts the thread to sleep for a minute.
-//Repeat if switch flipped is still true.
+/**
+ * Source: https://www.youtube.com/watch?v=xSrVWFCtgaE
+ * Tutorial for creating notifications. Credit to Foxandroid
+ *
+ * Source: https://firebase.google.com/docs/firestore/query-data/aggregation-queries
+ * Sourced firebase documentation in order to create queries
+ *
+ * Source: https://www.tutorialspoint.com/how-to-create-a-thread-in-java
+ * Used their tutorial in order to create threads in java.
+ *
+ * Source: https://freesound.org/people/IENBA/sounds/545495/
+ * License: https://creativecommons.org/licenses/by/4.0/
+ * Used sound for Positive notifications
+ *
+ * Source: https://stackoverflow.com/questions/40800288/math-random-generates-same-number
+ * Used this random number generator instead of Math.Random()
+ * Credit to developer
+ *
+ * Source: http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
+ * Used java2s tutorial in order to create AudioAttribute.
+ * Used their creation of them in this document. Same with Uri creation
+ */
 public class positiveAffirmationsThread implements Runnable {
 
     Thread positiveAffirmations;
@@ -73,7 +68,6 @@ public class positiveAffirmationsThread implements Runnable {
     @Override
     public void run() {
         DocumentReference docRef;
-
         //While the switch in positive Thoughts is flipped, it will continue to do this.
         //Once turned off, it will no longer call this.
         while (positiveAffirmationsReworkFragment.isSwitchFlipped) {
@@ -81,7 +75,6 @@ public class positiveAffirmationsThread implements Runnable {
             final String[] returnValue = new String[1];
             //initializing value INCASE for some reason it cannot connect to the database fast enough.
             returnValue[0]= "You've got this!";
-
             CollectionReference collection = databaseLoginInfoConnection.collection("Affirmations");
             Query query = collection;
             AggregateQuery countingAffirmations = query.count();
@@ -133,8 +126,6 @@ public class positiveAffirmationsThread implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
-
             //Source: Foxandroid
             //Creates a notificationcompat and a notification channel.
             NotificationCompat.Builder builder = new NotificationCompat.Builder(activityThread, "Positive Thoughts")
@@ -149,6 +140,7 @@ public class positiveAffirmationsThread implements Runnable {
                 String description = "Affirmation Notification Channel";
                 int importance = NotificationManager.IMPORTANCE_DEFAULT;
                 NotificationChannel channel = new NotificationChannel("Positive Thoughts", name, importance);
+
                 //Source: http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
                 //AudioAttribute creator, sourcing java2s's AudioAttribute creation
                 //in order to be able to create an audioattribute to attach to an alarmsound.
