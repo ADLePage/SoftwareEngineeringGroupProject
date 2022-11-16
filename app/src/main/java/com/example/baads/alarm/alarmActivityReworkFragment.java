@@ -128,7 +128,7 @@ public class alarmActivityReworkFragment extends Fragment {
         mainAlarm = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
 
         Intent intent = new Intent(getActivity(), MyReceiver.class);
-        pendingIntent = PendingIntent.getBroadcast(getActivity(),0,intent,0);
+        pendingIntent = PendingIntent.getBroadcast(getActivity(),1,intent,0);
         mainAlarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,
                 calendar.getTimeInMillis(), 1000,
                 pendingIntent);
@@ -140,12 +140,16 @@ public class alarmActivityReworkFragment extends Fragment {
     //that they need to wake up.
     private void cancelAlarm(){
         Intent intent = new Intent(getActivity(),MyReceiver.class);
-        pendingIntent = PendingIntent.getBroadcast(getActivity(),0,intent,0);
+        pendingIntent = PendingIntent.getBroadcast(getActivity(),1,intent,0);
 
         if(mainAlarm == null){
             mainAlarm = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
         }
-        notificationManager.deleteNotificationChannel("Alarm System");
+        try{
+            notificationManager.deleteNotificationChannel("Alarm System");
+        }catch (NullPointerException e){
+            
+        }
         mainAlarm.cancel(pendingIntent);
         try {
             //This is the media player within the receiver. Due to some weird interaction I need to instead
@@ -226,9 +230,10 @@ public class alarmActivityReworkFragment extends Fragment {
             String description = "Channel For Alarm";
             int importance = NotificationManager.IMPORTANCE_HIGH;
 
-
             channel = new NotificationChannel("Alarm System",name,importance);
             channel.setDescription(description);
+            //we dont want sound from here.
+            channel.setSound(null,null);
 
             notificationManager = getActivity().getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);

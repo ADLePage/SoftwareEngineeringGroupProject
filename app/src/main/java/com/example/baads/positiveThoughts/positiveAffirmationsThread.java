@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 
+import android.media.AudioAttributes;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -61,11 +62,9 @@ public class positiveAffirmationsThread implements Runnable {
     Thread positiveAffirmations;
     Activity activityThread;
     private NotificationManager notificationManager;
-    private MediaPlayer notificationSound;
     private FirebaseFirestore databaseLoginInfoConnection;
-    private static int countVariable;
+    private static int countVariable = 1;
     positiveAffirmationsThread(Activity activity){
-        notificationSound = null;
         activityThread = activity;
         databaseLoginInfoConnection = FirebaseFirestore.getInstance();
         positiveAffirmations = new Thread(this, "positiveAffirmation");
@@ -73,10 +72,6 @@ public class positiveAffirmationsThread implements Runnable {
     }
     @Override
     public void run() {
-        //Source: http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
-        //Format for Uri creation.
-        Uri alarmSound = Uri.parse("android.resource://" + activityThread.getPackageName() + "/" + R.raw.positive_sound);
-        MediaPlayer notificationSound = MediaPlayer.create(activityThread,alarmSound);
         DocumentReference docRef;
 
         //While the switch in positive Thoughts is flipped, it will continue to do this.
@@ -138,6 +133,8 @@ public class positiveAffirmationsThread implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
+
             //Source: Foxandroid
             //Creates a notificationcompat and a notification channel.
             NotificationCompat.Builder builder = new NotificationCompat.Builder(activityThread, "Positive Thoughts")
@@ -145,25 +142,31 @@ public class positiveAffirmationsThread implements Runnable {
                     .setContentTitle("Affirmation Notification")
                     .setContentText(returnValue[0])
                     .setTimeoutAfter(5000)
-                    .setPriority(NotificationCompat.PRIORITY_HIGH);
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 CharSequence name = "Positive Notification";
                 String description = "Affirmation Notification Channel";
-                int importance = NotificationManager.IMPORTANCE_HIGH;
+                int importance = NotificationManager.IMPORTANCE_DEFAULT;
                 NotificationChannel channel = new NotificationChannel("Positive Thoughts", name, importance);
-                channel.setDescription(description);
+                //Source: http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
+                //AudioAttribute creator, sourcing java2s's AudioAttribute creation
+                //in order to be able to create an audioattribute to attach to an alarmsound.
+                AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                        .setUsage(AudioAttributes.USAGE_NOTIFICATION)
+                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                        .build();
+                //Source: http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
+                //Format for Uri creation.
+                Uri alarmSound = Uri.parse("android.resource://" + activityThread.getPackageName() + "/" + R.raw.positive_sound);
 
-                //Source: https://freesound.org/people/IENBA/sounds/545495/
-                //License: https://creativecommons.org/licenses/by/4.0/
-                //Used sound for Positive notifications
-                notificationSound.start();
+                channel.setSound(alarmSound,audioAttributes);
+                channel.setDescription(description);
 
                 notificationManager = activityThread.getSystemService(NotificationManager.class);
                 notificationManager.createNotificationChannel(channel);
             }
             NotificationManagerCompat notificationManager = NotificationManagerCompat.from(activityThread);
-
             notificationManager.notify(100, builder.build());
             try {
                 Thread.sleep(60000);

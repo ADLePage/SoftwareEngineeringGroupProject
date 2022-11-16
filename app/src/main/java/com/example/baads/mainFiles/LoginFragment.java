@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -60,6 +61,15 @@ public class LoginFragment extends Fragment {
             }
         });
 
+        TextView errorTextModify = binding.errorText;
+        errorTextModify.setAlpha(0);
+
+        TextView usernameInteraction = binding.username;
+        usernameInteraction.setOnClickListener(e->errorTextModify.setAlpha(0));
+
+        TextView passwordInteraction = binding.password;
+        passwordInteraction.setOnClickListener(e->errorTextModify.setAlpha(0));
+
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceType")
             @Override
@@ -77,7 +87,7 @@ public class LoginFragment extends Fragment {
 
                     //Checks whether or not there was an account with the username.
                     if(!(docRef.get().isSuccessful())){
-                        binding.errorText.setText("ERROR: NO ACCOUNT TIED TO THAT USERNAME OR PASSWORD");
+                        errorTextModify.setAlpha(1);
                     }
                     //This is what we use to be able to login.
                     docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -90,7 +100,7 @@ public class LoginFragment extends Fragment {
                                 if (document.exists()) {
                                     //checks if the document contains the users password.
                                     if(document.getData().containsValue(password)) {
-                                        binding.errorText.setText("");
+                                        errorTextModify.setAlpha(0);
                                         //source : https://stackoverflow.com/questions/1944656/android-global-variable
                                         //Trying to figure out how to store a variable (in this case a username) across all activities.
                                         //Used this idea from the stackoverflow
@@ -107,7 +117,7 @@ public class LoginFragment extends Fragment {
                         }
                     });
                 }
-                else binding.errorText.setText("ERROR: NO ACCOUNT TIED TO THAT USERNAME OR PASSWORD");
+                errorTextModify.setAlpha(1);
             }
         });
     }
