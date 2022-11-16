@@ -19,7 +19,7 @@
             app:destination="@id/soundBar" />
         <action
             android:id="@+id/action_FirstFragment_to_agenda"
-            app:destination="@id/agenda" />
+            app:destination="@id/agendaReworkFragment" />
         <action
             android:id="@+id/action_FirstFragment_to_dailyActivity2"
             app:destination="@id/dailyActivity2" />
