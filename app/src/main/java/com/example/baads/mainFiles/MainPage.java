@@ -30,7 +30,7 @@ public class MainPage extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ////Creates a binding to send user to the sound bar
+        //Creates a binding to send user to the sound bar
         binding.positiveThoughts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,12 +38,12 @@ public class MainPage extends Fragment {
                         .navigate(R.id.action_FirstFragment_to_positiveAffirmationsReworkFragment);
             }
         });
-        ////Creates a binding to send user to the sound bar
+        //Creates a binding to send user to the sound bar
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_soundBar);
+                        .navigate(R.id.action_FirstFragment_to_soundBarReworkFragment);
             }
         });
         //Creates a binding to send user to the music player
@@ -53,7 +53,8 @@ public class MainPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_agenda);
+
+                        .navigate(R.id.youTubeActivity2);
             }
         });
 
@@ -86,7 +87,7 @@ public class MainPage extends Fragment {
         binding.agenda.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_agenda);
+                        .navigate(R.id.action_FirstFragment_to_agendaReworkFragment);
             }
         });
 
@@ -104,6 +105,14 @@ public class MainPage extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
                         .navigate(R.id.action_FirstFragment_to_wikiTipsFragmentReworked);
+            }
+        });
+
+        binding.stressRating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(MainPage.this)
+                        .navigate(R.id.action_FirstFragment_to_ratingInput);
             }
         });
 

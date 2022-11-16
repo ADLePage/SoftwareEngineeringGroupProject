@@ -1,4 +1,4 @@
-package com.example.baads;
+package com.example.baads.raterFolder;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,13 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-//import com.example.baads.databinding.FragmentSecondBinding;
-import com.example.baads.databinding.FragmentMusicBinding;
+import com.example.baads.databinding.FragmentSecondBinding;
 
-public class MusicPlayer extends Fragment {
+public class ratingGraph extends Fragment {
 
-    //Change this
-    private FragmentMusicBinding binding;
+    private FragmentSecondBinding binding;
 
     @Override
     public View onCreateView(
@@ -23,13 +21,15 @@ public class MusicPlayer extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        //Change this
-        binding = FragmentMusicBinding.inflate(inflater, container, false);
+        binding = FragmentSecondBinding.inflate(inflater, container, false);
         return binding.getRoot();
+
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
     }
 
     @Override

@@ -25,38 +25,34 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.Date;
-//@Author Aidan LePage
 
-//https://stackoverflow.com/questions/42211527/getpackagename-in-fragment
-//Helped with getting packagename in fragment.
-
-//This file deals with creating functionality for the widgets on the alarm page,
-//functionality for the alarm system, and alot of management of that page.
-
-//Alarm clock sound used.
-//Sound used: https://freesound.org/people/joedeshon/sounds/78562/
-//Creative license: https://creativecommons.org/licenses/by/4.0/
-
-//Credit to java2s, source http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
-//Helpful in figuring out how to set up setSound for notificationChannel.
-//Used their AttributeSounds format.
-
-//Huge credit to Foxandroid, source https://www.youtube.com/watch?v=xSrVWFCtgaE.
-//Much of the code regarding the alarm system and broadcasting is theirs and give total credit to them.
-//Needed their code to create a notification system along with an alarm system.
-
-/*
-This class deals with the alarm function.
-On click of the switch within the alarm fragment, it will
-    Check whether or not the inputted data is correct.
-    If correct, then it will submit it to a calendar object.
-    That calendar object is checked whether or not the date is for today or tomorrow.
-    Send it to a receiver
-    Also builds a notification manager
-        when the alarm sounds, it will play a notification and an alarm noise.
-If the switch is turned off, it will delete
-    the notification
-    and try to stop the alarm noise.
+/** @alarmActivityReworkFragment
+ *  @author Aidan LePage
+ *  Deals with alarm functionality and setting up the fragment page to be used by the program.
+ *  Assigns functionality to switch, which takes user input, if within bounds, and creates an
+ *  alarm that sounds on the specified time for 20 seconds and every minute unless turned off
+ *  by the user.
+ *
+ *  Huge credit to Foxandroid
+ *  source: https://www.youtube.com/watch?v=xSrVWFCtgaE.
+ *  Much of the code is sourced from their alarm tutorial on youtube.
+ *
+ *  Alarm clock sound used.
+ *  Sound used: https://freesound.org/people/joedeshon/sounds/78562/
+ *  Creative license: https://creativecommons.org/licenses/by/4.0/
+ *
+ *  https://stackoverflow.com/questions/42211527/getpackagename-in-fragment
+ *  When converting this from an activity to a fragment, had a hard time figuring out how to
+ *  acquire certain variables for functions. Used throughout project in fragments.
+ *  Credit to Steve for the answer.
+ *
+ *  https://abhiandroid.com/ui/edittext
+ *  Manipulating variables. Credit toabhiandroid
+ *
+ *  https://stackoverflow.com/questions/4531396/get-value-of-a-edit-text-field
+ *  Getting text value of textView. Credit to svdree
+ *
+ *
  */
 public class alarmActivityReworkFragment extends Fragment {
 
@@ -77,6 +73,7 @@ public class alarmActivityReworkFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setValuesBackToUserInput();
+        //Set the switch to do alarmAction.
         binding.AlarmSwitch1.setOnClickListener(e->doAlarmFunction());
     }
 
@@ -86,9 +83,9 @@ public class alarmActivityReworkFragment extends Fragment {
         binding = null;
     }
 
-    //Source https://www.youtube.com/watch?v=xSrVWFCtgaE
-    //All credit goes to Foxandroid
-    //Foxandroids private variables mainAlarm and pendingIntent that we need for the alarm system to work.
+    /**Source https://www.youtube.com/watch?v=xSrVWFCtgaE
+     * Foxandroids private variables
+     */
     private AlarmManager mainAlarm;
     private PendingIntent pendingIntent;
 
@@ -99,7 +96,11 @@ public class alarmActivityReworkFragment extends Fragment {
     public static String minute1;
     public static boolean time1Flipped = false;
 
-    //Checks whether or not the user input correct data.
+    /**@isCorrectSyntax(String hour, String minute)
+     * @param hour
+     * @param minute
+     * @return whether or not was correct syntax
+     */
     public boolean isCorrectSyntax(String hour, String minute){
         if(hour.isEmpty()||minute.isEmpty()){
             return false;
@@ -112,7 +113,10 @@ public class alarmActivityReworkFragment extends Fragment {
         }
         return false;
     }
-    //If loading page again, reload back user inputted values.
+
+    /**@setValuesBackToUser()
+     * Resets the page back to the what the user has set it.
+     */
     private void setValuesBackToUserInput(){
         Switch alarmSwitch = getActivity().findViewById(R.id.AlarmSwitch1);
         TextView textViewHour = getActivity().findViewById(R.id.AlarmTimeInputHour1);
@@ -121,31 +125,37 @@ public class alarmActivityReworkFragment extends Fragment {
         textViewHour.setText(hour1);
         textViewMinute.setText(minute1);
     }
-    //Source https://www.youtube.com/watch?v=xSrVWFCtgaE
-    //All credit goes to Foxandroid. Need for alarm to work.
-    //This starts up the alarm and primes the broadcast to be able to tell user to wake up.
+    /**
+     * @startAlarmClock(Calendar calendar)
+     * @param calendar
+     * takes a calendar object, sends a request to MyReceiver, and starts the alarm.
+     * source: https://www.youtube.com/watch?v=xSrVWFCtgaE
+     * Credit to Foxandroid. Sourced from their tutorial
+     */
     private void startAlarmClock(Calendar calendar){
         mainAlarm = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
-
         Intent intent = new Intent(getActivity(), MyReceiver.class);
-        pendingIntent = PendingIntent.getBroadcast(getActivity(),0,intent,0);
+        pendingIntent = PendingIntent.getBroadcast(getActivity(),1,intent,0);
         mainAlarm.setInexactRepeating(AlarmManager.RTC_WAKEUP,
                 calendar.getTimeInMillis(), 1000,
                 pendingIntent);
     }
-    //Source https://www.youtube.com/watch?v=xSrVWFCtgaE
-    //All credit goes to Foxandroid.
-    //Needed to figure out how to do a cancel on the notification. Credit to Foxandroid again
-    //This part creates an intent that is used to broadcast to the user using the MyReciever class
-    //that they need to wake up.
+    /**@cancelAlarm()
+     * @return void
+     * Needed to use in order to cancel the alarm.
+     * Credit to Foxandroid. Sourced from their tutorial
+     * Source: https://www.youtube.com/watch?v=xSrVWFCtgaE
+     */
     private void cancelAlarm(){
         Intent intent = new Intent(getActivity(),MyReceiver.class);
-        pendingIntent = PendingIntent.getBroadcast(getActivity(),0,intent,0);
-
+        pendingIntent = PendingIntent.getBroadcast(getActivity(),1,intent,0);
         if(mainAlarm == null){
             mainAlarm = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
         }
-        notificationManager.deleteNotificationChannel("Alarm System");
+        try{
+            notificationManager.deleteNotificationChannel("Alarm System");
+        }catch (NullPointerException e){
+        }
         mainAlarm.cancel(pendingIntent);
         try {
             //This is the media player within the receiver. Due to some weird interaction I need to instead
@@ -154,47 +164,63 @@ public class alarmActivityReworkFragment extends Fragment {
         }catch(NullPointerException e){
             //This try catch is in-case the media player is not playing.
         }
-
         Toast.makeText(getActivity(), "Alarm Cancelled", Toast.LENGTH_SHORT).show();
     }
+
+    /**@doAlarmFunction()
+     * @return void
+     *
+     * This is the main alarm function.
+     * Flips variable that says alarm is active
+     * If alarm is inactive
+     * Get the text within the user input
+     *
+     * If it is correct syntax
+     *  create the notification for alarm
+     *  Pull values from user input and create a calendar
+     *  Toast the input back to the user
+     *  Start alarm
+     *
+     * If not correct syntax
+     *  flip variable back
+     *  set alarm to boolean
+     *  reset input
+     *  Toast error text
+     *
+     * If alarm is inactive
+     *  cancel alarm
+     *
+     *  Sources:
+     *  https://abhiandroid.com/ui/edittext
+     *      Manipulating variables
+     *  https://stackoverflow.com/questions/4531396/get-value-of-a-edit-text-field
+     *      Getting value of textViews
+     *  https://www.youtube.com/watch?v=xSrVWFCtgaE
+     *      Credit to Foxandroid. Parts sourced from their tutorial.
+     */
     private void doAlarmFunction(){
         time1Flipped = !time1Flipped;
         if(time1Flipped) {
-            //Checks if input in the first alarm is correct.
-            //Takes in hours in first parameter, and minutes in second
-            //Source https://abhiandroid.com/ui/edittext
-            //Been a while since i've done android studio,
-            //needed to figure out how to manipulate variables.
             TextView textViewHour = getActivity().findViewById(R.id.AlarmTimeInputHour1);
             TextView textViewMinute = getActivity().findViewById(R.id.AlarmTimeInputMinute1);
-            //https://stackoverflow.com/questions/4531396/get-value-of-a-edit-text-field
-            //credit to svdree. Could not figure out how to get textvalues, on this stack overflow
-            //They tell how to get them from inputs.
             if(isCorrectSyntax(
                     textViewHour.getText().toString(),
                     textViewMinute.getText().toString())) {
-                //Once again https://www.youtube.com/watch?v=xSrVWFCtgaE
-                //All credit goes to Foxandroid. All this is theirs.
-                //I needed code to be able to make a notification for the android alarm system.
+                //Credit to Foxandroid
                 createNotificationForAlarm();
-
+                //End of Credit
                 String hour = textViewHour.getText().toString();
                 String minute = textViewMinute.getText().toString();
                 hour1 = hour;
                 minute1 = minute;
-
-                //Source https://www.youtube.com/watch?v=xSrVWFCtgaE
-                //All credit goes to Foxandroid. Could not figure out how to do the
-                //alarm function but thanks to them and their code I was able to implement. This part creates a calendar object
-                //That then gets set with user input.
+                //Credit to Foxandroid
                 Calendar calendar = Calendar.getInstance();
                 calendar.set(Calendar.HOUR_OF_DAY,Integer.parseInt(textViewHour.getText().toString()));
                 calendar.set(Calendar.MINUTE,Integer.parseInt(textViewMinute.getText().toString()));
                 calendar.set(Calendar.SECOND,0);
                 calendar.set(Calendar.MILLISECOND,0);
-                //Toast.makeText(getActivity().this, "Calendar Time:" + calendar.getTimeInMillis() + "\n" + "Actual Time:" + System.currentTimeMillis(), Toast.LENGTH_LONG).getActivity().show();
+                //End of Credit
                 Date date = calendar.getTime();
-
                 //In the case the user wants to set an alarm for tomorrow.
                 if(calendar.getTimeInMillis()<System.currentTimeMillis()){
                     calendar.setTimeInMillis(calendar.getTimeInMillis()+(24*60*60*1000));
@@ -202,8 +228,9 @@ public class alarmActivityReworkFragment extends Fragment {
                 }else{
                     Toast.makeText(getActivity().getApplication(), "Alarm set for today "+date.getHours()+":"+date.getMinutes(), Toast.LENGTH_SHORT).show();
                 }
-                //This part sends the calendar to the event handler.
+                //Credit to Foxandroid
                 startAlarmClock(calendar);
+                //End of credit
             }else{
                 Toast.makeText(getActivity(), "Error, input valid time", Toast.LENGTH_SHORT).show();
                 time1Flipped = false;
@@ -217,18 +244,23 @@ public class alarmActivityReworkFragment extends Fragment {
             cancelAlarm();
         }
     }
-    //https://www.youtube.com/watch?v=xSrVWFCtgaE
-    //All credit goes to Foxandroid  (unless stated for java2s). needed to figure out how to create a notification channel
-    //request for the alarm system. This builds and creates an object that will be used as a notification for the user to wake up.
+
+    /**@createNotificationForAlarm()
+     * @return void
+     * source: https://www.youtube.com/watch?v=xSrVWFCtgaE
+     * All credit goes to Foxandroid. Request for the alarm system. This builds and
+     * creates an object that will be used as a notification for the user to wake up.
+     */
     private void createNotificationForAlarm(){
         if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.O){
             CharSequence name = "baadsstressreliefChannel";
             String description = "Channel For Alarm";
             int importance = NotificationManager.IMPORTANCE_HIGH;
 
-
             channel = new NotificationChannel("Alarm System",name,importance);
             channel.setDescription(description);
+            //we dont want sound from here.
+            channel.setSound(null,null);
 
             notificationManager = getActivity().getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);

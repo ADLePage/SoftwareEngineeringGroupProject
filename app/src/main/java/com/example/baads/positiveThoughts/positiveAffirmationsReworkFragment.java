@@ -1,9 +1,5 @@
 package com.example.baads.positiveThoughts;
 
-
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +15,17 @@ import com.example.baads.R;
 import com.example.baads.databinding.ActivityPositiveThoughtsBinding;
 
 
-
+/**positiveAffrmationsReworkFragment
+ * Class that deals with setting page functionality and allowing the creation of threads to run notifications in backgrounds.
+ *
+ * source: https://www.tutorialspoint.com/how-to-create-a-thread-in-java
+ * Dealing with creation of threads in java
+ *
+ * https://www.youtube.com/watch?v=xSrVWFCtgaE
+ * Followed their tutorial to create notifications for user.
+ * Modified code in order to work with threads and no longer use receivers
+ *
+ */
 public class positiveAffirmationsReworkFragment extends Fragment {
 
     private ActivityPositiveThoughtsBinding binding;
@@ -31,10 +37,8 @@ public class positiveAffirmationsReworkFragment extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = ActivityPositiveThoughtsBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     //Resets page back to user saved settings.
@@ -43,26 +47,16 @@ public class positiveAffirmationsReworkFragment extends Fragment {
         thoughtEnabler.setChecked(isSwitchFlipped);
     }
 
-    //https://www.youtube.com/watch?v=xSrVWFCtgaE
-    //All credit goes to Foxandroid. Repurposing this creation of notification for alarms to display positive
-    //affirmations for the user.
-    private void createNotificationForAlarm(){
-        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.O){
-            CharSequence name = "baadsstressreliefChannel";
-            String description = "Channel For Positive Affirmations";
-            int importance = NotificationManager.IMPORTANCE_HIGH;
-            NotificationChannel channel = new NotificationChannel("Positive Thoughts",name,importance);
-            channel.setDescription(description);
-
-            NotificationManager notificationManager = getActivity().getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel);
-        }
-    }
-
-    //Source: https://www.tutorialspoint.com/how-to-create-a-thread-in-java
-    //Source: https://www.youtube.com/watch?v=xSrVWFCtgaE
-    //Credit for Foxandroid and tutorialspoint for how to create this. Combined both into a thread that
-    //In the background will make notifications and sounds.
+    /**buttonAction()
+     *
+     * @throws InterruptedException
+     * Source: https://www.tutorialspoint.com/how-to-create-a-thread-in-java
+     *  Threads in java
+     * Source: https://www.youtube.com/watch?v=xSrVWFCtgaE
+     *  Notifications
+     *
+     *  Combined both of these so that notifications could be used in threads.
+     */
     private void buttonAction() throws InterruptedException {
         isSwitchFlipped = !isSwitchFlipped;
         if(isSwitchFlipped) {
@@ -76,8 +70,6 @@ public class positiveAffirmationsReworkFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         resetPageToSave();
-
-        createNotificationForAlarm();
 
         Button button = getActivity().findViewById(R.id.positiveThoughtEnabler);
         button.setOnClickListener(e-> {

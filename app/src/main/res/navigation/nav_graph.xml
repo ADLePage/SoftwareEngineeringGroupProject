@@ -38,6 +38,22 @@
         <action
             android:id="@+id/action_FirstFragment_to_selfCareListReworkedFragment"
             app:destination="@id/selfCareListReworkedFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_youTubeActivity2"
+            app:destination="@id/youTubeActivity2" />
+        <action
+            android:id="@+id/action_FirstFragment_to_agendaReworkFragment"
+            app:destination="@id/agendaReworkFragment" />
+    <action
+            android:id="@+id/action_FirstFragment_to_soundBarReworkFragment"
+            app:destination="@id/soundBarReworkFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_youTubeReworkedFragment"
+            app:destination="@id/youTubeReworkedFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_ratingInput"
+            app:destination="@id/ratingInput" />
+
     </fragment>
     <fragment
         android:id="@+id/musicPlayer"
@@ -45,12 +61,12 @@
         android:label="MusicPlayer" />
     <activity
         android:id="@+id/soundBar"
-        android:name="com.example.baads.SoundBar"
+        android:name="com.example.baads.soundBar.SoundBarOLD"
         android:label="activity_sound_bar"
         tools:layout="@layout/activity_sound_bar" />
     <activity
         android:id="@+id/agenda"
-        android:name="com.example.baads.Agenda"
+        android:name="com.example.baads.agenda.Agenda"
         android:label="activity_agenda"
         tools:layout="@layout/activity_agenda" />
     <fragment
@@ -88,6 +104,28 @@
         android:id="@+id/selfCareListReworkedFragment"
         android:name="com.example.baads.selfCareList.selfCareListReworkedFragment"
         android:label="selfCareListReworkedFragment" />
+    <activity
+        android:id="@+id/youTubeActivity2"
+        android:name="com.example.baads.youtubePlayer.YouTubeActivity"
+        android:label="YouTubeActivity" />
+    <fragment
+        android:id="@+id/agendaReworkFragment"
+        android:name="com.example.baads.agenda.AgendaReworkFragment"
+        android:label="AgendaReworkFragment" />
+    <fragment
+        android:id="@+id/soundBarReworkFragment"
+        android:name="com.example.baads.soundBar.soundBarReworkFragment"
+        android:label="soundBarReworkFragment" />
+    <fragment
+        android:id="@+id/youTubeReworkedFragment"
+        android:name="com.example.baads.youtubePlayer.YouTubeReworkedFragment"
+        android:label="fragment_first4"
+        tools:layout="@layout/fragment_first4" />
+    <fragment
+        android:id="@+id/ratingInput"
+        android:name="com.example.baads.raterFolder.ratingInput"
+        android:label="ratingInput" />
+
 
 </navigation>
 

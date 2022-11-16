@@ -33,18 +33,39 @@ import com.google.firebase.database.ValueEventListener;
 
 import android.view.Menu;
 import android.view.MenuItem;
-//Source: https://creativecommons.org/publicdomain/zero/1.0/
-//Source: https://freesound.org/people/Provan9/sounds/345684/
-//Used sound for Admin Notifications
+
+
+/**
+ * MainActivity function does realtime database admin notification
+ *
+ * Source: http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
+ * Using java2s AudioAttribute creation.
+ *
+ * Source: https://creativecommons.org/publicdomain/zero/1.0/
+ * Source: https://freesound.org/people/Provan9/sounds/345684/
+ * Used sound for Admin Notifications
+ *
+ * Source: https://developer.android.com/develop/ui/views/notifications/build-notification
+ * Used in order to create admin notifications
+ *
+ * Source: https://creativecommons.org/publicdomain/zero/1.0/
+ * Source: https://freesound.org/people/Provan9/sounds/345684/
+ * Sound for Admin Notifications. admin_alert
+ *
+ * Sourced Firebase realtime usage from tutorial within android studio
+ *
+ */
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
     private NotificationManager notificationManager;
 
-    //Source: https://developer.android.com/develop/ui/views/notifications/build-notification
-    //Sourced from the android developer notification.
-    //Used this in order to create admin notifications.
+    /**
+     * @param value
+     * Source: https://developer.android.com/develop/ui/views/notifications/build-notification
+     * Used their example to create this.
+     */
     private void createAdminNotificationChannel(String value) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "Admin Channel")
                 .setSmallIcon(R.drawable.ic_launcher_background)
@@ -63,16 +84,11 @@ public class MainActivity extends AppCompatActivity {
             channel.setDescription(description);
 
             //Source: http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
-            //AudioAttribute creator, sourcing java2s's AudioAttribute creation
-            //in order to be able to create an audioattribute to attach to an alarmsound.
+            //Using java2s's AudioAttribute creation
             AudioAttributes audioAttributes = new AudioAttributes.Builder()
                     .setUsage(AudioAttributes.USAGE_NOTIFICATION)
                     .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                     .build();
-
-            //Source: https://creativecommons.org/publicdomain/zero/1.0/
-            //Source: https://freesound.org/people/Provan9/sounds/345684/
-            //Used sound for Admin Notifications
 
             //Source: http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
             //Format for Uri creation and setting sound for channel. Needed to be able to set the sound
@@ -110,7 +126,6 @@ public class MainActivity extends AppCompatActivity {
         //Taken from android studio tutorial within the app itself.
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
-
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -122,7 +137,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 value = null;
             }
-
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value

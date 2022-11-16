@@ -1,7 +1,8 @@
-package com.example.baads.positiveThoughts;
+package com.example.baads.raterFolder;
+
 import android.os.Bundle;
 
-import com.example.baads.R;
+import com.example.baads.databinding.ActivityRatingBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,23 +14,23 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.baads.databinding.ActivityPositiveAffirmationsReworkBinding;
+import com.example.baads.R;
 
-public class positiveAffirmationsRework extends AppCompatActivity {
+public class ratingActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityPositiveAffirmationsReworkBinding binding;
+    private ActivityRatingBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityPositiveAffirmationsReworkBinding.inflate(getLayoutInflater());
+        binding = ActivityRatingBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_positive_affirmations_rework);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_rating);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
@@ -44,7 +45,7 @@ public class positiveAffirmationsRework extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_positive_affirmations_rework);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_rating);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
