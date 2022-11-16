@@ -65,7 +65,7 @@ public class AgendaReworkFragment extends Fragment {
         EditText eventEditText = getActivity().findViewById(R.id.editEventText);
         //button
         Button sendEvent = getActivity().findViewById(R.id.newEventButton);
-       sendEvent.setOnClickListener(e->new View.OnClickListener() { // I can't figure out what I need to do here
+       sendEvent.setOnClickListener(e->new View.OnClickListener() {
            @Override
            public void onClick(View view) {
 
@@ -78,7 +78,7 @@ public class AgendaReworkFragment extends Fragment {
                EventText.setText(eventEditText.getText().toString());
 
 
-               String date = "10000";
+               date = "10000";
                //date = actualTime.toString();
 
                Map<String, Object> data1 = new HashMap<>();
