@@ -60,38 +60,20 @@ public class AgendaReworkFragment extends Fragment {
         //initialize connection to data base
         databaseAgendaConnection = FirebaseFirestore.getInstance();
 
-        CollectionReference callref = databaseAgendaConnection
-                .collection("users")
-                .document(usernameStorage.username)
-                .collection("Agenda");
-        callref.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    for (QueryDocumentSnapshot document : task.getResult()) {
-                        Log.d(TAG, document.getId() + " => " + document.getData());
-                    }
-                } else {
-                    Log.d(TAG, "Error getting documents: ", task.getException());
-                }
-            }
-        });
-
-
-
-        //button
         Button sendEvent = getActivity().findViewById(R.id.newEventButton);
         sendEvent.setOnClickListener(e -> saveEvent());
+
+        getCurrentCollection();
     }
     public void saveEvent() {
-                //editText
                 EditText eventEditText = getActivity().findViewById(R.id.editEventText);
                 //stores user input in a string variable to be later added to database
                 event = eventEditText.getText().toString();
 
-                //textView
-                TextView EventText = getActivity().findViewById(R.id.EventListText);
-                EventText.setText(eventEditText.getText().toString());
+
+
+
+
                 //gets the current time upon button press
                 Calendar calendar = Calendar.getInstance();
                 Date actualTime = calendar.getTime();
@@ -105,6 +87,34 @@ public class AgendaReworkFragment extends Fragment {
                         .collection("Agenda")
                         .document(date)
                         .set(data1);
+
+                getCurrentCollection();
+
+    }
+
+
+    public void getCurrentCollection() {
+        final String[] result = {""};
+        databaseAgendaConnection
+                .collection("users")
+                .document(usernameStorage.username)
+                .collection("Agenda").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        result[0] += document.getId() + document.getData().toString() + "\n";
+                    }
+                    TextView EventText = getActivity().findViewById(R.id.EventListText);
+                    EventText.setText(result[0]);
+                } else {
+                    Log.d(TAG, "Error getting documents: ", task.getException());
+                }
+            }
+        });
+
+
     }
 
     @Override

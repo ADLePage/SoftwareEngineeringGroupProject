@@ -45,7 +45,7 @@
         android:layout_height="53dp"
         android:layout_marginBottom="36dp"
         android:ems="10"
-        android:hint="Event"
+        android:hint="Add your tasks here"
         android:inputType="textMultiLine"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/newEventButton"
