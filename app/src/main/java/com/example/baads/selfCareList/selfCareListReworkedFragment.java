@@ -36,7 +36,7 @@ public class selfCareListReworkedFragment extends Fragment {
             "Reflect on things you are grateful for",
             "Eat a healthy meal", "Engage in exercise",
             "Go for a walk", "Drink water", "Practice good sleep hygiene",
-            "Call/text a friend", "Connect with nature",
+            "Call-text a friend", "Connect with nature",
             "Meditate"};
 
 
@@ -51,28 +51,31 @@ public class selfCareListReworkedFragment extends Fragment {
 
     }
 
-
-
-
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         databaseLoginInfoConnection = FirebaseFirestore.getInstance();
 
-        ArrayAdapter<String> tasks = new ArrayAdapter<String>(getActivity(),
+        ArrayAdapter<String> tasks = new ArrayAdapter<>(getActivity(),
                 R.layout.selfcarelist_item_view, R.id.itemTextView,
                 tips);
-
 
         ListView listTasks = getActivity().findViewById(R.id.listView);
         listTasks.setAdapter(tasks);
 
-        Map<String, Object> data1 = new HashMap<>();
-        databaseLoginInfoConnection.collection("users")
-                .document(usernameStorage.username)
-                .collection("SavedIdeas")
-                .document("hello")
-                .set(data1);
+        listTasks.setOnItemClickListener((adapter, v, position, id) -> {
+            String item = adapter.getItemAtPosition(position).toString();
+            Map<String, Object> data1 = new HashMap<>();
+            databaseLoginInfoConnection.collection("users")
+                    .document(usernameStorage.username)
+                    .collection("SavedIdeas")
+                    .document(item)
+                    .set(data1);
+        });
+        //Unused stuff
+        //DocumentReference docRef = databaseLoginInfoConnection.collection("SavedIdeas").document("SavedIdeasList");
+        //CollectionReference colRef = databaseLoginInfoConnection.collection("SavedIdeas");
+
 
         /*
                 binding.listView.setOnClickListener(new View.OnClickListener() {
@@ -88,28 +91,12 @@ public class selfCareListReworkedFragment extends Fragment {
                     }
                 });
                //*/
-        listTasks.setOnItemClickListener((adapter, v, position, id) -> {
-            String item = adapter.getItemAtPosition(position).toString();
 
-            //DocumentReference docRef = databaseLoginInfoConnection.collection("SavedIdeas").document("SavedIdeasList");
-            //CollectionReference colRef = databaseLoginInfoConnection.collection("SavedIdeas");
-
-            Map<String, Object> data2 = new HashMap<>();
-            data1.put("idea",item);
-
-            databaseLoginInfoConnection.collection("users")
-                    .document(usernameStorage.username)
-                    .collection("SavedIdeas")
-                    .document("hello")
-                    .set(data1);
-
-                    //.document(item.toString()).set(colRef);
-// Set the "isCapital" field of the city 'DC'
-           // docRef
-            //        .update("Take a break", true);
-         //   .add(field: item)
-
-        });
+        //.document(item.toString()).set(colRef);
+        // Set the "isCapital" field of the city 'DC'
+        // docRef
+        //        .update("Take a break", true);
+        //   .add(field: item)
     }
 
 
@@ -121,3 +108,4 @@ public class selfCareListReworkedFragment extends Fragment {
     }
 
 }
+
