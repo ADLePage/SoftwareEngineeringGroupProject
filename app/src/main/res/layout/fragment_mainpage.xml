@@ -15,6 +15,7 @@
         android:text="Welcome to BAADS stress free app! Let your stress melt away."
         android:textAlignment="center"
         android:textAppearance="@style/Theme.Baads"
+        android:textColor="#FBFBFB"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +24,7 @@
     <Button
         android:id="@+id/button_First"
         android:layout_width="150dp"
-        android:layout_height="55dp"
+        android:layout_height="70dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="12dp"
         android:text="Soundbars"
@@ -33,7 +34,7 @@
     <Button
         android:id="@+id/TestingButton"
         android:layout_width="150dp"
-        android:layout_height="55dp"
+        android:layout_height="70dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="32dp"
         android:text="Journal Page"
@@ -43,7 +44,7 @@
     <Button
         android:id="@+id/AlarmClock"
         android:layout_width="150dp"
-        android:layout_height="55dp"
+        android:layout_height="70dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="30dp"
         android:text="Alarm Clock"
@@ -53,7 +54,7 @@
     <Button
         android:id="@+id/positiveThoughts"
         android:layout_width="150dp"
-        android:layout_height="55dp"
+        android:layout_height="70dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="32dp"
         android:text="Positive Thoughts"
@@ -63,7 +64,7 @@
     <Button
         android:id="@+id/agenda"
         android:layout_width="150dp"
-        android:layout_height="55dp"
+        android:layout_height="70dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="12dp"
         android:text="Agenda"
@@ -73,7 +74,7 @@
     <Button
         android:id="@+id/youTubeVideo"
         android:layout_width="150dp"
-        android:layout_height="55dp"
+        android:layout_height="70dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="32dp"
         android:text="YouTube Video"
@@ -82,44 +83,41 @@
 
     <Button
         android:id="@+id/SelfCareList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="424dp"
-        android:layout_marginEnd="268dp"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
         android:text="Self Care Ideas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.381"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/agenda" />
 
 
     <Button
         android:id="@+id/wiki2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="60dp"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
         android:text="Wiki Tips"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stressRating" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SelfCareList" />
 
     <Button
         android:id="@+id/dailyActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="28dp"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
         android:text="Daily Activity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/positiveThoughts" />
+        app:layout_constraintTop_toBottomOf="@+id/youTubeVideo" />
 
     <Button
         android:id="@+id/stressRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="63dp"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
         android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dailyActivity" />

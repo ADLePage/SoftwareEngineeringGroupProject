@@ -55,8 +55,6 @@ public class LoginFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         databaseLoginInfoConnection = FirebaseFirestore.getInstance();
 
-
-
         binding.skipButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 NavHostFragment.findNavController(LoginFragment.this)
@@ -110,7 +108,7 @@ public class LoginFragment extends Fragment {
                                                 .navigate(R.id.action_loginFragment_to_FirstFragment);
                                     }
                                 } else {
-                                    Log.d(TAG, "No such document");
+                                    errorTextModify.setAlpha(1);
                                 }
                             } else {
                                 Log.d(TAG, "get failed with ", task.getException());
@@ -118,7 +116,7 @@ public class LoginFragment extends Fragment {
                         }
                     });
                 }
-                errorTextModify.setAlpha(1);
+
             }
         });
     }
