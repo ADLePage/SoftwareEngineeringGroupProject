@@ -16,6 +16,7 @@ import com.example.baads.R;
 import com.example.baads.databinding.ActivitySelfCareListBinding;
 import com.example.baads.mainFiles.LoginFragment;
 import com.example.baads.mainFiles.usernameStorage;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -50,6 +51,9 @@ public class selfCareListReworkedFragment extends Fragment {
 
     }
 
+
+
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -60,25 +64,55 @@ public class selfCareListReworkedFragment extends Fragment {
                 tips);
 
 
-        ListView listTasks = (ListView) getActivity().findViewById(R.id.listView);
+        ListView listTasks = getActivity().findViewById(R.id.listView);
         listTasks.setAdapter(tasks);
-/*
-        binding.listView.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Map<String, Object> data1 = new HashMap<>();
 
-                data1.put("idea1", "Practice mindfulness");
-                databaseLoginInfoConnection.collection("users")
-                        .document(usernameStorage.username)
-                        .collection("SavedIdeas")
-                        .document("SavedIdeasList")
-                        .set(data1);
-            }
+        Map<String, Object> data1 = new HashMap<>();
+        databaseLoginInfoConnection.collection("users")
+                .document(usernameStorage.username)
+                .collection("SavedIdeas")
+                .document("hello")
+                .set(data1);
+
+        /*
+                binding.listView.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View view) {
+                        Map<String, Object> data1 = new HashMap<>();
+
+                        data1.put("idea1", "Practice mindfulness");
+                        databaseLoginInfoConnection.collection("users")
+                                .document(usernameStorage.username)
+                                .collection("SavedIdeas")
+                                .document("SavedIdeasList")
+                                .set(data1);
+                    }
+                });
+               //*/
+        listTasks.setOnItemClickListener((adapter, v, position, id) -> {
+            String item = adapter.getItemAtPosition(position).toString();
+
+            //DocumentReference docRef = databaseLoginInfoConnection.collection("SavedIdeas").document("SavedIdeasList");
+            //CollectionReference colRef = databaseLoginInfoConnection.collection("SavedIdeas");
+
+            Map<String, Object> data2 = new HashMap<>();
+            data1.put("idea",item);
+
+            databaseLoginInfoConnection.collection("users")
+                    .document(usernameStorage.username)
+                    .collection("SavedIdeas")
+                    .document("hello")
+                    .set(data1);
+
+                    //.document(item.toString()).set(colRef);
+// Set the "isCapital" field of the city 'DC'
+           // docRef
+            //        .update("Take a break", true);
+         //   .add(field: item)
+
         });
-       //*/
-
-
     }
+
+
 
     @Override
     public void onDestroyView() {
