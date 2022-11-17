@@ -98,23 +98,17 @@ public class AgendaReworkFragment extends Fragment {
         databaseAgendaConnection
                 .collection("users")
                 .document(usernameStorage.username)
-                .collection("Agenda").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    for (QueryDocumentSnapshot document : task.getResult()) {
-                        result[0] += document.getId() + document.getData().toString() + "\n";
+                .collection("Agenda").get().addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            result[0] += document.getId() + document.getData().get("agendaEvent") + "\n";
+                        }
+                        TextView EventText = getActivity().findViewById(R.id.EventListText);
+                        EventText.setText(result[0]);
+                    } else {
+                        Log.d(TAG, "Error getting documents: ", task.getException());
                     }
-                    TextView EventText = getActivity().findViewById(R.id.EventListText);
-                    EventText.setText(result[0]);
-                } else {
-                    Log.d(TAG, "Error getting documents: ", task.getException());
-                }
-            }
-        });
-
-
+                });
     }
 
     @Override
