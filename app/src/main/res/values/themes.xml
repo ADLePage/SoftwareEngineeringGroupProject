@@ -12,6 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <!-- https://cssgradient.io/shades-of-blue/ -->
+        <!-- source for color of background. -->
         <item name="android:colorBackground">#72A0C1</item>
     </style>
 
