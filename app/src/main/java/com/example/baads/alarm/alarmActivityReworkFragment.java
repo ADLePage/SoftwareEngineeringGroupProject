@@ -275,6 +275,7 @@ public class alarmActivityReworkFragment extends Fragment {
             }
         }else{
             //If you're switching the alarm off, stop the alarm.
+            cancelAlarm();
             setClickableButtons(true);
         }
     }
