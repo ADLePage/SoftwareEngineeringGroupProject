@@ -53,6 +53,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_ratingInput"
             app:destination="@id/ratingInput" />
+        <action
+            android:id="@+id/action_FirstFragment_to_savedListFragment"
+            app:destination="@id/savedListFragment" />
 
     </fragment>
     <fragment
@@ -125,6 +128,10 @@
         android:id="@+id/ratingInput"
         android:name="com.example.baads.raterFolder.ratingInput"
         android:label="ratingInput" />
+    <fragment
+        android:id="@+id/savedListFragment"
+        android:name="com.example.baads.savedList.savedListFragment"
+        android:label="savedListFragment" />
 
 
 </navigation>
