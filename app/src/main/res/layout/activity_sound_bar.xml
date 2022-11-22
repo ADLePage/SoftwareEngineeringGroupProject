@@ -8,44 +8,45 @@
 
     <TextView
         android:id="@+id/whiteNoise"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="111dp"
+        android:layout_height="36dp"
         android:layout_gravity="center"
         android:layout_marginTop="80dp"
         android:text="@string/white_noise_title"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/oceanNoise"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:text="@string/ocean_noise_title"
+        android:layout_width="112dp"
+        android:layout_height="27dp"
         android:layout_gravity="center"
-
+        android:text="@string/ocean_noise_title"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/whiteNoise"
-        app:layout_constraintVertical_bias="0.078" />
-
+        app:layout_constraintVertical_bias="0.062" />
 
     <ImageButton
         android:id="@+id/playOcean"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="420dp"
+        android:backgroundTint="@color/gray"
         android:onClick="playOceanNoise"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/pauseOcean"
-        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintHorizontal_bias="0.83"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playWhite"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.224"
         app:srcCompat="@android:drawable/ic_media_play"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -54,13 +55,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="420dp"
+        android:backgroundTint="@color/gray"
         android:onClick="pauseOceanNoise"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintHorizontal_bias="0.788"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pauseWhite"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.224"
         app:srcCompat="@android:drawable/ic_media_pause"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -68,12 +70,12 @@
         android:id="@+id/playWhite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
-
+        android:layout_marginTop="80dp"
+        android:backgroundTint="@color/gray"
         android:onClick="playWhiteNoise"
         app:layout_constraintBottom_toTopOf="@+id/oceanNoise"
         app:layout_constraintEnd_toStartOf="@+id/pauseWhite"
-        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintHorizontal_bias="0.829"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -84,10 +86,10 @@
         android:id="@+id/pauseWhite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="136dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="76dp"
+        android:backgroundTint="@color/gray"
         android:onClick="pauseWhiteNoise"
-
         app:layout_constraintBottom_toTopOf="@+id/oceanNoise"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
