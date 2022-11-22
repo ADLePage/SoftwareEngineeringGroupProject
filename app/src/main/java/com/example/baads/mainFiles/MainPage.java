@@ -11,7 +11,8 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.baads.R;
 import com.example.baads.databinding.FragmentMainpageBinding;
-
+//https://www.adobe.com/express/create/logo
+//Source for creation of the logo for our app.
 public class MainPage extends Fragment {
 
     private FragmentMainpageBinding binding;
