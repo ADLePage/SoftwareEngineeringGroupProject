@@ -22,15 +22,37 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button_First"
+            android:id="@+id/agenda"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="15dp"
-            android:text="Soundbars"
+            android:text="Agenda"
             android:textAlignment="viewStart"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/AlarmClock" />
+            app:layout_constraintTop_toBottomOf="@+id/button_First" />
+
+        <Button
+            android:id="@+id/AlarmClock"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:text="Alarm Clock"
+            android:textAlignment="viewStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <Button
+            android:id="@+id/dailyActivity"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:text="Daily Activity"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/youTubeVideo" />
 
         <Button
             android:id="@+id/TestingButton"
@@ -55,39 +77,6 @@
             app:layout_constraintTop_toBottomOf="@+id/TestingButton" />
 
         <Button
-            android:id="@+id/AlarmClock"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp"
-            android:text="Alarm Clock"
-            android:textAlignment="viewStart"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-        <Button
-            android:id="@+id/agenda"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp"
-            android:text="Agenda"
-            android:textAlignment="viewStart"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_First" />
-
-        <Button
-            android:id="@+id/youTubeVideo"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp"
-            android:text="YouTube Video"
-            android:textAlignment="viewStart"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/positiveThoughts" />
-
-        <Button
             android:id="@+id/SelfCareList"
             android:layout_width="match_parent"
             android:layout_height="70dp"
@@ -97,6 +86,28 @@
             android:textAlignment="viewStart"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/agenda" />
+
+        <Button
+            android:id="@+id/button_First"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:text="Soundbars"
+            android:textAlignment="viewStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AlarmClock" />
+
+        <Button
+            android:id="@+id/stressRating"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:text="Stress Rating"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dailyActivity" />
 
 
         <Button
@@ -111,26 +122,15 @@
             app:layout_constraintTop_toBottomOf="@+id/SelfCareList" />
 
         <Button
-            android:id="@+id/dailyActivity"
+            android:id="@+id/youTubeVideo"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="15dp"
-            android:text="Daily Activity"
+            android:text="YouTube Video"
             android:textAlignment="viewStart"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/youTubeVideo" />
-
-        <Button
-            android:id="@+id/stressRating"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="15dp"
-            android:text="Stress Rating"
-            android:textAlignment="viewStart"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dailyActivity" />
+            app:layout_constraintTop_toBottomOf="@+id/positiveThoughts" />
 
     </LinearLayout>
 </ScrollView>
