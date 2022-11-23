@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.example.baads.mainFiles.MainPage"
-        android:label="@string/first_fragment_label"
+        android:label="BAADS Main Page"
         tools:layout="@layout/fragment_mainpage">
 
         <action
@@ -61,21 +61,21 @@
     <fragment
         android:id="@+id/musicPlayer"
         android:name="com.example.baads.MusicPlayer"
-        android:label="MusicPlayer" />
+        android:label="" />
     <activity
         android:id="@+id/soundBar"
         android:name="com.example.baads.soundBar.SoundBarOLD"
-        android:label="activity_sound_bar"
+        android:label=""
         tools:layout="@layout/activity_sound_bar" />
     <activity
         android:id="@+id/agenda"
         android:name="com.example.baads.agenda.Agenda"
-        android:label="activity_agenda"
+        android:label=""
         tools:layout="@layout/activity_agenda" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.baads.mainFiles.LoginFragment"
-        android:label="fragment_first2"
+        android:label="Login"
         tools:layout="@layout/fragment_first2" >
         <action
             android:id="@+id/action_loginFragment_to_FirstFragment"
@@ -85,53 +85,53 @@
     <activity
         android:id="@+id/dailyActivity2"
         android:name="com.example.baads.dailyActivity"
-        android:label="activity_daily"
+        android:label=""
         tools:layout="@layout/activity_daily" />
     <fragment
         android:id="@+id/alarmActivityReworkFragment"
         android:name="com.example.baads.alarm.alarmActivityReworkFragment"
-        android:label="alarmActivityReworkFragment" />
+        android:label="BAADS Alarm" />
     <fragment
         android:id="@+id/positiveAffirmationsReworkFragment"
         android:name="com.example.baads.positiveThoughts.positiveAffirmationsReworkFragment"
-        android:label="positiveAffirmationsReworkFragment" />
+        android:label="BAADS Positive Affirmations" />
     <fragment
         android:id="@+id/journalPageFragmentReworked"
         android:name="com.example.baads.journalPage.journalPageFragmentReworked"
-        android:label="journalPageFragmentReworked" />
+        android:label="BAADS Journal" />
     <fragment
         android:id="@+id/wikiTipsFragmentReworked"
         android:name="com.example.baads.wikiTips.wikiTipsFragmentReworked"
-        android:label="wikiTipsFragmentReworked" />
+        android:label="BAADS Wikitips" />
     <fragment
         android:id="@+id/selfCareListReworkedFragment"
         android:name="com.example.baads.selfCareList.selfCareListReworkedFragment"
-        android:label="selfCareListReworkedFragment" />
+        android:label="BAADS Selfcare" />
     <activity
         android:id="@+id/youTubeActivity2"
         android:name="com.example.baads.youtubePlayer.YouTubeActivity"
-        android:label="YouTubeActivity" />
+        android:label="BAADS YouTube" />
     <fragment
         android:id="@+id/agendaReworkFragment"
         android:name="com.example.baads.agenda.AgendaReworkFragment"
-        android:label="AgendaReworkFragment" />
+        android:label="BAADS Daily Agenda" />
     <fragment
         android:id="@+id/soundBarReworkFragment"
         android:name="com.example.baads.soundBar.soundBarReworkFragment"
-        android:label="soundBarReworkFragment" />
+        android:label="BAADS Soundbar" />
     <fragment
         android:id="@+id/youTubeReworkedFragment"
         android:name="com.example.baads.youtubePlayer.YouTubeReworkedFragment"
-        android:label="fragment_first4"
+        android:label=""
         tools:layout="@layout/fragment_first4" />
     <fragment
         android:id="@+id/ratingInput"
         android:name="com.example.baads.raterFolder.ratingInput"
-        android:label="ratingInput" />
+        android:label="BAADS Day Rating" />
     <fragment
         android:id="@+id/savedListFragment"
         android:name="com.example.baads.savedList.savedListFragment"
-        android:label="savedListFragment" />
+        android:label="BAADS Saved List" />
 
 
 </navigation>
