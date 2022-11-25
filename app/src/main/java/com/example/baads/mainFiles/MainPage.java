@@ -11,7 +11,8 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.baads.R;
 import com.example.baads.databinding.FragmentMainpageBinding;
-
+//https://www.adobe.com/express/create/logo
+//Source for creation of the logo for our app.
 public class MainPage extends Fragment {
 
     private FragmentMainpageBinding binding;
@@ -115,6 +116,14 @@ public class MainPage extends Fragment {
                         .navigate(R.id.action_FirstFragment_to_ratingInput);
             }
         });
+
+       /*binding.savedList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(MainPage.this)
+                        .navigate(R.id.action_FirstFragment_to_savedListFragment);
+            }
+        });*/
 
     }
 

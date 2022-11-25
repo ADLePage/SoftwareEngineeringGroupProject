@@ -22,6 +22,7 @@ import android.os.Build;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -58,6 +59,12 @@ public class alarmActivityReworkFragment extends Fragment {
 
     private FragmentAlarmclockBinding binding;
 
+    //Checks whether AM or PM.
+    //False = AM
+    //True = PM
+    //Initialized to AM
+    private static boolean isPM = false;
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -73,6 +80,8 @@ public class alarmActivityReworkFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setValuesBackToUserInput();
+
+        binding.AMorPM.setOnClickListener(e->switchAMPMButton());
         //Set the switch to do alarmAction.
         binding.AlarmSwitch1.setOnClickListener(e->doAlarmFunction());
     }
@@ -92,8 +101,8 @@ public class alarmActivityReworkFragment extends Fragment {
     private NotificationChannel channel;
     private NotificationManager notificationManager;
 
-    public static String hour1;
-    public static String minute1;
+    public static String hour1 ="";
+    public static String minute1 = "";
     public static boolean time1Flipped = false;
 
     /**@isCorrectSyntax(String hour, String minute)
@@ -106,9 +115,9 @@ public class alarmActivityReworkFragment extends Fragment {
             return false;
         }
         if((Integer.parseInt(hour)>=0)
-                &&(Integer.parseInt(hour)<=23)
+                &&(Integer.parseInt(hour)<=12)
                 &&(Integer.parseInt(minute)>=0)
-                &&(Integer.parseInt(minute)<=59)){
+                &&(Integer.parseInt(minute)<=60)){
             return true;
         }
         return false;
@@ -122,8 +131,15 @@ public class alarmActivityReworkFragment extends Fragment {
         TextView textViewHour = getActivity().findViewById(R.id.AlarmTimeInputHour1);
         TextView textViewMinute = getActivity().findViewById(R.id.AlarmTimeInputMinute1);
         alarmSwitch.setChecked(time1Flipped);
-        textViewHour.setText(hour1);
+        textViewHour.setText(String.valueOf(hour1));
+        if((isPM)&&(Integer.parseInt(hour1)!=12)){
+            int conversionHour = Integer.parseInt(hour1);
+            String checker = String.valueOf(conversionHour - 12);
+            textViewHour.setText(checker);
+        }
         textViewMinute.setText(minute1);
+        ToggleButton AMorPM = getActivity().findViewById(R.id.AMorPM);
+        AMorPM.setChecked(isPM);
     }
     /**
      * @startAlarmClock(Calendar calendar)
@@ -213,24 +229,41 @@ public class alarmActivityReworkFragment extends Fragment {
                 String minute = textViewMinute.getText().toString();
                 hour1 = hour;
                 minute1 = minute;
+                if(isPM&&((Integer.parseInt(hour)!=12))){
+                    int beforeConversionHour = Integer.parseInt(hour);
+                    hour1 = String.valueOf(beforeConversionHour + 12);
+                }
+                getActivity().findViewById(R.id.AMorPM);
                 //Credit to Foxandroid
                 Calendar calendar = Calendar.getInstance();
-                calendar.set(Calendar.HOUR_OF_DAY,Integer.parseInt(textViewHour.getText().toString()));
+                calendar.set(Calendar.HOUR_OF_DAY,Integer.parseInt(hour1));
                 calendar.set(Calendar.MINUTE,Integer.parseInt(textViewMinute.getText().toString()));
                 calendar.set(Calendar.SECOND,0);
                 calendar.set(Calendar.MILLISECOND,0);
                 //End of Credit
                 Date date = calendar.getTime();
                 //In the case the user wants to set an alarm for tomorrow.
+                int displayHours = date.getHours();
+                int displayMinutes = date.getMinutes();
+                String displayAMorPM;
+                if(isPM){
+                    displayAMorPM = "pm";
+                    if(displayHours!=12) {
+                        displayHours = displayHours - 12;
+                    }
+                }else{
+                    displayAMorPM = "am";
+                }
                 if(calendar.getTimeInMillis()<System.currentTimeMillis()){
                     calendar.setTimeInMillis(calendar.getTimeInMillis()+(24*60*60*1000));
-                    Toast.makeText(getActivity().getApplication(), "Alarm set for tomorrow "+date.getHours()+":"+date.getMinutes(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity().getApplication(), "Alarm set for tomorrow "+displayHours+":"+displayMinutes+" "+displayAMorPM, Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(getActivity().getApplication(), "Alarm set for today "+date.getHours()+":"+date.getMinutes(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity().getApplication(), "Alarm set for today "+displayHours+":"+displayMinutes+" "+displayAMorPM, Toast.LENGTH_SHORT).show();
                 }
                 //Credit to Foxandroid
                 startAlarmClock(calendar);
                 //End of credit
+                setClickableButtons(false);
             }else{
                 Toast.makeText(getActivity(), "Error, input valid time", Toast.LENGTH_SHORT).show();
                 time1Flipped = false;
@@ -238,11 +271,33 @@ public class alarmActivityReworkFragment extends Fragment {
                 alarmSwitch.setChecked(time1Flipped);
                 textViewHour.setText("");
                 textViewMinute.setText("");
+                setClickableButtons(true);
             }
         }else{
             //If you're switching the alarm off, stop the alarm.
             cancelAlarm();
+            setClickableButtons(true);
         }
+    }
+
+    private void setClickableButtons(boolean input){
+        TextView inputHour = getActivity().findViewById(R.id.AlarmTimeInputHour1);
+        TextView inputMinute = getActivity().findViewById(R.id.AlarmTimeInputMinute1);
+        ToggleButton amOrPm = getActivity().findViewById(R.id.AMorPM);
+        inputHour.setEnabled(input);
+        inputMinute.setEnabled(input);
+        amOrPm.setEnabled(input);
+    }
+    /**
+     * Switches variable isAm
+     * if isPM = true
+     * set to pm
+     * if isPM = false
+     * set to am
+     */
+    private void switchAMPMButton(){
+        isPM = !isPM;
+        //binding.AMorPM.setChecked(isPM);
     }
 
     /**@createNotificationForAlarm()

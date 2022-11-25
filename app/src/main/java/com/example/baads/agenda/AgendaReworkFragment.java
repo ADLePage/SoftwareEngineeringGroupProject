@@ -101,8 +101,11 @@ public class AgendaReworkFragment extends Fragment {
                 .collection("Agenda").get().addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
-                            result[0] += document.getId() + document.getData().get("agendaEvent") + "\n";
+                            //result[0] += document.getId() + document.getData().get("agendaEvent") + "\n";
+                            result[0] += document.getData().get("agendaEvent") + "\n";
                         }
+
+                        //if date == current date run this code
                         TextView EventText = getActivity().findViewById(R.id.EventListText);
                         EventText.setText(result[0]);
                     } else {

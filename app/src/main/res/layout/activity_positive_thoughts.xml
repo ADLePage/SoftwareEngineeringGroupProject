@@ -13,6 +13,7 @@
         android:layout_marginTop="4dp"
         android:text="Would you like to enable positive thought notifications?"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         android:textSize="48sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
