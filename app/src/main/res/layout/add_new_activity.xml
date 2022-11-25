@@ -7,7 +7,7 @@
     tools:context=".addNewActivity"
     >
     <EditText
-        android:id="@+id/task_edittext"
+        android:id="@+id/edittexty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/set_due_tv"
+        android:id="@+id/setduey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -30,17 +30,17 @@
         android:textColor="@color/purple_200"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/task_edittext" />
+        app:layout_constraintTop_toBottomOf="@+id/edittexty" />
 
     <Button
-        android:id="@+id/save_btn"
+        android:id="@+id/savebutton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Save "
+        android:text="SAVE "
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/task_edittext" />
+        app:layout_constraintTop_toBottomOf="@+id/edittexty" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

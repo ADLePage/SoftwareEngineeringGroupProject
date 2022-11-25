@@ -38,9 +38,9 @@ public class addNewActivity extends BottomSheetDialogFragment {
 
         public static final String TAG = "addNewActivity";
 
-        private TextView setDueDate;
-        private EditText mTaskEdit;
-        private Button mSaveBtn;
+        private TextView setduedate;
+        private EditText Edit;
+        private Button savebutton;
         private FirebaseFirestore firestore;
         private Context context;
         private String dueDate = "";
@@ -48,6 +48,7 @@ public class addNewActivity extends BottomSheetDialogFragment {
         private String dueDateUpdate = "";
 
         public static addNewActivity newInstance(){
+
             return new addNewActivity();
         }
 
@@ -62,9 +63,9 @@ public class addNewActivity extends BottomSheetDialogFragment {
         public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
 
-            setDueDate = view.findViewById(R.id.set_due_tv);
-            mTaskEdit = view.findViewById(R.id.task_edittext);
-            mSaveBtn = view.findViewById(R.id.save_btn);
+           setduedate = view.findViewById(R.id.setduey);
+            Edit = view.findViewById(R.id.edittexty);
+            savebutton = view.findViewById(R.id.savebutton3);
 
             firestore = FirebaseFirestore.getInstance();
 
@@ -77,16 +78,16 @@ public class addNewActivity extends BottomSheetDialogFragment {
                 id = bundle.getString("ID");
                 dueDateUpdate = bundle.getString("DUE DATE");
 
-                mTaskEdit.setText(task);
-                setDueDate.setText(dueDateUpdate);
+                Edit.setText(task);
+                setduedate.setText(dueDateUpdate);
 
                 if (task.length() > 0){
-                    mSaveBtn.setEnabled(false);
-                    mSaveBtn.setBackgroundColor(Color.GRAY);
+                    savebutton.setEnabled(false);
+                    savebutton.setBackgroundColor(Color.GRAY);
                 }
             }
 
-            mTaskEdit.addTextChangedListener(new TextWatcher() {
+            Edit.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -94,12 +95,12 @@ public class addNewActivity extends BottomSheetDialogFragment {
 
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    if (s.toString().equals(" ")){
-                        mSaveBtn.setEnabled(false);
-                        mSaveBtn.setBackgroundColor(Color.GRAY);
+                    if (s.toString().equals("")){
+                        savebutton.setEnabled(false);
+                        savebutton.setBackgroundColor(Color.GRAY);
                     }else{
-                        mSaveBtn.setEnabled(true);
-                        mSaveBtn.setBackgroundColor(getResources().getColor(R.color.purple_200));
+                        savebutton.setEnabled(true);
+                        savebutton.setBackgroundColor(getResources().getColor(R.color.purple_200));
                     }
                 }
 
@@ -109,7 +110,7 @@ public class addNewActivity extends BottomSheetDialogFragment {
                 }
             });
 
-            setDueDate.setOnClickListener(new View.OnClickListener() {
+            setduedate.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Calendar calendar = Calendar.getInstance();
@@ -122,8 +123,8 @@ public class addNewActivity extends BottomSheetDialogFragment {
                         @Override
                         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                             month = month + 1;
-                            setDueDate.setText(dayOfMonth + "/" + month + "/" + year);
-                            dueDate = dayOfMonth + "/" + month +"/"+year;
+                            setduedate.setText(dayOfMonth + "-" + month + "-" + year);
+                            dueDate = dayOfMonth + "-" + month +"-"+year;
 
                         }
                     } , YEAR , MONTH , DAY);
@@ -133,30 +134,31 @@ public class addNewActivity extends BottomSheetDialogFragment {
             });
 
             boolean finalIsUpdate = isUpdate;
-            mSaveBtn.setOnClickListener(new View.OnClickListener() {
+            savebutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    String task = mTaskEdit.getText().toString();
+                    String daily = Edit.getText().toString();
 
                     if (finalIsUpdate){
-                        firestore.collection("Daily activity").document(id).update("daily activity" , task , "due" , dueDate);
+                        firestore.collection("Dailyactivity").document(id).update("dailyactivity" , daily , "due" , dueDate);
                         Toast.makeText(context, "Daily Updated", Toast.LENGTH_SHORT).show();
 
                     }
                     else {
-                        if (task.isEmpty()) {
+                        if (daily.isEmpty()) {
                             Toast.makeText(context, "oopies!!!!! cant be empty. you did something today for sure ", Toast.LENGTH_SHORT).show();
                         } else {
 
-                            Map<String, Object> taskMap = new HashMap<>();
+                            Map<String, Object> dailyMap = new HashMap<>();
 
-                            taskMap.put("daily activity", task);
-                            taskMap.put("due", dueDate);
-                            taskMap.put("status", 0);
-                            taskMap.put("time", FieldValue.serverTimestamp());
+                            dailyMap.put("daily activity", daily);
+                            dailyMap.put("due", dueDate);
+                            dailyMap.put("status", 0);
+                            dailyMap.put("time", FieldValue.serverTimestamp());
 
-                            firestore.collection("daily activity").add(taskMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+
+                            firestore.collection("Dailyactivity").add(dailyMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
                                 @Override
                                 public void onComplete(@NonNull Task<DocumentReference> task) {
                                     if (task.isSuccessful()) {

@@ -1,11 +1,11 @@
 package com.example.baads.dailyModel;
 
 public class dailyactivityModel  extends dailyID{
-    private String dailyActivity , due;
+    private String Dailyactivity , due;
     private int status;
 
     public String getdailyActivity() {
-        return dailyActivity;
+        return Dailyactivity;
     }
 
     public String getDue() {
