@@ -50,6 +50,7 @@ public class ratingGraph extends Fragment {
 
     }
 
+    //Sourced https://firebase.google.com/docs/firestore/query-data/get-data
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 

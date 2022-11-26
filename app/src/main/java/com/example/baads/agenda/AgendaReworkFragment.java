@@ -37,7 +37,7 @@ public class AgendaReworkFragment extends Fragment {
     private FirebaseFirestore databaseAgendaConnection;
     private String event;
     private String date;
-
+    //Sourced https://firebase.google.com/docs/firestore/query-data/get-data
 
     public AgendaReworkFragment() {
         date = null;
