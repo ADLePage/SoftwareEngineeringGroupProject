@@ -18,7 +18,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.baads.R;
 import com.example.baads.databinding.FragmentRatingBinding;
-import com.example.baads.databinding.FragmentRatingBinding;
+import com.example.baads.mainFiles.MainPage;
 import com.example.baads.mainFiles.usernameStorage;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -89,12 +89,24 @@ public class ratingInput extends Fragment {
         //Sourced from https://firebase.google.com/docs/firestore/manage-data/add-data
         super.onViewCreated(view, savedInstanceState);
 
+       // Button button1 = getActivity().findViewById(R.id.button_submit);
+        //button1.setOnClickListener(e->buttonAction());
+
+        //Button buttonGraph = getActivity().findViewById(R.id.button_graph);
+
+        binding.buttonGraph.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(ratingInput.this)
+                        .navigate(R.id.action_ratingInput_to_ratingGraph);
+            }
+        });
+
         Button button1 = getActivity().findViewById(R.id.button_submit);
         button1.setOnClickListener(e->buttonAction());
 
-
-
     }
+
 
     @Override
     public void onDestroyView() {

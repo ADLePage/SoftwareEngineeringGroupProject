@@ -2,14 +2,8 @@
 <resources>
     <item name="selfCareList" type="id" />
     <item name="wikiTips" type="id" />
-    <item name="button_First" type="id" />
-    <item name="AlarmClock" type="id" />
-    <item name="TestingButton" type="id" />
-    <item name="imageView" type="id" />
-    <item name="positiveThoughts" type="id" />
-    <item name="youTubeVideo" type="id" />
-    <item name="SelfCareList" type="id" />
-    <item name="wiki2" type="id" />
-    <item name="dailyActivity" type="id" />
-    <item name="stressRating" type="id" />
+    <item name="ratingFragmentData" type="id" />
+    <item name="YoutubePlayerView2" type="id" />
+    <item name="rating2" type="id" />
+    <item name="ratingGraph2" type="id" />
 </resources>

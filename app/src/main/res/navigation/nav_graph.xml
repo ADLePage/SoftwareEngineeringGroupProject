@@ -54,6 +54,9 @@
             android:id="@+id/action_FirstFragment_to_ratingInput"
             app:destination="@id/ratingInput" />
         <action
+            android:id="@+id/action_ratingInput_to_ratingGraph"
+            app:destination="@id/ratingGraph" />
+        <action
             android:id="@+id/action_FirstFragment_to_savedListFragment"
             app:destination="@id/savedListFragment" />
 
@@ -127,7 +130,15 @@
     <fragment
         android:id="@+id/ratingInput"
         android:name="com.example.baads.raterFolder.ratingInput"
-        android:label="BAADS Day Rating" />
+        android:label="BAADS Day Rating" >
+        <action
+            android:id="@+id/action_ratingInput_to_ratingGraph2"
+            app:destination="@id/ratingGraph2" />
+    </fragment>
+    <fragment
+        android:id="@+id/ratingGraph"
+        android:name="com.example.baads.raterFolder.ratingInput"
+        android:label="BAADS Day Rating Data" />
     <fragment
         android:id="@+id/savedListFragment"
         android:name="com.example.baads.savedList.savedListFragment"
