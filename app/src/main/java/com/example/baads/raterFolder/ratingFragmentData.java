@@ -1,4 +1,4 @@
-package com.example.baads.raterFolder;
+/*package com.example.baads.raterFolder;
 
 import static com.firebase.ui.auth.AuthUI.getApplicationContext;
 
@@ -57,4 +57,4 @@ public class ratingFragmentData extends Fragment {
         binding = null;
     }
 
-}
+}*/

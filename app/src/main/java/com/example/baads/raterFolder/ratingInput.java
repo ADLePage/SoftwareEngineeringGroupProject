@@ -89,7 +89,7 @@ public class ratingInput extends Fragment {
         //Sourced from https://firebase.google.com/docs/firestore/manage-data/add-data
         super.onViewCreated(view, savedInstanceState);
 
-       // Button button1 = getActivity().findViewById(R.id.button_submit);
+        //Button button1 = getActivity().findViewById(R.id.button_submit);
         //button1.setOnClickListener(e->buttonAction());
 
         //Button buttonGraph = getActivity().findViewById(R.id.button_graph);
