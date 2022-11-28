@@ -62,6 +62,9 @@ public class ratingGraph extends Fragment {
             if (task.isSuccessful()) {
 
                 for (QueryDocumentSnapshot document : task.getResult()) {
+                    // cast
+                    int numInt = Integer.parseInt(document.getData().get("Rating").toString().replaceAll("[\\D]",""));
+                    // datapoint ...
                     result[0] += document.getData().get("Rating") + "\n";
                 }
                 retrieveDataText.setText(result[0]);
@@ -69,6 +72,7 @@ public class ratingGraph extends Fragment {
                 Log.d(addNewActivity.TAG, "Error getting documents: ", task.getException());
             }
         });
+
     }
 
     private <value> void getdata() {

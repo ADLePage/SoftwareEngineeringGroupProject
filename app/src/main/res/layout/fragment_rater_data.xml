@@ -15,4 +15,10 @@
         android:textColor="@color/purple_500"
         android:textSize="18sp" />
 
+    <com.jjoe64.graphview.GraphView
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:id="@+id/graph"
+        tools:ignore="MissingClass" />
+
 </FrameLayout>

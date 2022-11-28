@@ -42,6 +42,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.1.0'
     implementation 'com.google.firebase:firebase-firestore:24.4.0'
     implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
+    implementation 'com.jjoe64:graphview:4.2.2'
 
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
     testImplementation 'junit:junit:4.13.2'
