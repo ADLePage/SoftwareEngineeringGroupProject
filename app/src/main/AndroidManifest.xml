@@ -176,12 +176,20 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".journalPage.journalPageOLD"
+            android:name=".journalPage"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name=".newjournalPage"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
 
         <receiver
             android:name=".alarm.MyReceiver"

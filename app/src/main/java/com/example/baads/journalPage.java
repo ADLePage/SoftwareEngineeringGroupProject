@@ -71,4 +71,6 @@ public class journalPage extends AppCompatActivity {
         super.onResume();
         jonadapter.notifyDataSetChanged();
     }
+
+
 }
