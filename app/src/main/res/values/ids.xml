@@ -13,4 +13,5 @@
     <item name="dailyActivity" type="id" />
     <item name="stressRating" type="id" />
     <item name="action_FirstFragment_to_journalPageOLD" type="id" />
+    <item name="Title" type="id" />
 </resources>

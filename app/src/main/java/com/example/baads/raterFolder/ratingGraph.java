@@ -19,7 +19,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.baads.R;
 import com.example.baads.addNewActivity;
-import com.example.baads.databinding.FragmentSecondbindingBinding;
+import com.example.baads.databinding.FragmentDataratingBinding;
 import com.example.baads.mainFiles.MainActivity;
 import com.example.baads.mainFiles.usernameStorage;
 import com.google.firebase.database.DataSnapshot;
@@ -34,7 +34,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 public class ratingGraph extends Fragment {
 
-    private FragmentSecondbindingBinding binding;
+    private FragmentDataratingBinding binding;
     FirebaseFirestore firebaseDatabase;
     DatabaseReference databaseReference;
     private TextView retrieveDataText;
@@ -45,7 +45,7 @@ public class ratingGraph extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSecondbindingBinding.inflate(inflater, container, false);
+        binding = FragmentDataratingBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
