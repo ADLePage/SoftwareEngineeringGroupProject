@@ -21,6 +21,7 @@ public class soundBarReworkFragment extends Fragment {
     private ActivitySoundBarBinding binding;
     MediaPlayer oceanNoise;
     MediaPlayer whiteNoise;
+    MediaPlayer guitarMusic;
 
     @Override
     public View onCreateView(
@@ -36,7 +37,8 @@ public class soundBarReworkFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //both mp3 files were pulled from https://mc2method.org/white-noise/
+        //white and ocean noise mp3 files pulled from https://mc2method.org/white-noise/
+
         AppCompatImageButton oceanButtonPlay = getActivity().findViewById(R.id.playOcean);
         oceanButtonPlay.setOnClickListener(e-> oceanStart());
 
@@ -45,11 +47,17 @@ public class soundBarReworkFragment extends Fragment {
         oceanButtonPause.setOnClickListener(e->oceanNoise.stop());
 
         AppCompatImageButton whiteNoisePlay = getActivity().findViewById(R.id.playWhite);
-        whiteNoisePlay.setOnClickListener(e-> whiteStart());
+        whiteNoisePlay.setOnClickListener(e->whiteStart());
 
 
         AppCompatImageButton whiteNoisePause = getActivity().findViewById(R.id.pauseWhite);
         whiteNoisePause.setOnClickListener(e->whiteNoise.stop());
+
+        AppCompatImageButton guitarMusicPlay = getActivity().findViewById(R.id.playGuitar);
+        guitarMusicPlay.setOnClickListener(e->guitarStart());
+
+        AppCompatImageButton guitarMusicPause = getActivity().findViewById(R.id.pauseGuitar);
+        guitarMusicPause.setOnClickListener(e->guitarMusic.stop());
     }
 
     private void oceanStart(){
@@ -60,6 +68,11 @@ public class soundBarReworkFragment extends Fragment {
     private void whiteStart(){
         whiteNoise = MediaPlayer.create(getActivity(), R.raw.white_noise);
         whiteNoise.start();
+    }
+
+    private void guitarStart(){
+        guitarMusic = MediaPlayer.create(getActivity(), R.raw.guitar_music);
+        guitarMusic.start();
     }
 
 
