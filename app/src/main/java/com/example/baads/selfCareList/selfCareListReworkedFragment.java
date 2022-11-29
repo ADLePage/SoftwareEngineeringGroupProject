@@ -38,7 +38,7 @@ public class selfCareListReworkedFragment extends Fragment {
             "Go for a walk", "Drink water", "Practice good sleep hygiene",
             "Call-text a friend", "Connect with nature",
             "Meditate"};
-
+    String savedList[];
 
     @Override
     public View onCreateView(
@@ -99,7 +99,9 @@ public class selfCareListReworkedFragment extends Fragment {
         //   .add(field: item)
     }
 
-
+public String [] getSaved(){
+        return savedList;
+}
 
     @Override
     public void onDestroyView() {
