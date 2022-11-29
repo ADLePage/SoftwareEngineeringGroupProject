@@ -19,7 +19,7 @@ import java.util.List;
 public class dailyactivityAdapter extends RecyclerView.Adapter<dailyactivityAdapter.MyViewHolder> {
 
     private List<dailyactivityModel> bands;
-    private dailyActivity activity;
+    private final dailyActivity activity;
     private FirebaseFirestore firestore;
 
     public dailyactivityAdapter(dailyActivity dactivity, List<dailyactivityModel> mlist) {
@@ -61,7 +61,8 @@ public class dailyactivityAdapter extends RecyclerView.Adapter<dailyactivityAdap
 
     @Override
     public int getItemCount() {
-        return 0;
+
+        return bands.size();
     }
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
