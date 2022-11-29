@@ -62,7 +62,7 @@ public class dailyactivityAdapter extends RecyclerView.Adapter<dailyactivityAdap
     @Override
     public int getItemCount() {
 
-        return bands.size();
+        return 0;
     }
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
