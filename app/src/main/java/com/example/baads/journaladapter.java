@@ -1,5 +1,6 @@
 package com.example.baads;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,16 @@ public class journaladapter extends FirestoreRecyclerAdapter<Journal, journalada
     holder.titleTextView.setText(journal.title);
     holder.descriptionTextView.setText(journal.description);
     holder.timestampTextView.setText(used.timestampToString(journal.timestamp));
+
+    holder.itemView.setOnClickListener((v) -> {
+        Intent intent = new Intent(context,newjournalPage.class );
+        intent.putExtra("title", journal.title);
+        intent.putExtra("description", journal.description);
+        String doc = this.getSnapshots().getSnapshot(position).getId();
+        intent.putExtra("doc", doc);
+        context.startActivity(intent);
+
+    });
     }
 
     @NonNull
@@ -46,7 +57,7 @@ public class journaladapter extends FirestoreRecyclerAdapter<Journal, journalada
 
         public JournalViewHolder(@NonNull View itemView) {
             super(itemView);
-            titleTextView = itemView.findViewById(R.id.journaltitletext);
+            titleTextView = itemView.findViewById(R.id.journaltitletextview);
             descriptionTextView = itemView.findViewById(R.id.journaldescriptiontextview);
             timestampTextView = itemView.findViewById(R.id.journaltimestamptextview);
 

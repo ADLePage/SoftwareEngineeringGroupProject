@@ -1,35 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="9dp"
+    android:background="#6F8CA5"
+
+    android:orientation="vertical"
+
+
+    android:padding="12dp">
 
     <TextView
+        android:id="@+id/journaltitletextview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Journal title"
-        android:id ="@+id/journaltitletextview"
-        android:textColor="@color/black"
-        android:textSize="15dp"
-        android:layout_marginVertical="5dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id ="@+id/journaldescriptiontextview"
-        android:text="my name is Bola and i love sugarcane and big nyansh........"
-        android:maxLines="2"
-        android:ellipsize="end"
         android:layout_marginVertical="5dp"
-        />
+        android:text="Journal title"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+
+        android:textStyle="bold" />
+
     <TextView
+        android:id="@+id/journaldescriptiontextview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id ="@+id/journaltimestamptextview"
-        android:text="Journal title"
-        android:textSize="12dp"
+        android:layout_marginVertical="5dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="my name is Bola and i love sugarcane and big nyansh........"
+
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/journaltimestamptextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
         android:gravity="right"
-        android:layout_marginVertical="4dp"/>
+        android:text="Journal title"
+        android:textColor="@color/black"
+        android:textSize="12dp" />
 
 
 </LinearLayout>
