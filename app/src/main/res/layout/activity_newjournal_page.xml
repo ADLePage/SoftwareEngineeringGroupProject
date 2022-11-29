@@ -4,54 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".newjournalPage">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/title_layout">
+
         <TextView
+            android:id="@+id/pagetitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/pagetitle"
-            android:text=" new journal :) "
-            android:textSize ="30dp"
-            />
+
+
+            android:background="#408BC5"
+            android:text=" new journal 😁"
+
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
 
     <ImageButton
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:id="@+id/saveButtonjournal"
-        android:src ="@drawable/ic_baseline_done_outline_24"
+
         android:layout_alignParentEnd="true"
 
         />
         </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/title_layout"
-        android:orientation="vertical"
-        android:padding="15dp"
         android:layout_marginVertical="26dp"
-        android:background="@color/white">
+        android:background="#82A0C1"
+        android:orientation="vertical"
+        android:padding="15dp">
+
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/journaltitletext"
-            android:hint="TITLE"
-            android:textStyle="bold"
-            android:layout_marginVertical="8dp"/>
-        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:hint="TITLE"
+            android:textStyle="bold" />
+
+        <EditText
             android:id="@+id/journaltitledescription"
-            android:hint="DESCRIPTION"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
             android:gravity="top"
+            android:hint="DESCRIPTION"
             android:minLines="15"
-            android:textStyle="bold"
-            android:layout_marginVertical="8dp"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <TextView
