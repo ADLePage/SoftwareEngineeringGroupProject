@@ -18,7 +18,7 @@ import java.security.KeyPairGenerator;
 public class YouTubeActivity extends YouTubeBaseActivity {
 
     Button btn;
-    Button btn2;
+    Button btnChangeVideo;
     YouTubePlayerView youTubePlayerView;
     YouTubePlayerView youTubePlayerView2;
     YouTubePlayer.OnInitializedListener onInitializedListener;
@@ -32,14 +32,16 @@ public class YouTubeActivity extends YouTubeBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_you_tube);
 
+        final String[] videoId = {"lrhPTqholcc"};
+
         btn = findViewById(R.id.play);
-        btn2 = findViewById(R.id.play2);
+        btnChangeVideo = findViewById(R.id.changeVideo);
         youTubePlayerView = findViewById(R.id.YoutubePlayerView);
-        youTubePlayerView2 = findViewById(R.id.YoutubePlayerView2);
+       // youTubePlayerView2 = findViewById(R.id.YoutubePlayerView2);
         onInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                youTubePlayer.loadVideo("lrhPTqholcc");
+                youTubePlayer.loadVideo(videoId[0]);
             }
 
             @Override
@@ -55,27 +57,21 @@ public class YouTubeActivity extends YouTubeBaseActivity {
             }
 
         });
+        //8TuRYV71Rgo
 
-        onInitializedListener2 = new YouTubePlayer.OnInitializedListener() {
-            @Override
-            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer2, boolean b) {
-                youTubePlayer2.loadVideo("8TuRYV71Rgo");
-            }
-
-            @Override
-            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-
-            }
-        };
-
-        btn2.setOnClickListener(new View.OnClickListener() {
+        btnChangeVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                youTubePlayerView2.initialize("AIzaSyALdZO1D-c0JsQ4pDMlHzLHsfN8CPRFKAI", onInitializedListener);
-            }
 
+                videoId[0] = "8TuRYV71Rgo";
+
+                recreate();
+
+            }
         });
+
+        }
+
 
     }
 
-}
