@@ -30,9 +30,6 @@
             android:id="@+id/action_FirstFragment_to_positiveAffirmationsReworkFragment"
             app:destination="@id/positiveAffirmationsReworkFragment" />
         <action
-            android:id="@+id/action_FirstFragment_to_journalPageFragmentReworked"
-            app:destination="@id/journalPageFragmentReworked" />
-        <action
             android:id="@+id/action_FirstFragment_to_wikiTipsFragmentReworked"
             app:destination="@id/wikiTipsFragmentReworked" />
         <action
@@ -56,6 +53,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_savedListFragment"
             app:destination="@id/savedListFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_journalPage"
+            app:destination="@id/journalPage" />
 
     </fragment>
     <fragment
@@ -96,10 +96,6 @@
         android:name="com.example.baads.positiveThoughts.positiveAffirmationsReworkFragment"
         android:label="BAADS Positive Affirmations" />
     <fragment
-        android:id="@+id/journalPageFragmentReworked"
-        android:name="com.example.baads.journalPage.journalPageFragmentReworked"
-        android:label="BAADS Journal" />
-    <fragment
         android:id="@+id/wikiTipsFragmentReworked"
         android:name="com.example.baads.wikiTips.wikiTipsFragmentReworked"
         android:label="BAADS Wikitips" />
@@ -132,6 +128,11 @@
         android:id="@+id/savedListFragment"
         android:name="com.example.baads.savedList.savedListFragment"
         android:label="BAADS Saved List" />
+    <activity
+        android:id="@+id/journalPage"
+        android:name="com.example.baads.journalPage"
+        android:label="activity_journal_page"
+        tools:layout="@layout/activity_journal_page" />
 
 
 </navigation>

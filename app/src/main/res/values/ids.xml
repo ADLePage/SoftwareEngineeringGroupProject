@@ -12,4 +12,5 @@
     <item name="wiki2" type="id" />
     <item name="dailyActivity" type="id" />
     <item name="stressRating" type="id" />
+    <item name="action_FirstFragment_to_journalPageOLD" type="id" />
 </resources>
