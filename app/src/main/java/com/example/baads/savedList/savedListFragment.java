@@ -56,7 +56,7 @@ public class savedListFragment extends Fragment {
             "Eat a healthy meal", "Engage in exercise",
             "Go for a walk", "Drink water", "Practice good sleep hygiene",
             "Call-text a friend", "Connect with nature",
-            "Meditate"};
+            "Meditate", "Treat yourself", "Maintain a routine", "Take deep breaths"};
     ArrayList<String> savedArrayList = new ArrayList<>();
           //  = {
          //   "0"//, "1", "2"
@@ -85,7 +85,7 @@ public class savedListFragment extends Fragment {
 
         String[] result = new String[1];
         result[0] ="";
-        savedArrayList.add("Call-text a friend");
+       // savedArrayList.add("Call-text a friend");
 
         CollectionReference colRef = databaseLoginInfoConnection.collection("users")
                 .document(usernameStorage.username)
@@ -98,7 +98,20 @@ public class savedListFragment extends Fragment {
                         savedArrayList.add(String.valueOf(value.getDocuments()));
                     }
                 });
-*/
+*/        ArrayAdapter<String> tasks = new ArrayAdapter<>(getActivity(),
+                R.layout.selfcarelist_item_view, R.id.itemTextView,
+                savedArrayList);
+       // tasks.notifyDataSetChanged();
+//set to tips for full list
+//set to savedArrayList for saved
+
+
+        ListView listTasks = getActivity().findViewById(R.id.listView);
+
+        listTasks.setAdapter(tasks);
+       // tasks.notifyDataSetChanged();
+
+
 
                 colRef.get()
                 .addOnCompleteListener(task -> {
@@ -109,7 +122,10 @@ public class savedListFragment extends Fragment {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                                // QuerySnapshot document2 = task.getResult();
 
-                               // savedArrayList.add(document.getId()); //FAILS PROGRAM
+                                savedArrayList.add(document.getId()); //FAILS PROGRAM
+                                tasks.notifyDataSetChanged();
+                                //requestLayout();
+                                //notifyDataSetChanged();
                               //  savedArrayList.add("1");
                                 counter ++;
                               //  int numInt = Integer.parseInt(document.getData().get("Idea").toString().replaceAll("[\\D]",""));
@@ -137,7 +153,7 @@ public class savedListFragment extends Fragment {
                                    //savedArrayList.add("!!!!!!!");
                                 } else {
                                     Log.d(TAG, "No such document");
-                                   //savedArrayList.add("AAAAAHHHHHH");
+                                  // savedArrayList.add("AAAAAHHHHHH");
                                 }
 
 
@@ -146,8 +162,8 @@ public class savedListFragment extends Fragment {
                            // retrieveDataText.setText(result[0]);
                             //savedArrayList.add(result[0]);
                         } else {
-                                d(TAG, "Error getting documents: ", task.getException());
-                            //savedArrayList.add("UNSUCCESSFUL");
+                                Log.d(TAG, "Error getting documents: ", task.getException());
+                           // savedArrayList.add("UNSUCCESSFUL");
                             }
                         //} else {
                          //   Log.d(TAG, "get failed with ", task.getException());
@@ -167,7 +183,7 @@ public class savedListFragment extends Fragment {
 
 
         //savedArrayList.add(task.getData().values().toString());
-        savedArrayList.add("2");
+       // savedArrayList.add("2");
 
 
 
@@ -199,15 +215,7 @@ public class savedListFragment extends Fragment {
            // saved[0] = String.valueOf(sList);
 
 
-        ArrayAdapter<String> tasks = new ArrayAdapter<>(getActivity(),
-                R.layout.selfcarelist_item_view, R.id.itemTextView,
-                tips);
-//set to tips for full list
-//set to savedArrayList for saved
 
-
-        ListView listTasks = getActivity().findViewById(R.id.listView);
-        listTasks.setAdapter(tasks);
 //https://firebase.google.com/docs/firestore/query-data/get-data#java_8
 
         /*
