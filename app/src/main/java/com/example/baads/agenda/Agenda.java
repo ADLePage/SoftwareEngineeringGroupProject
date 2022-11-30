@@ -1,10 +1,14 @@
-package com.example.baads.planner;
+package com.example.baads.agenda;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
-public class Planner extends AppCompatActivity {
+import com.example.baads.R;
+import com.google.firebase.database.core.view.View;
+
+public class Agenda extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

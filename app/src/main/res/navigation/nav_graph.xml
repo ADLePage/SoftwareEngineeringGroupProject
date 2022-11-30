@@ -64,14 +64,14 @@
         android:label="" />
     <activity
         android:id="@+id/soundBar"
-        android:name="com.example.baads.soothingSounds.soothingSoundsOLD"
+        android:name="com.example.baads.soundBar.SoundBarOLD"
         android:label=""
-        tools:layout="@layout/activity_soothing_sounds" />
+        tools:layout="@layout/activity_sound_bar" />
     <activity
         android:id="@+id/agenda"
-        android:name="com.example.baads.planner.Planner"
+        android:name="com.example.baads.agenda.Agenda"
         android:label=""
-        tools:layout="@layout/activity_planner" />
+        tools:layout="@layout/activity_agenda" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.baads.mainFiles.LoginFragment"
@@ -109,11 +109,11 @@
         android:label="BAADS YouTube" />
     <fragment
         android:id="@+id/agendaReworkFragment"
-        android:name="com.example.baads.planner.PlannerReworkFragment"
+        android:name="com.example.baads.agenda.AgendaReworkFragment"
         android:label="BAADS Daily Agenda" />
     <fragment
         android:id="@+id/soundBarReworkFragment"
-        android:name="com.example.baads.soothingSounds.soothingSoundsReworkFragment"
+        android:name="com.example.baads.soundBar.soundBarReworkFragment"
         android:label="BAADS Soundbar" />
     <fragment
         android:id="@+id/youTubeReworkedFragment"

@@ -1,10 +1,11 @@
-package com.example.baads.soothingSounds;
+package com.example.baads.soundBar;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageButton;
@@ -15,7 +16,7 @@ import com.example.baads.R;
 import com.example.baads.databinding.ActivitySoundBarBinding;
 
 
-public class soothingSoundsReworkFragment extends Fragment {
+public class soundBarReworkFragment extends Fragment {
 
     private ActivitySoundBarBinding binding;
     MediaPlayer oceanNoise;

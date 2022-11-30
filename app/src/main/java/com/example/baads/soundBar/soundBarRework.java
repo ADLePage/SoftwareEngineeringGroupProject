@@ -1,8 +1,9 @@
-package com.example.baads.planner;
+package com.example.baads.soundBar;
 
 import android.os.Bundle;
 
-import com.example.baads.databinding.ActivityPlannerReworkBinding;
+import com.example.baads.databinding.ActivitySoothingSoundsReworkBinding;
+import com.example.baads.databinding.ActivitySoundBarReworkBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,21 +18,21 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.baads.R;
 
-public class PlannerRework extends AppCompatActivity {
+public class soundBarRework extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityPlannerReworkBinding binding;
+    private ActivitySoothingSoundsReworkBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityPlannerReworkBinding.inflate(getLayoutInflater());
+        binding = ActivitySoothingSoundsReworkBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_agenda_rework);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_sound_bar_rework);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
@@ -46,7 +47,7 @@ public class PlannerRework extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_agenda_rework);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_sound_bar_rework);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
