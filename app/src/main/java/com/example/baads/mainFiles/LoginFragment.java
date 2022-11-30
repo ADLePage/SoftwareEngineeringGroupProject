@@ -105,6 +105,8 @@ public class LoginFragment extends Fragment {
                                         usernameStorage.username = username;
                                         NavHostFragment.findNavController(LoginFragment.this)
                                                 .navigate(R.id.action_loginFragment_to_FirstFragment);
+                                    }else{
+                                        errorTextModify.setAlpha(1);
                                     }
                                 } else {
                                     errorTextModify.setAlpha(1);
