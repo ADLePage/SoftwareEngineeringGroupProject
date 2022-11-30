@@ -5,29 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Click to save idea"
-        android:textAlignment="center"
-        android:textSize="38sp"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <!--https://www.youtube.com/watch?v=aUFdgLSEl0g -->
     <ListView
         android:id="@+id/listView"
-        android:layout_width="411dp"
-        android:layout_height="575dp"
+        android:layout_width="410dp"
+        android:layout_height="732dp"
         android:layout_gravity="center"
         android:layout_marginEnd="2dp"
-        android:layout_marginBottom="4dp"
         android:background="@color/off_white"
         android:divider="@color/gray"
         android:dividerHeight="4dp"
@@ -35,6 +19,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
