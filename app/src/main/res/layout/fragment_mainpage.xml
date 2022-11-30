@@ -27,7 +27,7 @@
             android:layout_height="70dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="15dp"
-            android:text="Agenda"
+            android:text="Planner"
             android:textAlignment="viewStart"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_First" />
@@ -104,7 +104,7 @@
             android:layout_height="70dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="15dp"
-            android:text="Soundbars"
+            android:text="Soothing Sounds"
             android:textAlignment="viewStart"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/AlarmClock" />
