@@ -14,7 +14,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Play"
+        android:text="View: Stress Tips"
         android:id="@+id/play"
         android:layout_marginTop="20dp"
         tools:ignore="MissingConstraints" />
@@ -22,7 +22,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Change Video"
+        android:text="View: Stress Yoga"
         android:id="@+id/changeVideo"
         android:layout_marginTop="20dp"
         tools:ignore="MissingConstraints" />

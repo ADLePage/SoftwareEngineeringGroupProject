@@ -23,7 +23,7 @@ public class YouTubeActivity extends YouTubeBaseActivity {
     YouTubePlayerView youTubePlayerView2;
     YouTubePlayer.OnInitializedListener onInitializedListener;
     YouTubePlayer.OnInitializedListener onInitializedListener2;
-    YouTubePlayer youTubePlayer;
+    YouTubePlayer mYouTubePlayer;
     YouTubePlayer youTubePlayer2;
 
     @SuppressLint("MissingInflatedId")
@@ -40,7 +40,8 @@ public class YouTubeActivity extends YouTubeBaseActivity {
         onInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                youTubePlayer.cueVideo(videoId);
+                mYouTubePlayer = youTubePlayer;
+                mYouTubePlayer.cueVideo(videoId);
             }
 
             @Override
@@ -52,7 +53,7 @@ public class YouTubeActivity extends YouTubeBaseActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                youTubePlayerView.initialize("AIzaSyALdZO1D-c0JsQ4pDMlHzLHsfN8CPRFKAI", onInitializedListener);
+                mYouTubePlayer.cueVideo("lrhPTqholcc");
             }
 
         });
@@ -60,10 +61,15 @@ public class YouTubeActivity extends YouTubeBaseActivity {
         btnChangeVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                youTubePlayer.cueVideo("8TuRYV71Rgo");
+                mYouTubePlayer.cueVideo("8TuRYV71Rgo");
             }
 
         });
+        youTubePlayerView.initialize("AIzaSyALdZO1D-c0JsQ4pDMlHzLHsfN8CPRFKAI", onInitializedListener);
+
+    }
+    private void youTubePlayerSetup(){
 
 
-    }}
+    }
+}
