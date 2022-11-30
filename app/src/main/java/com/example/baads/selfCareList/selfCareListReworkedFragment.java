@@ -37,7 +37,13 @@ public class selfCareListReworkedFragment extends Fragment {
             "Eat a healthy meal", "Engage in exercise",
             "Go for a walk", "Drink water", "Practice good sleep hygiene",
             "Call-text a friend", "Connect with nature",
-            "Meditate", "Treat yourself", "Maintain a routine", "Take deep breaths"};
+            "Meditate", "Treat yourself", "Maintain a routine",
+            "Take deep breaths", "Set Yourself Up for Success",
+            "Hydrate", "Slow Down", "Live Intentionally",
+            "Get Outdoors", "Get a Coach", "Discover a New Hobby",
+            "Set Goals", "List It"
+
+    };
     String savedList[];
 
     @Override
