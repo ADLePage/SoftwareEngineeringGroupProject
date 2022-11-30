@@ -2,7 +2,7 @@ package com.example.baads.planner;
 
 import android.os.Bundle;
 
-import com.example.baads.databinding.ActivityAgendaReworkBinding;
+import com.example.baads.databinding.ActivityPlannerReworkBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,13 +20,13 @@ import com.example.baads.R;
 public class PlannerRework extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityAgendaReworkBinding binding;
+    private ActivityPlannerReworkBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityAgendaReworkBinding.inflate(getLayoutInflater());
+        binding = ActivityPlannerReworkBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);

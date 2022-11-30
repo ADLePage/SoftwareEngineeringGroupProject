@@ -2,6 +2,7 @@ package com.example.baads.soothingSounds;
 
 import android.os.Bundle;
 
+import com.example.baads.databinding.ActivitySoothingSoundsReworkBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,13 +20,13 @@ import com.example.baads.R;
 public class soothingSoundsRework extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivitySoundBarReworkBinding binding;
+    private ActivitySoothingSoundsReworkBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivitySoundBarReworkBinding.inflate(getLayoutInflater());
+        binding = ActivitySoothingSoundsReworkBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
