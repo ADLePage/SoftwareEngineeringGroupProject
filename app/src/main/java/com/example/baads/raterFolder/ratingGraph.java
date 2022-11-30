@@ -1,7 +1,5 @@
 package com.example.baads.raterFolder;
 
-import static android.content.ContentValues.TAG;
-
 import static com.firebase.ui.auth.AuthUI.getApplicationContext;
 
 import android.annotation.SuppressLint;
@@ -15,22 +13,20 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.baads.R;
 import com.example.baads.addNewActivity;
 import com.example.baads.databinding.FragmentDataratingBinding;
-import com.example.baads.mainFiles.MainActivity;
 import com.example.baads.mainFiles.usernameStorage;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+import java.text.BreakIterator;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ratingGraph extends Fragment {
 
@@ -38,6 +34,7 @@ public class ratingGraph extends Fragment {
     FirebaseFirestore firebaseDatabase;
     DatabaseReference databaseReference;
     private TextView retrieveDataText;
+    private TextView seeAverage;
 
     @Override
     public View onCreateView(
@@ -56,23 +53,32 @@ public class ratingGraph extends Fragment {
 
         firebaseDatabase = FirebaseFirestore.getInstance();
         retrieveDataText = getActivity().findViewById(R.id.retrieveData);
+        seeAverage = getActivity().findViewById(R.id.seeAverage);
         String[] result = new String[1];
         result[0] ="";
         firebaseDatabase.collection("users").document(usernameStorage.username).collection("stressRating").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-
+                int sum = 0;
+                int count = 0;
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     // cast
                     int numInt = Integer.parseInt(document.getData().get("Rating").toString().replaceAll("[\\D]",""));
+                    sum += numInt;
+                    count++;
                     // datapoint ...
-                    result[0] += "Rating: " + document.getData().get("Rating") + "\n" + document.getId() + "\n";
+                    result[0] += document.getId() + "\n" + "Rating: " + document.getData().get("Rating") + "\n";
                     //document.getId();
                 }
+                sum = sum/count;
+                seeAverage.setText(String.valueOf(sum));
                 retrieveDataText.setText(result[0]);
             } else {
                 Log.d(addNewActivity.TAG, "Error getting documents: ", task.getException());
             }
+
         });
+
+
 
     }
 

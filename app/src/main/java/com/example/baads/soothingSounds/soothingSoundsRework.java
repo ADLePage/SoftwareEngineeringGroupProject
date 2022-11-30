@@ -1,8 +1,8 @@
-package com.example.baads.agenda;
+package com.example.baads.soothingSounds;
 
 import android.os.Bundle;
 
-import com.example.baads.databinding.ActivityAgendaReworkBinding;
+import com.example.baads.databinding.ActivitySoothingSoundsReworkBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,21 +17,21 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.baads.R;
 
-public class AgendaRework extends AppCompatActivity {
+public class soothingSoundsRework extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityAgendaReworkBinding binding;
+    private ActivitySoothingSoundsReworkBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityAgendaReworkBinding.inflate(getLayoutInflater());
+        binding = ActivitySoothingSoundsReworkBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_agenda_rework);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_sound_bar_rework);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
@@ -46,7 +46,7 @@ public class AgendaRework extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_agenda_rework);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_sound_bar_rework);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }

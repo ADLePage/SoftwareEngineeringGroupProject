@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".agenda.Agenda">
+    tools:context=".planner.Planner">
 
     <TextView
         android:id="@+id/todayAgendaText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="Today's Agenda: "
+        android:text="Planner: "
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
-        android:text="Nothing to Display:)"
+        android:text="Nothing to Display"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -48,7 +48,7 @@
         android:layout_marginBottom="132dp"
         android:ems="10"
         android:fontFamily="sans-serif"
-        android:hint="Add your tasks here"
+        android:hint="Add events here"
         android:inputType="textMultiLine"
         android:text=""
         android:textColor="@color/white"

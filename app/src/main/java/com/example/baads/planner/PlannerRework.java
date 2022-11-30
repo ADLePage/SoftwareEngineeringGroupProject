@@ -1,8 +1,8 @@
-package com.example.baads.soundBar;
+package com.example.baads.planner;
 
 import android.os.Bundle;
 
-import com.example.baads.databinding.ActivitySoundBarReworkBinding;
+import com.example.baads.databinding.ActivityPlannerReworkBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,21 +17,21 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.baads.R;
 
-public class soundBarRework extends AppCompatActivity {
+public class PlannerRework extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivitySoundBarReworkBinding binding;
+    private ActivityPlannerReworkBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivitySoundBarReworkBinding.inflate(getLayoutInflater());
+        binding = ActivityPlannerReworkBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_sound_bar_rework);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_agenda_rework);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
@@ -46,7 +46,7 @@ public class soundBarRework extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_sound_bar_rework);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_agenda_rework);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
