@@ -65,6 +65,8 @@ public class LoginFragment extends Fragment {
         TextView errorTextModify = binding.errorText;
         errorTextModify.setAlpha(0);
 
+        errorTextModify.setText("ERROR: NO ACCOUNT TIED TO THAT USERNAME OR PASSWORD");
+
         TextView usernameInteraction = binding.username;
         usernameInteraction.setOnClickListener(e->errorTextModify.setAlpha(0));
 
@@ -84,22 +86,19 @@ public class LoginFragment extends Fragment {
                     //This this case, it takes from the users collection, and finds the user with the inputted username.
                     DocumentReference docRef = databaseLoginInfoConnection.collection("users").document(username);
 
-                    //Checks whether or not there was an account with the username.
-                    if(!(docRef.get().isSuccessful())){
-                        errorTextModify.setAlpha(1);
-                    }
                     //This is what we use to be able to login.
                     docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                             //If the task is complete, go into the if statement.
                             if (task.isSuccessful()) {
+                                errorTextModify.setAlpha(0);
                                 //gets the document that contains the user information
                                 DocumentSnapshot document = task.getResult();
                                 if (document.exists()) {
                                     //checks if the document contains the users password.
                                     if(document.getData().containsValue(password)) {
-                                        errorTextModify.setAlpha(0);
+
                                         //source : https://stackoverflow.com/questions/1944656/android-global-variable
                                         //Trying to figure out how to store a variable (in this case a username) across all activities.
                                         //Used this idea from the stackoverflow
@@ -111,10 +110,12 @@ public class LoginFragment extends Fragment {
                                     errorTextModify.setAlpha(1);
                                 }
                             } else {
-                                Log.d(TAG, "get failed with ", task.getException());
+                                errorTextModify.setAlpha(1);
                             }
                         }
                     });
+                }else{
+                    errorTextModify.setAlpha(1);
                 }
 
             }

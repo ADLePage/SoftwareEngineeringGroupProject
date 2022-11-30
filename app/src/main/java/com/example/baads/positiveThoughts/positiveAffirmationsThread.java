@@ -8,6 +8,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 
 import android.media.AudioAttributes;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
@@ -132,7 +133,7 @@ public class positiveAffirmationsThread implements Runnable {
                     .setSmallIcon(R.drawable.ic_launcher_background)
                     .setContentTitle("Affirmation Notification")
                     .setContentText(returnValue[0])
-                    .setTimeoutAfter(5000)
+                    .setTimeoutAfter(15000)
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -144,16 +145,23 @@ public class positiveAffirmationsThread implements Runnable {
                 //Source: http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
                 //AudioAttribute creator, sourcing java2s's AudioAttribute creation
                 //in order to be able to create an audioattribute to attach to an alarmsound.
-                AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                        .setUsage(AudioAttributes.USAGE_NOTIFICATION)
-                        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                        .build();
+                //AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                //        .setUsage(AudioAttributes.USAGE_NOTIFICATION)
+                //        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                //        .build();
+
                 //Source: http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
                 //Format for Uri creation.
-                Uri alarmSound = Uri.parse("android.resource://" + activityThread.getPackageName() + "/" + R.raw.positive_sound);
-
-                channel.setSound(alarmSound,audioAttributes);
+                //Old way of doing it, for some reason has issues where it will not play sound.
+                //channel.setSound(alarmSound,audioAttributes);
                 channel.setDescription(description);
+                Uri alarmSound = Uri.parse("android.resource://" + activityThread.getPackageName() + "/" + R.raw.positive_sound);
+                MediaPlayer positiveSound = MediaPlayer.create(activityThread.getApplicationContext(),alarmSound);
+                positiveSound.start();
+                //Set sound to null. Sourced from stackoverflow, source in alarmActivityReworkFragment.
+                channel.setSound(null,null);
+
+
 
                 notificationManager = activityThread.getSystemService(NotificationManager.class);
                 notificationManager.createNotificationChannel(channel);

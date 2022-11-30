@@ -53,6 +53,9 @@ import java.util.Date;
  *  https://stackoverflow.com/questions/4531396/get-value-of-a-edit-text-field
  *  Getting text value of textView. Credit to svdree
  *
+ *  https://stackoverflow.com/questions/45919392/disable-sound-from-notificationchannel
+ *  Setting sound to nothing. Credit to mVck
+ *
  *
  */
 public class alarmActivityReworkFragment extends Fragment {
@@ -305,6 +308,10 @@ public class alarmActivityReworkFragment extends Fragment {
      * source: https://www.youtube.com/watch?v=xSrVWFCtgaE
      * All credit goes to Foxandroid. Request for the alarm system. This builds and
      * creates an object that will be used as a notification for the user to wake up.
+     *
+     * Sourced https://stackoverflow.com/questions/45919392/disable-sound-from-notificationchannel
+     * Used for setting sound to nothing
+     *
      */
     private void createNotificationForAlarm(){
         if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.O){
@@ -315,6 +322,7 @@ public class alarmActivityReworkFragment extends Fragment {
             channel = new NotificationChannel("Alarm System",name,importance);
             channel.setDescription(description);
             //we dont want sound from here.
+            //Sourced https://stackoverflow.com/questions/45919392/disable-sound-from-notificationchannel
             channel.setSound(null,null);
 
             notificationManager = getActivity().getSystemService(NotificationManager.class);
