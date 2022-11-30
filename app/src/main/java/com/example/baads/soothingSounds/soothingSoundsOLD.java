@@ -1,4 +1,4 @@
-package com.example.baads.soundBar;
+package com.example.baads.soothingSounds;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.example.baads.R;
 
-public class SoundBarOLD extends AppCompatActivity {
+public class soothingSoundsOLD extends AppCompatActivity {
     MediaPlayer oceanNoise;
     MediaPlayer whiteNoise;
 
@@ -15,7 +15,7 @@ public class SoundBarOLD extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sound_bar);
+        setContentView(R.layout.activity_soothing_sounds);
 
         oceanNoise = MediaPlayer.create(this, R.raw.ocean_noise); //both mp3 files were pulled from https://mc2method.org/white-noise/
         whiteNoise = MediaPlayer.create(this, R.raw.white_noise);

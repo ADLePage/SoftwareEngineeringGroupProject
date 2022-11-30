@@ -44,7 +44,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".agenda.AgendaRework"
+            android:name=".planner.PlannerRework"
             android:exported="false"
             android:label="@string/title_activity_agenda_rework" />
 
@@ -53,7 +53,7 @@
             android:value="" />
 
         <activity
-            android:name=".soundBar.soundBarRework"
+            android:name=".soothingSounds.soothingSoundsRework"
             android:exported="false"
             android:label="@string/title_activity_sound_bar_rework"
             android:theme="@style/Theme.Baads.NoActionBar">
@@ -132,7 +132,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".agenda.Agenda"
+            android:name=".planner.Planner"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -165,7 +165,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".soundBar.SoundBarOLD"
+            android:name=".soothingSounds.soothingSoundsOLD"
             android:exported="false"
             android:label="@string/soundBarTitle" />
         <activity
