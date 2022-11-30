@@ -6,6 +6,8 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="spoken_emoji_1F602">Face with tears of joy</string>
+    <!-- Spoken description for Unicode code point U+1F603: "😃" SMILING FACE WITH OPEN MOUTH -->
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
@@ -30,5 +32,6 @@
     <string name="title_activity_sound_bar_rework">soundBarRework</string>
     <string name="title_activity_you_tube_reworked">YouTubeReworked</string>
     <string name="title_activity_rating">ratingActivity</string>
+    <string name="guitar_music_title"> Guitar Music</string>
 
 </resources>

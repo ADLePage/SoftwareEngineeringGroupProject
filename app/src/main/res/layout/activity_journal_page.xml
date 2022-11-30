@@ -12,14 +12,17 @@
         android:layout_height="wrap_content"
 
         android:id="@+id/title_layout">
+
+
         <TextView
+            android:id="@+id/pagetitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/pagetitle"
-            android:text="Daily journal :)"
-            android:textSize ="30dp"
-            />
-
+            android:layout_gravity="center"
+            android:text="Daily journal 😃"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
 
         <ImageButton
             android:layout_width="35dp"

@@ -5,6 +5,7 @@ import static android.content.ContentValues.TAG;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.media.AudioAttributes;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -85,15 +86,18 @@ public class MainActivity extends AppCompatActivity {
 
             //Source: http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
             //Using java2s's AudioAttribute creation
-            AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                    .setUsage(AudioAttributes.USAGE_NOTIFICATION)
-                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                    .build();
+            //AudioAttributes audioAttributes = new AudioAttributes.Builder()
+            //        .setUsage(AudioAttributes.USAGE_NOTIFICATION)
+            //        .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+            //        .build();
 
             //Source: http://www.java2s.com/example/java-api/android/app/notificationchannel/setsound-2-0.html
             //Format for Uri creation and setting sound for channel. Needed to be able to set the sound
             Uri alarmSound = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.admin_alert);
-            channel.setSound(alarmSound,audioAttributes);
+            MediaPlayer adminNotification = MediaPlayer.create(getApplicationContext(),alarmSound);
+            adminNotification.start();
+            //Set sound to null. Sourced from stackoverflow, source in alarmActivityReworkFragment.
+            channel.setSound(null,null);
 
             notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);

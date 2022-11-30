@@ -34,6 +34,18 @@
         app:layout_constraintTop_toBottomOf="@+id/whiteNoise"
         app:layout_constraintVertical_bias="0.062" />
 
+    <TextView
+        android:id="@+id/guitarMusic"
+        android:layout_width="113dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/guitar_music_title"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oceanNoise" />
+
     <ImageButton
         android:id="@+id/playOcean"
         android:layout_width="wrap_content"
@@ -96,5 +108,32 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@android:drawable/ic_media_pause"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/pauseGuitar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.788"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pauseOcean"
+        app:srcCompat="@android:drawable/ic_media_pause"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/playGuitar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="36dp"
+        android:backgroundTint="@color/gray"
+        app:layout_constraintEnd_toStartOf="@+id/pauseGuitar"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playOcean"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -65,7 +65,8 @@ public class ratingGraph extends Fragment {
                     // cast
                     int numInt = Integer.parseInt(document.getData().get("Rating").toString().replaceAll("[\\D]",""));
                     // datapoint ...
-                    result[0] += document.getData().get("Rating") + "\n";
+                    result[0] += "Rating: " + document.getData().get("Rating") + "\n" + document.getId() + "\n";
+                    //document.getId();
                 }
                 retrieveDataText.setText(result[0]);
             } else {
