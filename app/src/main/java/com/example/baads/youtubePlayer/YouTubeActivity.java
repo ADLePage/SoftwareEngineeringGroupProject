@@ -32,16 +32,15 @@ public class YouTubeActivity extends YouTubeBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_you_tube);
 
-        final String[] videoId = {"lrhPTqholcc"};
+        final String videoId = "lrhPTqholcc";
 
         btn = findViewById(R.id.play);
         btnChangeVideo = findViewById(R.id.changeVideo);
         youTubePlayerView = findViewById(R.id.YoutubePlayerView);
-       // youTubePlayerView2 = findViewById(R.id.YoutubePlayerView2);
         onInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                youTubePlayer.loadVideo(videoId[0]);
+                youTubePlayer.cueVideo(videoId);
             }
 
             @Override
@@ -58,20 +57,13 @@ public class YouTubeActivity extends YouTubeBaseActivity {
 
         });
         //8TuRYV71Rgo
-
         btnChangeVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                videoId[0] = "8TuRYV71Rgo";
-
-                recreate();
-
+                youTubePlayer.cueVideo("8TuRYV71Rgo");
             }
+
         });
 
-        }
 
-
-    }
-
+    }}

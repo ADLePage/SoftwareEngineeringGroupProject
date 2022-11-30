@@ -41,8 +41,12 @@
         android:layout_width="410dp"
         android:layout_height="81dp"
         android:text="Loading..."
+        android:textColor="@color/white"
+        android:textSize="25dp"
         tools:layout_editor_absoluteX="-1dp"
         tools:layout_editor_absoluteY="651dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
