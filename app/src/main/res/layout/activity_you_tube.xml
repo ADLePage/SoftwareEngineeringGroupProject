@@ -14,7 +14,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View: Stress Tips"
+        android:text="Quick Stress Release: Anxiety Reduction Technique: Anxiety Skills #19"
         android:id="@+id/play"
         android:layout_marginTop="20dp"
         tools:ignore="MissingConstraints" />
@@ -22,8 +22,32 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View: Stress Yoga"
+        android:text="10 Minute Yoga Stress and Anxiety"
         android:id="@+id/changeVideo"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guided Meditation For Stress and Anxiety"
+        android:id="@+id/stressVideo3"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stress Relief - Deepest Relaxation - 432 Hz &amp; Delta Waves - Binaural Beats - Meditation Music"
+        android:id="@+id/stressVideo4"
+        android:layout_marginTop="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Release Stress, Anxiety &amp; Overwhelm - Tapping Meditation"
+        android:id="@+id/stressVideo5"
         android:layout_marginTop="20dp"
         tools:ignore="MissingConstraints" />
 

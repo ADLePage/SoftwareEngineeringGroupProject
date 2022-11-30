@@ -19,6 +19,9 @@ public class YouTubeActivity extends YouTubeBaseActivity {
 
     Button btn;
     Button btnChangeVideo;
+    Button btnStressVideo3;
+    Button btnStressVideo4;
+    Button btnStressVideo5;
     YouTubePlayerView youTubePlayerView;
     YouTubePlayerView youTubePlayerView2;
     YouTubePlayer.OnInitializedListener onInitializedListener;
@@ -36,6 +39,9 @@ public class YouTubeActivity extends YouTubeBaseActivity {
 
         btn = findViewById(R.id.play);
         btnChangeVideo = findViewById(R.id.changeVideo);
+        btnStressVideo3 = findViewById(R.id.stressVideo3);
+        btnStressVideo4 = findViewById(R.id.stressVideo4);
+        btnStressVideo5 = findViewById(R.id.stressVideo5);
         youTubePlayerView = findViewById(R.id.YoutubePlayerView);
         onInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override
@@ -62,6 +68,27 @@ public class YouTubeActivity extends YouTubeBaseActivity {
             @Override
             public void onClick(View v) {
                 mYouTubePlayer.cueVideo("8TuRYV71Rgo");
+            }
+
+        });
+        btnStressVideo3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mYouTubePlayer.cueVideo("w4tlGeSrcNw");
+            }
+
+        });
+        btnStressVideo4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mYouTubePlayer.cueVideo("oWPQJJ_n3Sk");
+            }
+
+        });
+        btnStressVideo5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mYouTubePlayer.cueVideo("Sqe3h3l8a7w");
             }
 
         });
