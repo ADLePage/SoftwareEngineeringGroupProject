@@ -38,7 +38,7 @@ public class soundBarReworkFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         //white and ocean noise mp3 files pulled from https://mc2method.org/white-noise/
-
+        //guitar music pulled from https://pixabay.com/music/search/mood/relaxing/
         AppCompatImageButton oceanButtonPlay = getActivity().findViewById(R.id.playOcean);
         oceanButtonPlay.setOnClickListener(e-> oceanStart());
 
