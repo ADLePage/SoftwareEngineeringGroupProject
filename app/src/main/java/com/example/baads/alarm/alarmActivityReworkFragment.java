@@ -257,11 +257,15 @@ public class alarmActivityReworkFragment extends Fragment {
                 }else{
                     displayAMorPM = "am";
                 }
+                String extraZeroIfNeeded="";
+                if(displayMinutes<10){
+                    extraZeroIfNeeded="0";
+                }
                 if(calendar.getTimeInMillis()<System.currentTimeMillis()){
                     calendar.setTimeInMillis(calendar.getTimeInMillis()+(24*60*60*1000));
-                    Toast.makeText(getActivity().getApplication(), "Alarm set for tomorrow "+displayHours+":"+displayMinutes+" "+displayAMorPM, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity().getApplication(), "Alarm set for tomorrow "+displayHours+":"+extraZeroIfNeeded+displayMinutes+" "+displayAMorPM, Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(getActivity().getApplication(), "Alarm set for today "+displayHours+":"+displayMinutes+" "+displayAMorPM, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity().getApplication(), "Alarm set for today "+displayHours+":"+extraZeroIfNeeded+displayMinutes+" "+displayAMorPM, Toast.LENGTH_SHORT).show();
                 }
                 //Credit to Foxandroid
                 startAlarmClock(calendar);
