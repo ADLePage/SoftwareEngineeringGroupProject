@@ -1,11 +1,10 @@
-package com.example.baads.soundBar;
+package com.example.baads.soothingSounds;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageButton;
@@ -16,7 +15,7 @@ import com.example.baads.R;
 import com.example.baads.databinding.ActivitySoundBarBinding;
 
 
-public class soundBarReworkFragment extends Fragment {
+public class soothingSoundsReworkFragment extends Fragment {
 
     private ActivitySoundBarBinding binding;
     MediaPlayer oceanNoise;
@@ -38,7 +37,7 @@ public class soundBarReworkFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         //white and ocean noise mp3 files pulled from https://mc2method.org/white-noise/
-
+        //guitar music pulled from https://pixabay.com/music/search/mood/relaxing/
         AppCompatImageButton oceanButtonPlay = getActivity().findViewById(R.id.playOcean);
         oceanButtonPlay.setOnClickListener(e-> oceanStart());
 
