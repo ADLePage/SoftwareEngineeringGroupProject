@@ -110,11 +110,11 @@
     <fragment
         android:id="@+id/agendaReworkFragment"
         android:name="com.example.baads.agenda.AgendaReworkFragment"
-        android:label="BAADS Daily Agenda" />
+        android:label="BAADS Planner" />
     <fragment
         android:id="@+id/soundBarReworkFragment"
         android:name="com.example.baads.soundBar.soundBarReworkFragment"
-        android:label="BAADS Soundbar" />
+        android:label="BAADS Soothing Sounds" />
     <fragment
         android:id="@+id/youTubeReworkedFragment"
         android:name="com.example.baads.youtubePlayer.YouTubeReworkedFragment"
