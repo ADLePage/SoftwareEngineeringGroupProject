@@ -54,7 +54,7 @@ public class selfCareListThread implements Runnable{
         /*
         CollectionReference colRef = databaseLoginInfoConnection.collection("SavedIdeas");
 
-// Set the "isCapital" field of the city 'DC'
+
         colRef
                 .update("Take a break", true)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -72,23 +72,6 @@ public class selfCareListThread implements Runnable{
 
 
 
-       /* DocumentReference docRef;
-
-        databaseLoginInfoConnection.collection("")
-                .whereEqualTo("capital", true)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d(TAG, document.getId() + " => " + document.getData());
-                            }
-                        } else {
-                            Log.d(TAG, "Error getting documents: ", task.getException());
-                        }
-                    }
-                });
 
         */
 

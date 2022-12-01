@@ -46,7 +46,6 @@ public class savedListFragment extends Fragment {
     private FirebaseFirestore databaseLoginInfoConnection;
     private ActivitySelfCareListBinding binding;
 
-    //DocumentReference savedIdeasRef = db.collection("Practice mindfulness").document("SavedIdeasList");
 
     String tips[]
             = { "Practice mindfulness", "Take a break",
@@ -57,8 +56,10 @@ public class savedListFragment extends Fragment {
             "Go for a walk", "Drink water", "Practice good sleep hygiene",
             "Call-text a friend", "Connect with nature",
             "Meditate", "Treat yourself", "Maintain a routine", "Take deep breaths"};
-    ArrayList<String> savedArrayList = new ArrayList<>();
+    //for testing
 
+    ArrayList<String> savedArrayList = new ArrayList<>();
+    //actual list
 
 
     @Override
@@ -97,7 +98,7 @@ public class savedListFragment extends Fragment {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
 
                                 savedArrayList.add(document.getId());
-                                //adds doc ID for each in collection
+                                //adds all doc IDs in SavedIdeas collection
                                 tasks.notifyDataSetChanged();
                                 //notifies adapter of change in ListView
 
@@ -113,7 +114,6 @@ public class savedListFragment extends Fragment {
                     });
 
 
-        String [] saved = savedArrayList.toArray(new String[savedArrayList.size()]);
 
         listTasks.setOnItemClickListener((adapter, v, position, id) -> {
             String item = adapter.getItemAtPosition(position).toString();

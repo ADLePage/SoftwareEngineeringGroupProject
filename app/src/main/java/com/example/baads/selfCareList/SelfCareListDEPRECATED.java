@@ -15,15 +15,5 @@ public class SelfCareListDEPRECATED extends AppCompatActivity {
 
     }
 }
-//  public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
 
-        ////Creates a binding to send user to the sound bar
-       /* binding.positiveThoughts.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(SelfCareListDEPRECATED.this)
-                        .navigate(R.id.action_FirstFragment_to_positiveThoughts2);
-            }*/
-      //  });
 

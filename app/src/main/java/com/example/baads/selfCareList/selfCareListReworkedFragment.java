@@ -98,11 +98,6 @@ public class selfCareListReworkedFragment extends Fragment {
                 });
                //*/
 
-        //.document(item.toString()).set(colRef);
-        // Set the "isCapital" field of the city 'DC'
-        // docRef
-        //        .update("Take a break", true);
-        //   .add(field: item)
     }
 
 public String [] getSaved(){
