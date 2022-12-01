@@ -21,9 +21,6 @@
             android:id="@+id/action_FirstFragment_to_agenda"
             app:destination="@id/agendaReworkFragment" />
         <action
-            android:id="@+id/action_FirstFragment_to_dailyActivity2"
-            app:destination="@id/dailyActivity2" />
-        <action
             android:id="@+id/action_FirstFragment_to_alarmActivityReworkFragment"
             app:destination="@id/alarmActivityReworkFragment" />
         <action
@@ -56,6 +53,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_journalPage"
             app:destination="@id/journalPage" />
+        <action
+            android:id="@+id/action_FirstFragment_to_dailyActivity32"
+            app:destination="@id/dailyActivity3" />
 
     </fragment>
     <fragment
@@ -82,11 +82,6 @@
             app:destination="@id/FirstFragment" />
     </fragment>
 
-    <activity
-        android:id="@+id/dailyActivity2"
-        android:name="com.example.baads.dailyActivity"
-        android:label=""
-        tools:layout="@layout/activity_daily" />
     <fragment
         android:id="@+id/alarmActivityReworkFragment"
         android:name="com.example.baads.alarm.alarmActivityReworkFragment"
@@ -141,6 +136,11 @@
         android:name="com.example.baads.journalPage"
         android:label="activity_journal_page"
         tools:layout="@layout/activity_journal_page" />
+    <activity
+        android:id="@+id/dailyActivity3"
+        android:name="com.example.baads.DailyActivity"
+        android:label="activity_daily"
+        tools:layout="@layout/activity_daily" />
 
 
 </navigation>

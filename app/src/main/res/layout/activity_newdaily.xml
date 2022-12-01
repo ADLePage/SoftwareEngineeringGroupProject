@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".newdailyActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/daily_bar_layout">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/page_daily"
+            android:text="New activity"
+            android:textSize= "29dp"
+            android:textStyle="bold"/>
+        <ImageButton
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/saveButtondaily"
+            android:background="@drawable/fui_ic_check_circle_black_128dp"
+            android:layout_alignParentEnd="true"
+            />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/daily_bar_layout"
+        android:layout_marginVertical="26dp"
+        android:background="#82A0C1"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+    <EditText
+        android:id="@+id/activity_daily_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:hint="Enter your daily activity and mood  (e.g., Happy, Sad, etc.)"
+        android:textStyle="bold" />
+</LinearLayout>
+    <TextView
+        android:id="@+id/deleteactivitybtn"
+        android:layout_width="191dp"
+        android:layout_height="32dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="107dp"
+        android:visibility="gone"
+        android:layout_marginBottom="169dp"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:text="Delete Activity"
+        android:textColor="#DF0D0D" />
+
+
+
+</RelativeLayout>

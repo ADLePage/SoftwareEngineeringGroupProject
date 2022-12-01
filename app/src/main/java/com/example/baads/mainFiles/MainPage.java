@@ -81,7 +81,7 @@ public class MainPage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(MainPage.this)
-                        .navigate(R.id.action_FirstFragment_to_dailyActivity2);
+                        .navigate(R.id.action_FirstFragment_to_dailyActivity32);
             }
         });
 

@@ -99,11 +99,11 @@ public class newjournalPage extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    used.showToast(newjournalPage.this, " old Journal deleted successfully :)");
+                    used.showToast(newjournalPage.this, " Journal deleted successfully ");
                     finish();
 
                 } else {
-                    used.showToast(newjournalPage.this, "sorry couldn't deletw your old journal :(");
+                    used.showToast(newjournalPage.this, "sorry couldn't delete your old journal :(");
                 }
             }
         });
