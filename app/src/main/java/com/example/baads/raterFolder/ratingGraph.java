@@ -70,7 +70,7 @@ public class ratingGraph extends Fragment {
                     //document.getId();
                 }
                 sum = sum/count;
-                seeAverage.setText(String.valueOf(sum));
+                seeAverage.setText("All Time Average: " + String.valueOf(sum));
                 retrieveDataText.setText(result[0]);
             } else {
                 Log.d(addNewActivity.TAG, "Error getting documents: ", task.getException());

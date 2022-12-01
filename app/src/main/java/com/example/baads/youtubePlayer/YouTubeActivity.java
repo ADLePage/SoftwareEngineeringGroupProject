@@ -19,11 +19,14 @@ public class YouTubeActivity extends YouTubeBaseActivity {
 
     Button btn;
     Button btnChangeVideo;
+    Button btnStressVideo3;
+    Button btnStressVideo4;
+    Button btnStressVideo5;
     YouTubePlayerView youTubePlayerView;
     YouTubePlayerView youTubePlayerView2;
     YouTubePlayer.OnInitializedListener onInitializedListener;
     YouTubePlayer.OnInitializedListener onInitializedListener2;
-    YouTubePlayer youTubePlayer;
+    YouTubePlayer mYouTubePlayer;
     YouTubePlayer youTubePlayer2;
 
     @SuppressLint("MissingInflatedId")
@@ -36,11 +39,15 @@ public class YouTubeActivity extends YouTubeBaseActivity {
 
         btn = findViewById(R.id.play);
         btnChangeVideo = findViewById(R.id.changeVideo);
+        btnStressVideo3 = findViewById(R.id.stressVideo3);
+        btnStressVideo4 = findViewById(R.id.stressVideo4);
+        btnStressVideo5 = findViewById(R.id.stressVideo5);
         youTubePlayerView = findViewById(R.id.YoutubePlayerView);
         onInitializedListener = new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                youTubePlayer.cueVideo(videoId);
+                mYouTubePlayer = youTubePlayer;
+                mYouTubePlayer.cueVideo(videoId);
             }
 
             @Override
@@ -52,7 +59,7 @@ public class YouTubeActivity extends YouTubeBaseActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                youTubePlayerView.initialize("AIzaSyALdZO1D-c0JsQ4pDMlHzLHsfN8CPRFKAI", onInitializedListener);
+                mYouTubePlayer.cueVideo("lrhPTqholcc");
             }
 
         });
@@ -60,10 +67,36 @@ public class YouTubeActivity extends YouTubeBaseActivity {
         btnChangeVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                youTubePlayer.cueVideo("8TuRYV71Rgo");
+                mYouTubePlayer.cueVideo("8TuRYV71Rgo");
             }
 
         });
+        btnStressVideo3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mYouTubePlayer.cueVideo("w4tlGeSrcNw");
+            }
+
+        });
+        btnStressVideo4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mYouTubePlayer.cueVideo("oWPQJJ_n3Sk");
+            }
+
+        });
+        btnStressVideo5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mYouTubePlayer.cueVideo("Sqe3h3l8a7w");
+            }
+
+        });
+        youTubePlayerView.initialize("AIzaSyALdZO1D-c0JsQ4pDMlHzLHsfN8CPRFKAI", onInitializedListener);
+
+    }
+    private void youTubePlayerSetup(){
 
 
-    }}
+    }
+}

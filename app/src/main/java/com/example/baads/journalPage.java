@@ -5,21 +5,14 @@ import android.os.Bundle;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.View;
 import android.widget.ImageButton;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.baads.databinding.ActivityJournalPageBinding;
 import com.google.firebase.firestore.Query;
 
 public class journalPage extends AppCompatActivity {
@@ -34,7 +27,7 @@ public class journalPage extends AppCompatActivity {
          setContentView(R.layout.activity_journal_page);
 
          FAB2 = findViewById(R.id.fab2);
-         recyclerView = findViewById(R.id.recyclerviewjournal);
+         recyclerView = findViewById(R.id.recyclerviewdaily);
          menuButton = findViewById(R.id.menuButtonjournal2);
 
          FAB2.setOnClickListener((v)-> startActivity(new Intent(journalPage.this,newjournalPage.class)));

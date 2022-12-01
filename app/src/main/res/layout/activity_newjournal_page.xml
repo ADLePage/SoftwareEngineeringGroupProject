@@ -18,9 +18,8 @@
             android:layout_height="wrap_content"
 
 
-            android:background="#408BC5"
-            android:text=" new journal 😁"
 
+            android:text=" new journal "
             android:textSize="30dp"
             android:textStyle="bold" />
 
@@ -29,9 +28,8 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:id="@+id/saveButtonjournal"
-
+        android:background="@drawable/fui_ic_check_circle_black_128dp"
         android:layout_alignParentEnd="true"
-
         />
         </RelativeLayout>
 
@@ -49,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
-            android:hint="TITLE"
+            android:hint="Journal title"
             android:textStyle="bold" />
 
         <EditText
@@ -58,19 +56,22 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
             android:gravity="top"
-            android:hint="DESCRIPTION"
+            android:hint="Journal description"
             android:minLines="15"
             android:textStyle="bold" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/deletejournal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="191dp"
+        android:layout_height="32dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="166dp"
-        android:gravity="center"
+        android:layout_marginEnd="107dp"
         android:visibility="gone"
+        android:layout_marginBottom="169dp"
+        android:background="@color/gray"
+        android:gravity="center"
         android:text="DELETE"
         android:textColor="#DF0D0D" />
 

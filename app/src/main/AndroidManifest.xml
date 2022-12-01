@@ -26,6 +26,20 @@
         android:theme="@style/Theme.Baads"
         tools:targetApi="31">
         <activity
+            android:name=".newdailyActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DailyActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".raterFolder.ratingActivity"
             android:exported="false"
             android:label="@string/title_activity_rating"
@@ -156,15 +170,6 @@
             android:value="" />
 
         <activity
-            android:name=".dailyActivity"
-            android:exported="false"
-            android:label="@string/title_activity_daily"
-            android:theme="@style/Theme.Baads.NoActionBar">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".soundBar.SoundBarOLD"
             android:exported="false"
             android:label="@string/soundBarTitle" />
@@ -189,7 +194,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
 
         <receiver
             android:name=".alarm.MyReceiver"

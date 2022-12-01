@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Daily journal 😃"
+            android:text="Daily journals"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="30dp" />
@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/title_layout"
-        android:id="@+id/recyclerviewjournal"/>
+        android:id="@+id/recyclerviewdaily"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab2"
